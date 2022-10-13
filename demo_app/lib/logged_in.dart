@@ -39,20 +39,22 @@ class _LoggedinState extends State<Loggedin> {
                   width: 25,
                   color: Colors.tealAccent,
                 )),
-            Center(
+            Positioned(
+                top: size.height * 0.2,
+                left: size.height * 0.2,
                 child: GestureDetector(
-              onTap: () {
-                setState(() {
-                  click = !click;
-                });
-              },
-              child: AnimatedContainer(
-                duration: Duration(seconds: 2),
-                color: click ? Colors.pinkAccent : Colors.lightBlue,
-                height: click ? 150 : 75,
-                width: click ? 75 : 150,
-              ),
-            ))
+                  onTap: () {
+                    setState(() {
+                      click = !click;
+                    });
+                  },
+                  child: AnimatedContainer(
+                    duration: Duration(seconds: 2),
+                    color: click ? Colors.pinkAccent : Colors.lightBlue,
+                    height: click ? 150 : 75,
+                    width: click ? 75 : 150,
+                  ),
+                ))
           ]),
           ListView.builder(
             itemBuilder: (context, index) {
