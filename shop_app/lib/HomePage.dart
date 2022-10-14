@@ -22,6 +22,7 @@ class HomePage extends StatelessWidget {
             children: [
               Text(
                 'Shop',
+                textAlign: TextAlign.left,
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 25,
