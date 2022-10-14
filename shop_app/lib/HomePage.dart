@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             // Text(
             //   'Categories',
