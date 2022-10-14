@@ -16,8 +16,9 @@ class HomePage extends StatelessWidget {
         ),
         Positioned(
           top: size.height * 0.051,
+          left: size.width * 0.051,
           child: Column(
-            //mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
                 'Shop',
@@ -26,12 +27,16 @@ class HomePage extends StatelessWidget {
                     fontSize: 25,
                     fontWeight: FontWeight.w500),
               ),
-              Card(
-                elevation: 7,
-                child: TextField(
-                  decoration: InputDecoration(
-                    fillColor: Colors.white,
-                    labelText: 'Search all..',
+              Container(
+                height: size.height * 0.071,
+                width: size.width * 0.5,
+                child: Card(
+                  elevation: 7,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      fillColor: Colors.white,
+                      labelText: 'Search all..',
+                    ),
                   ),
                 ),
               )
@@ -40,6 +45,7 @@ class HomePage extends StatelessWidget {
         ),
         Positioned(
             top: size.height * 0.15,
+            left: 0,
             child: Container(
               child: TextField(
                 decoration: InputDecoration(
