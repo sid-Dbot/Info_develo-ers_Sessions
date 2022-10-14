@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/ListViews/listview_horizontal_categories.dart';
+
+import './ListViews/listview_horizontal_categories.dart';
 
 class HomePage extends StatelessWidget {
   @override
