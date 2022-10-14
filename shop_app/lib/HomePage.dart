@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,45 +8,50 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Shop'),
-      // ),
-      body: Stack(children: [
-        Container(
-          color: Colors.teal,
+        appBar: AppBar(
+          title: Text(
+            'Categories',
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.green[900],
+          actions: [],
         ),
-        Positioned(
-          top: size.height * 0.051,
-          left: size.width * 0.0051,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+        body: Column(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            // mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text(
-                'Shop',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 5),
-                height: size.height * 0.071,
-                width: size.width,
-                child: Card(
-                  elevation: 7,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      fillColor: Colors.white,
-                      labelText: 'Search all..',
-                    ),
+              // Text(
+              //   'Categories',
+              //   style: TextStyle(
+              //     color: Colors.white,
+              //     fontSize: 25,
+              //     fontWeight: FontWeight.w500,
+              //   ),
+              // ),
+              Card(
+                elevation: 9,
+                // decoration: BoxDecoration(
+                //   color: Colors.white,
+                //   borderRadius: BorderRadius.all(Radius.circular(10)),
+                // ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    suffixIcon: Icon(Icons.search),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.white)),
+                    fillColor: Colors.white,
+                    labelText: 'Search all..',
                   ),
                 ),
-              )
-            ],
-          ),
-        ),
-      ]),
-    );
+              ),
+              // ListView.builder(
+              //   itemBuilder: (context, index) {},
+              // )
+            ]));
   }
 }
