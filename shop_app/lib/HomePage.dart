@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  List list = [
+    'All',
+    'collections',
+    'Occasions',
+    'Home Decor',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -54,14 +58,16 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 4,
-                itemBuilder: (context, index) {
-                  return Row(
-                    children: [Text('All')],
-                  );
-                },
+              Container(
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    return Row(
+                      children: [Text('$list[index]')],
+                    );
+                  },
+                ),
               )
             ]));
   }
