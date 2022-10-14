@@ -44,17 +44,6 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        Positioned(
-            top: size.height * 0.15,
-            left: 0,
-            child: Container(
-              child: TextField(
-                decoration: InputDecoration(
-                  fillColor: Colors.white,
-                  labelText: 'Search all..',
-                ),
-              ),
-            ))
       ]),
     );
   }
