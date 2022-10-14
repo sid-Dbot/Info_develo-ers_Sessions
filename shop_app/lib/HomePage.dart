@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         ),
         Positioned(
           top: size.height * 0.051,
-          left: size.width * 0.051,
+          left: size.width * 0.0051,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -28,8 +28,9 @@ class HomePage extends StatelessWidget {
                     fontWeight: FontWeight.w500),
               ),
               Container(
+                padding: EdgeInsets.symmetric(horizontal: 5),
                 height: size.height * 0.071,
-                width: size.width * 0.5,
+                width: size.width,
                 child: Card(
                   elevation: 7,
                   child: TextField(
