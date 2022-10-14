@@ -11,6 +11,8 @@ class Categories_types extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: EdgeInsets.all(9),
+      scrollDirection: Axis.horizontal,
       itemBuilder: (BuildContext context, int index) {
         return Card(
           elevation: 9,
