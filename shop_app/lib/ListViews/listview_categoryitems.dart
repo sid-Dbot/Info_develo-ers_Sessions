@@ -14,7 +14,13 @@ class Category_item extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             color: Colors.deepPurpleAccent,
-            boxShadow: BoxShadow(),
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 2,
+                spreadRadius: 1,
+                offset: Offset(2, 2),
+              )
+            ],
           ),
           child: Text('$index'),
         );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './ListViews/listview_categoryitems.dart';
 import './ListViews/listview_horizontal_categories.dart';
 
 class HomePage extends StatelessWidget {
@@ -55,6 +56,10 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 50,
               child: Categories_types(),
+            ),
+            SizedBox(
+              height: 300,
+              child: Category_item(),
             ),
           ]),
     );
