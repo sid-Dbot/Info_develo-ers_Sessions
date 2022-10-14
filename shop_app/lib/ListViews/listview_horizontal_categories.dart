@@ -17,7 +17,7 @@ class Categories_types extends StatelessWidget {
           child: Text(list[index]),
         );
       },
-      itemCount: 4,
+      itemCount: 5,
     );
   }
 }
