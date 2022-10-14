@@ -29,7 +29,7 @@ class _Categories_typesState extends State<Categories_types> {
           }),
           child: Card(
             elevation: 9,
-            color: click ? Colors.white : Colors.amber,
+            color: click ? Colors.amber : Colors.white,
             child: Text(list[index]),
           ),
         );
