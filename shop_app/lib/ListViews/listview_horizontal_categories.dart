@@ -27,10 +27,12 @@ class _Categories_typesState extends State<Categories_types> {
               click = !click;
             });
           }),
-          child: Card(
-            elevation: 9,
-            color: click ? Colors.amber : Colors.white,
-            child: Text(list[index]),
+          child: Container(
+            child: Card(
+              elevation: 9,
+              color: click ? Colors.amber : Colors.white,
+              child: Text(list[index]),
+            ),
           ),
         );
       },
