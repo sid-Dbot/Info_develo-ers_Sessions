@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  List list = [
-    'All',
-    'collections',
-    'Occasions',
-    'Home Decor',
-  ];
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -41,22 +34,22 @@ class HomePage extends StatelessWidget {
             //     fontWeight: FontWeight.w500,
             //   ),
             // ),
-            // Card(
-            //   elevation: 9,
-            //   // decoration: BoxDecoration(
-            //   //   color: Colors.white,
-            //   //   borderRadius: BorderRadius.all(Radius.circular(10)),
-            //   // ),
-            //   child: TextField(
-            //     decoration: InputDecoration(
-            //       suffixIcon: Icon(Icons.search),
-            //       enabledBorder: OutlineInputBorder(
-            //           borderRadius: BorderRadius.all(Radius.circular(10)),
-            //           borderSide: BorderSide(color: Colors.white)),
-            //       labelText: 'Search all..',
-            //     ),
-            //   ),
-            // ),
+            Card(
+              elevation: 9,
+              // decoration: BoxDecoration(
+              //   color: Colors.white,
+              //   borderRadius: BorderRadius.all(Radius.circular(10)),
+              // ),
+              child: TextField(
+                decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.search),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(color: Colors.white)),
+                  labelText: 'Search all..',
+                ),
+              ),
+            ),
           ]),
     );
   }
