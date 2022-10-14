@@ -62,7 +62,8 @@ class HomePage extends StatelessWidget {
               child: Category_item(),
             ),
           ]),
-      bottomNavigationBar: BottomNavigationBar(items: [
+      bottomNavigationBar:
+          BottomNavigationBar(type: BottomNavigationBarType.fixed, items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'home',
