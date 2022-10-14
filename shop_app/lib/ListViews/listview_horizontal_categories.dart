@@ -10,17 +10,14 @@ class Categories_types extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Card(
+    return ListView.builder(
+      itemBuilder: (BuildContext context, int index) {
+        return Card(
           elevation: 9,
-          child: Text('AbCE'),
-        ),
-        Card(
-          elevation: 9,
-          child: Text('AbCE'),
-        )
-      ],
+          child: Text(list[index]),
+        );
+      },
+      itemCount: 4,
     );
   }
 }
