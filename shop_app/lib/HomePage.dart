@@ -18,7 +18,12 @@ class HomePage extends StatelessWidget {
           ),
           backgroundColor: Colors.white,
           foregroundColor: Colors.green[900],
-          actions: [],
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.menu),
+            )
+          ],
         ),
         body: Column(
             // crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,9 +54,15 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              // ListView.builder(
-              //   itemBuilder: (context, index) {},
-              // )
+              ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 4,
+                itemBuilder: (context, index) {
+                  return Row(
+                    children: [Text('All')],
+                  );
+                },
+              )
             ]));
   }
 }
