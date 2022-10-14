@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/ListViews/listview_horizontal_categories.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -49,6 +50,10 @@ class HomePage extends StatelessWidget {
                   labelText: 'Search all..',
                 ),
               ),
+            ),
+            Container(
+              height: 75,
+              child: Categories_types(),
             ),
           ]),
     );
