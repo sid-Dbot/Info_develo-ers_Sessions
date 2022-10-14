@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
               child: Categories_types(),
             ),
             SizedBox(
-              height: 250,
+              height: size.height * 0.5,
               child: Category_item(),
             ),
           ]),
