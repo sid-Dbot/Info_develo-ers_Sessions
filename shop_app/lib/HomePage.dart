@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      fontSize: 25,
+                      fontSize: 20,
                     ),
                   ),
                   Card(child: TextField()),

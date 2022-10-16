@@ -29,14 +29,6 @@ class categoriesPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            // Text(
-            //   'Categories',
-            //   style: TextStyle(
-            //     color: Colors.white,
-            //     fontSize: 25,
-            //     fontWeight: FontWeight.w500,
-            //   ),
-            // ),
             Card(
               elevation: 9,
               // decoration: BoxDecoration(
