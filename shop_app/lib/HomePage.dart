@@ -59,9 +59,9 @@ class HomePage extends StatelessWidget {
               child: Center(child: OutlinedButton(onPressed: (){
                 Navigator.push(context,MaterialPageRoute(builder: (context) {
                   return categoriesPage();
-                },
+                }
                  
-                },));
+            );},))
               }, child: Text('Categories'),),),),
             ),
           )
