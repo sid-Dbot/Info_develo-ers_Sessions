@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Container(
+                    width: size.width,
                     child: Card(
                         child: TextField(
                       decoration: InputDecoration(
