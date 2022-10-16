@@ -18,12 +18,16 @@ class HomePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text('Shop'),
-                  TextField(),
+                  Text(
+                    'Shop',
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w500),
+                  ),
+                  Card(child: TextField()),
                 ],
               )),
           Positioned(
-            top: size.height * 0.25,
+            top: size.height * 0.22,
             child: Container(
               height: size.height,
               width: size.width,
