@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/CategpriesPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -56,7 +57,9 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(11),
               ),
               child: Center(child: OutlinedButton(onPressed: (){
-                Navigator.of(context).push('categoriesPage')
+                Navigator.push(context,MaterialApp.router(builder: (context, child) {
+                 return categoriesPage() ;
+                },));
               }, child: Text('Categories'),),),),
             ),
           )
