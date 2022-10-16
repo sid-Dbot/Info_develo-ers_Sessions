@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           Positioned(
               top: size.height * 0.1,
               child: Column(
-                children: [],
+                children: [Text('Shop'), tex],
               )),
           Positioned(
             top: size.height * 0.2,
