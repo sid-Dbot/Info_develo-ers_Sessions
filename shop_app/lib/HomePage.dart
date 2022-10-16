@@ -55,7 +55,9 @@ class HomePage extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(11),
               ),
-              child: Center(child: OutlinedButton(onPressed: (){}, child: Text('Categories'),),)),
+              child: Center(child: OutlinedButton(onPressed: (){
+                Navigator.of(context).push('categoriesPage')
+              }, child: Text('Categories'),),),),
             ),
           )
         ],
