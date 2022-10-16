@@ -8,7 +8,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          
+          Container(
+            color: Colors.amber[400],
+          )
         ],
       ),
     );
