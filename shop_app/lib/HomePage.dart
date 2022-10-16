@@ -15,29 +15,33 @@ class HomePage extends StatelessWidget {
           ),
           Positioned(
               top: size.height * 0.1,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    'Shop',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Shop',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                      ),
                     ),
-                  ),
-                  Container(
-                    width: size.width,
-                    child: Card(
-                        child: TextField(
-                      decoration: InputDecoration(
-                          label: Text('Search All..'),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7),
-                          )),
-                    )),
-                  ),
-                ],
+                    Container(
+                      width: size.width,
+                      child: Card(
+                          child: TextField(
+                        decoration: InputDecoration(
+                            label: Text('Search All..'),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(7),
+                            )),
+                      )),
+                    ),
+                  ],
+                ),
               )),
           Positioned(
             top: size.height * 0.22,
