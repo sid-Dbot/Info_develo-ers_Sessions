@@ -16,10 +16,14 @@ class HomePage extends StatelessWidget {
           Positioned(
               top: size.height * 0.1,
               child: Column(
-                children: [Text('Shop'), tex],
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text('Shop'),
+                  TextField(),
+                ],
               )),
           Positioned(
-            top: size.height * 0.2,
+            top: size.height * 0.25,
             child: Container(
               height: size.height,
               width: size.width,
