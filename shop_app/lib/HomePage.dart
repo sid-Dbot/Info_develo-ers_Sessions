@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
                 ),
               )),
           Positioned(
-            top: size.height * 0.25,
+            top: size.height * 0.24,
             child: Container(
               height: size.height,
               width: size.width,
