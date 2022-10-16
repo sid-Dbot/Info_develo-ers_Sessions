@@ -26,14 +26,16 @@ class HomePage extends StatelessWidget {
                       fontSize: 20,
                     ),
                   ),
-                  Card(
-                      child: TextField(
-                    decoration: InputDecoration(
-                        label: Text('Search All..'),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7),
-                        )),
-                  )),
+                  Container(
+                    child: Card(
+                        child: TextField(
+                      decoration: InputDecoration(
+                          label: Text('Search All..'),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(7),
+                          )),
+                    )),
+                  ),
                 ],
               )),
           Positioned(
