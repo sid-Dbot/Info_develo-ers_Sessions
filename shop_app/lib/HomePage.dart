@@ -57,8 +57,10 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(11),
               ),
               child: Center(child: OutlinedButton(onPressed: (){
-                Navigator.push(context,MaterialApp.router(builder: (context, child) {
-                 return categoriesPage() ;
+                Navigator.push(context,MaterialPageRoute(builder: (context) {
+                  return categoriesPage();
+                },
+                 
                 },));
               }, child: Text('Categories'),),),),
             ),
