@@ -31,10 +31,6 @@ class categoriesPage extends StatelessWidget {
           children: [
             Card(
               elevation: 9,
-              // decoration: BoxDecoration(
-              //   color: Colors.white,
-              //   borderRadius: BorderRadius.all(Radius.circular(10)),
-              // ),
               child: TextField(
                 decoration: InputDecoration(
                   suffixIcon: Icon(Icons.search),
