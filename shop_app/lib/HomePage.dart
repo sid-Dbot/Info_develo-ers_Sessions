@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
             color: Colors.grey[800],
           ),
           Positioned(
-              top: size.height * 0.1,
+              top: size.height * 0.07,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -34,6 +34,7 @@ class HomePage extends StatelessWidget {
                       child: Card(
                           child: TextField(
                         decoration: InputDecoration(
+                            suffixIcon: Icon(Icons.search),
                             label: Text('Search All..'),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(7),
