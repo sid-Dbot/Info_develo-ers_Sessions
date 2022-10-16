@@ -12,11 +12,12 @@ class HomePage extends StatelessWidget {
           Container(
             width: size.width,
             color: Colors.grey[800],
-           
           ),
           Positioned(
-            top: size.height*0.1,
-            child: child)
+              top: size.height * 0.1,
+              child: Column(
+                children: [],
+              )),
           Positioned(
             top: size.height * 0.2,
             child: Container(
