@@ -30,6 +30,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
+                      margin: EdgeInsets.all(8),
                       width: size.width,
                       child: Card(
                           child: TextField(
