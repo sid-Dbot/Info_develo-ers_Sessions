@@ -21,7 +21,10 @@ class HomePage extends StatelessWidget {
                   Text(
                     'Shop',
                     style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w500),
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 25,
+                    ),
                   ),
                   Card(child: TextField()),
                 ],
