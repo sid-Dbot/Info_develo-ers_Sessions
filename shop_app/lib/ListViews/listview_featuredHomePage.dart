@@ -11,7 +11,7 @@ class Featured extends StatelessWidget {
 
     return ListView.builder(
         itemBuilder: (context, index) => Container(
-              height: size.height * 0.2,
+              height: size.height * 0.1,
               width: size.width * 0.9,
               padding: EdgeInsets.all(7),
               child: Text('$index'),
