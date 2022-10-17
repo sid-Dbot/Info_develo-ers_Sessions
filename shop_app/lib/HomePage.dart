@@ -61,11 +61,11 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text('Featured'),
                   Container(
-                    width: size.width * 0.9,
+                    width: size.width * 0.7,
                     height: size.height * 0.2,
                     child: Featured(),
                   ),
