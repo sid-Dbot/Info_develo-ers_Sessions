@@ -54,7 +54,7 @@ class _TheHomePageState extends State<TheHomePage> {
 
   Widget _builderStream() {
     return Center(
-      child: StreamBuilder<int>(
+      child: StreamBuilder(
           stream: _stoped(),
           builder: ((context, snapshot) {
             return Text(snapshot.data.toString());
