@@ -72,7 +72,6 @@ class HomePage extends StatelessWidget {
         Positioned(
           child: Column(children: [
             Text('Featured'),
-            Featured(),
           ]),
           top: size.height * 0.3,
         )
