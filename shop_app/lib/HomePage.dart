@@ -72,7 +72,6 @@ class HomePage extends StatelessWidget {
                       },
                       child: Text('Categories')),
                 ),
-                Featured(),
               ],
             ),
           ),
