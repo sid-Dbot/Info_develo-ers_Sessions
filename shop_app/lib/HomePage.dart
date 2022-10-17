@@ -88,18 +88,23 @@ class HomePage extends StatelessWidget {
           BottomNavigationBar(type: BottomNavigationBarType.fixed, items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.h_mobiledata),
+          label: 'H',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.h_mobiledata),
+          label: 'H',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.h_mobiledata),
+          label: 'H',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.h_mobiledata),
+          label: 'H',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.h_mobiledata),
+          label: 'H',
         ),
       ]),
     );
