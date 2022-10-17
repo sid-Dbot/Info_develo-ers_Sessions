@@ -14,6 +14,7 @@ class Featured extends StatelessWidget {
               height: size.height * 0.2,
               width: size.width * 0.9,
               padding: EdgeInsets.all(7),
+              child: Text('$index'),
             ));
   }
 }
