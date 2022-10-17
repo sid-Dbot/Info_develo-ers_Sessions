@@ -58,6 +58,7 @@ class HomePage extends StatelessWidget {
               borderRadius: BorderRadius.circular(11),
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('Featured'),
                 OutlinedButton(
