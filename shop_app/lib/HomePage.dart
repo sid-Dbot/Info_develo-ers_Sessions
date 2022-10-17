@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/CategpriesPage.dart';
+import 'package:shop_app/ListViews/listview_featuredHomePage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -58,7 +59,7 @@ class HomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ListView(),
+                Featured(),
                 Center(
                   child: OutlinedButton(
                       onPressed: () {
