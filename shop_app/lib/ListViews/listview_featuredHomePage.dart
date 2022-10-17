@@ -15,7 +15,7 @@ class Featured extends StatelessWidget {
       itemBuilder: (context, index) => Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          width: size.width * .7,
+          width: size.width * .9,
           decoration: BoxDecoration(
             color: Colors.amber,
             borderRadius: BorderRadius.circular(10),
