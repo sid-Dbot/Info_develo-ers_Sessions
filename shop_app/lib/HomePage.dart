@@ -60,7 +60,6 @@ class HomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Featured(),
                 Center(
                   child: OutlinedButton(
                       onPressed: () {
@@ -73,6 +72,7 @@ class HomePage extends StatelessWidget {
                       },
                       child: Text('Categories')),
                 ),
+                Featured(),
               ],
             ),
           ),
