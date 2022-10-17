@@ -84,7 +84,20 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ]),
-      bottomNavigationBar: BottomNavigationBar(items: [
+      bottomNavigationBar:
+          BottomNavigationBar(type: BottomNavigationBarType.fixed, items: [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.h_mobiledata),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.h_mobiledata),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.h_mobiledata),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.h_mobiledata),
+        ),
         BottomNavigationBarItem(
           icon: Icon(Icons.h_mobiledata),
         ),
