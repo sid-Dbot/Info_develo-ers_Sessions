@@ -64,6 +64,11 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Featured'),
+                  Container(
+                    width: size.width * 0.9,
+                    height: size.height * 0.2,
+                    child: Featured(),
+                  ),
                   OutlinedButton(
                       onPressed: () {
                         Navigator.push(
