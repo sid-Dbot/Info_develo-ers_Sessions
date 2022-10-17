@@ -70,7 +70,9 @@ class HomePage extends StatelessWidget {
           ),
         ),
         Positioned(
-          child: Text('Featured'),
+          child: Column(children: [
+            Featured(),
+          ]),
           top: size.height * 0.3,
         )
       ]),
