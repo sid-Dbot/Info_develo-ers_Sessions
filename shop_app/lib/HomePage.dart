@@ -76,6 +76,10 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
+        Positioned(
+          child: Featured(),
+          top: size.height * 0.3,
+        )
       ]),
     );
   }
