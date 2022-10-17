@@ -12,12 +12,17 @@ class Featured extends StatelessWidget {
 
     return ListView.builder(
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) => Container(
-        height: 200,
-        width: 300,
-        color: Colors.amber,
-        padding: EdgeInsets.all(7),
-        child: Text('$index'),
+      itemBuilder: (context, index) => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          width: size.width * .7,
+          decoration: BoxDecoration(
+            color: Colors.amber,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          padding: EdgeInsets.all(7),
+          child: Text('$index'),
+        ),
       ),
       itemCount: 3,
     );

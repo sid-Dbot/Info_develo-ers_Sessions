@@ -64,9 +64,8 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text('Featured'),
-                  Container(
-                    width: size.width * 0.7,
-                    height: size.height * 0.2,
+                  SizedBox(
+                    height: 100,
                     child: Featured(),
                   ),
                   OutlinedButton(
