@@ -57,16 +57,21 @@ class HomePage extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(11),
             ),
-            child: OutlinedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) {
-                      return categoriesPage();
-                    }),
-                  );
-                },
-                child: Text('Categories')),
+            child: Column(
+              children: [
+                Text('Featured'),
+                OutlinedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return categoriesPage();
+                        }),
+                      );
+                    },
+                    child: Text('Categories')),
+              ],
+            ),
           ),
         ),
         Positioned(
