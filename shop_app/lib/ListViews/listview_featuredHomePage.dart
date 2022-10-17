@@ -14,7 +14,7 @@ class Featured extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) => Container(
         height: 200,
-        width: 500,
+        width: 300,
         color: Colors.amber,
         padding: EdgeInsets.all(7),
         child: Text('$index'),
