@@ -2,63 +2,47 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class TheHomePage extends StatefulWidget {
-  const TheHomePage({super.key});
-
-  @override
-  State<TheHomePage> createState() => _TheHomePageState();
+void main(List<String> args) {
+  runApp(Builderz());
 }
 
-class _TheHomePageState extends State<TheHomePage> {
-  int _count = 0;
+class Builderz extends StatefulWidget {
+  @override
+  State<Builderz> createState() => _BuilderzState();
+}
 
-  Future<int> _calculate(int num) async {
+class _BuilderzState extends State<Builderz> {
+  Future<int> _calc(int num) async {
     await Future.delayed(Duration(seconds: 2));
-    return num * num;
+    return num + 10;
   }
 
-  Stream<int> _stoped() async* {
+  Stream<int> _stream(int num) async* {
     while (true) {
-      await Future.delayed(Duration(seconds: 1));
-      yield _count++;
+      await Future.delayed(Duration(seconds: 2));
+      yield num++;
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          _builderFuture(),
-          SizedBox(
-            height: 20,
+    return MaterialApp(
+      home: Scaffold(
+          body: Column(children: [
+        Center(
+          child: FutureBuilder(
+              future: _calc(39),
+              builder: (context, snapshot) {
+                return Text(snapshot.data.toString());
+              }),
+        ),
+        Center(
+          child: StreamBuilder(
+            stream: _stream(20),
+            builder: (context, snapshot) => Text(snapshot.data.toString()),
           ),
-          // _builderStream(),
-        ],
-      ),
+        )
+      ])),
     );
   }
-
-  Widget _builderFuture() {
-    return Center(
-      child: FutureBuilder(
-          future: _calculate(10),
-          builder: ((context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              return Text(snapshot.data.toString());
-            }
-            return CircularProgressIndicator();
-          })),
-    );
-  }
-
-  // Widget _builderStream() {
-  //   return Center(
-  //     child: StreamBuilder(
-  //         stream: _stoped(),
-  //         builder: ((context, snapshot) {
-  //           return Text(snapshot.data.toString());
-  //         })),
-  //   );
-  // }
 }
