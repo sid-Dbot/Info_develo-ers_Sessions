@@ -33,7 +33,7 @@ class _TheHomePageState extends State<TheHomePage> {
           SizedBox(
             height: 20,
           ),
-          _builderStream(),
+          // _builderStream(),
         ],
       ),
     );
@@ -52,13 +52,13 @@ class _TheHomePageState extends State<TheHomePage> {
     );
   }
 
-  Widget _builderStream() {
-    return Center(
-      child: StreamBuilder(
-          stream: _stoped(),
-          builder: ((context, snapshot) {
-            return Text(snapshot.data.toString());
-          })),
-    );
-  }
+  // Widget _builderStream() {
+  //   return Center(
+  //     child: StreamBuilder(
+  //         stream: _stoped(),
+  //         builder: ((context, snapshot) {
+  //           return Text(snapshot.data.toString());
+  //         })),
+  //   );
+  // }
 }
