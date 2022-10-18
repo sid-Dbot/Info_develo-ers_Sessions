@@ -5,10 +5,4 @@ class users {
   late final String status;
 
   users(@required this.userName, @required this.status);
-
-  Map<String,dynamic> toJason(){
-    return ['UserName'=userName;]
-  }
-  }
-    
 }
