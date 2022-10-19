@@ -10,8 +10,8 @@ class ApiService {
         Uri.parse("https://mocki.io/v1/11cfbb24-b1bd-4a85-9a15-1e9a48d30fc1"));
     if (response.statusCode == 200) {
       print(response.body);
-      final List datas = jsonDecode(response.body);
-      return datas.map((e) => users.fromJson(e)).toList();
+      final List data = jsonDecode(response.body);
+      return data.map((e) => users.fromJson(e)).toList();
     } else {
       throw Exception("Failed");
     }
