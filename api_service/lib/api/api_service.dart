@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
 class ApiService {
-  Future<List<users>> getData() async {
+  Future<List<MoviesList>> getData() async {
     Response response = await get(
         Uri.parse("https://mocki.io/v1/11cfbb24-b1bd-4a85-9a15-1e9a48d30fc1"));
     if (response.statusCode == 200) {
       print(response.body);
       final List datas = jsonDecode(response.body);
-      return datas.map((e) => users.fromJson(e)).toList();
+      return datas.map((e) => MoviesList.fromJson(e)).toList();
     } else {
       throw Exception("Failed");
     }
@@ -40,8 +40,8 @@ class DatasPages extends StatelessWidget {
                   child: Card(
                     elevation: 7,
                     child: ListTile(
-                      title: Text(snapshot.data![index].username.toString()),
-                      subtitle: Text(snapshot.data![index].status.toString()),
+                      title: Text(snapshot.data![index].name.toString()),
+                      subtitle: Text(snapshot.data![index].genre.toString()),
                     ),
                   ),
                 );
