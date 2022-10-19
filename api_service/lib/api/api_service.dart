@@ -35,6 +35,7 @@ class DatasPages extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Container(
                   decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
                       borderRadius: BorderRadius.circular(9),
                       boxShadow: [
                         BoxShadow(
@@ -46,6 +47,7 @@ class DatasPages extends StatelessWidget {
                   child: Card(
                     elevation: 7,
                     child: ListTile(
+                      leading: Text(snapshot.data![index].id.toString()),
                       title: Text(snapshot.data![index].name.toString()),
                       subtitle: Text(snapshot.data![index].genre.toString()),
                     ),
