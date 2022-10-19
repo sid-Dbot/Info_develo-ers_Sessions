@@ -9,4 +9,9 @@ class users {
   users.fromJson(Map<String, dynamic> json)
       : userName = json['userName'],
         status = json['status'];
+
+  Map<String, dynamic> tojson() => {
+        'userName': userName,
+        'status': status,
+      };
 }
