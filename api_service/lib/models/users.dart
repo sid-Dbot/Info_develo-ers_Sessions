@@ -5,4 +5,8 @@ class users {
   final String? status;
 
   users(@required this.userName, @required this.status);
+
+  users.fromJson(Map<String, dynamic> json, this.userName, this.status)
+      : userName = json['userName'],
+        status = json['status'];
 }
