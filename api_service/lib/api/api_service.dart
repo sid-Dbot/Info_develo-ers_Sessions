@@ -34,7 +34,7 @@ class DatasPages extends StatelessWidget {
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text(snapshot.data![index].userName.toString()),
+                  title: Text(snapshot.data![index].username.toString()),
                   subtitle: Text(snapshot.data![index].status.toString()),
                 );
               });
