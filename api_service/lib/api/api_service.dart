@@ -7,7 +7,7 @@ import 'package:http/http.dart';
 class ApiService {
   Future<List<MoviesList>> getData() async {
     Response response = await get(
-        Uri.parse("https://mocki.io/v1/11cfbb24-b1bd-4a85-9a15-1e9a48d30fc1"));
+        Uri.parse("https://mocki.io/v1/9c5889fb-6eef-4e0a-bc1c-3e1eeec66178"));
     if (response.statusCode == 200) {
       print(response.body);
       final List datas = jsonDecode(response.body);
@@ -35,8 +35,14 @@ class DatasPages extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(9),
-                  ),
+                      borderRadius: BorderRadius.circular(9),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 4,
+                          blurStyle: BlurStyle.outer,
+                          color: Colors.black,
+                        )
+                      ]),
                   child: Card(
                     elevation: 7,
                     child: ListTile(
