@@ -25,7 +25,7 @@ class DatasPages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Data"),
+        title: Text("Movies List"),
       ),
       body: FutureBuilder(
         future: ApiService().getData(),
@@ -33,9 +33,17 @@ class DatasPages extends StatelessWidget {
           return ListView.builder(
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(snapshot.data![index].username.toString()),
-                  subtitle: Text(snapshot.data![index].status.toString()),
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(9),
+                  ),
+                  child: Card(
+                    elevation: 7,
+                    child: ListTile(
+                      title: Text(snapshot.data![index].username.toString()),
+                      subtitle: Text(snapshot.data![index].status.toString()),
+                    ),
+                  ),
                 );
               });
         }),
