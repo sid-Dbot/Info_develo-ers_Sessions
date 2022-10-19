@@ -47,7 +47,10 @@ class DatasPages extends StatelessWidget {
                   child: Card(
                     elevation: 7,
                     child: ListTile(
-                      leading: Text(snapshot.data![index].id.toString()),
+                      leading: Text(
+                        snapshot.data![index].id.toString(),
+                        style: TextStyle(fontSize: 30),
+                      ),
                       title: Text(snapshot.data![index].name.toString()),
                       subtitle: Text(snapshot.data![index].genre.toString()),
                     ),
