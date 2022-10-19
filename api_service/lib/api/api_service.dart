@@ -7,7 +7,7 @@ import 'package:http/http.dart';
 class ApiService {
   Future<List<users>> getData() async {
     Response response = await get(
-        Uri.parse("https://mocki.io/v1/4a7ddac6-4299-4d1a-b8ee-36663887737a"));
+        Uri.parse("https://mocki.io/v1/11cfbb24-b1bd-4a85-9a15-1e9a48d30fc1"));
     if (response.statusCode == 200) {
       print(response.body);
       final List datas = jsonDecode(response.body);
@@ -34,8 +34,8 @@ class DatasPages extends StatelessWidget {
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text(snapshot.data![index].name.toString()),
-                  subtitle: Text(snapshot.data![index].email.toString()),
+                  title: Text(snapshot.data![index].userName.toString()),
+                  subtitle: Text(snapshot.data![index].status.toString()),
                 );
               });
         }),
