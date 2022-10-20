@@ -17,13 +17,13 @@ class MoviesList {
     imgURL = json['img'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['genre'] = this.genre;
-    data['released'] = this.released;
-    data['img'] = this.imgURL;
-    return data;
-  }
+  // Map<String, dynamic> toJson() {
+  //   final Map<String, dynamic> data = new Map<String, dynamic>();
+  //   data['id'] = this.id;
+  //   data['name'] = this.name;
+  //   data['genre'] = this.genre;
+  //   data['released'] = this.released;
+  //   data['img'] = this.imgURL;
+  //   return data;
+  // }
 }
