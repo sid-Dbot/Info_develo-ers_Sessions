@@ -1,17 +1,21 @@
 import 'dart:convert';
+import 'dart:html';
 
 import 'package:api_service/models/users.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
+class ApiService {
+  Future<List<MoviesList>> getdata() async {
+    String url = "https://mocki.io/v1/0653266b-eca0-46cd-835e-b0d3aabec459";
+    Response response =await get(Uri.parse(url));
+    return data.map=
 
-class ApiService{
 
-  Future<List<MoviesList>> getdata()async{
-    String url="https://mocki.io/v1/0653266b-eca0-46cd-835e-b0d3aabec459"
-
+    }
   }
 }
+
 class DatasPages extends StatelessWidget {
   const DatasPages({super.key});
 
