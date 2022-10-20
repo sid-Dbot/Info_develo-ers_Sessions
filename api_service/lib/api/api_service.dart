@@ -7,7 +7,7 @@ import 'package:http/http.dart';
 class ApiService {
   Future<List<MoviesList>> getData() async {
     Response response = await get(
-        Uri.parse("https://mocki.io/v1/9c5889fb-6eef-4e0a-bc1c-3e1eeec66178"));
+        Uri.parse("https://mocki.io/v1/07d800c4-2a10-4c67-a012-adce556c18ca"));
     if (response.statusCode == 200) {
       print(response.body);
       final List datas = jsonDecode(response.body);
@@ -52,7 +52,13 @@ class DatasPages extends StatelessWidget {
                         style: TextStyle(fontSize: 30),
                       ),
                       title: Text(snapshot.data![index].name.toString()),
-                      subtitle: Text(snapshot.data![index].genre.toString()),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(snapshot.data![index].genre.toString()),
+                          Text(snapshot.data![index].released.toString()),
+                        ],
+                      ),
                     ),
                   ),
                 );
