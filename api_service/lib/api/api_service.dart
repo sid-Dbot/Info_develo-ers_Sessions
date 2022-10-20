@@ -71,7 +71,12 @@ class DatasPages extends StatelessWidget {
                         trailing: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text(snapshot.data![index].name.toString()),
+                            Text(
+                              snapshot.data![index].name.toString(),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  decoration: TextDecoration.underline),
+                            ),
                             Text(snapshot.data![index].genre.toString()),
                             Text(snapshot.data![index].released.toString()),
                           ],
