@@ -6,11 +6,15 @@ import 'package:http/http.dart';
 
 class ApiService {
   Future<List<MoviesList>> getData() async {
-    await Future.delayed(Duration(seconds: 1));
+    //await Future.delayed(Duration(seconds: 1));
     String url = "https://mocki.io/v1/0653266b-eca0-46cd-835e-b0d3aabec459";
     Response response = await get(Uri.parse(url));
-    final List Aaa = jsonDecode(response.body);
-    return Aaa.map((_) => MoviesList.fromJson(_)).toList();
+    if (response.statusCode == 200) {
+      final List Aaa = jsonDecode(response.body);
+      return Aaa.map((_) => MoviesList.fromJson(_)).toList();
+    } else {
+      print("Error Server Is Down.");
+    }
   }
 }
 
