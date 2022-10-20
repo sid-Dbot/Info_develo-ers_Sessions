@@ -9,11 +9,11 @@ class ApiService {
     //await Future.delayed(Duration(seconds: 1));
     String url = "https://mocki.io/v1/0653266b-eca0-46cd-835e-b0d3aabec459";
     Response response = await get(Uri.parse(url));
-    if (response.statusCode == 200) {
+    if (response == null) {
+      throw Exception("Server down");
+    } else {
       final List Aaa = jsonDecode(response.body);
       return Aaa.map((_) => MoviesList.fromJson(_)).toList();
-    } else {
-      print("Error Server Is Down.");
     }
   }
 }
