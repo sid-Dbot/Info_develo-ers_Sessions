@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui';
 
 import 'package:api_service/models/users.dart';
 import 'package:flutter/material.dart';
@@ -36,37 +37,47 @@ class DatasPages extends StatelessWidget {
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 return Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black),
-                      borderRadius: BorderRadius.circular(9),
-                      boxShadow: [
-                        BoxShadow(
-                          blurRadius: 5,
-                          blurStyle: BlurStyle.outer,
-                          color: Colors.black,
-                        )
-                      ]),
-                  child: Card(
-                    elevation: 7,
-                    child: ListTile(
-                      leading: Text(
-                        snapshot.data![index].id.toString(),
-                        style: TextStyle(fontSize: 30),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black),
+                        borderRadius: BorderRadius.circular(9),
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 5,
+                            blurStyle: BlurStyle.outer,
+                            color: Colors.black,
+                          )
+                        ]),
+                    child: Card(
+                      elevation: 7,
+                      child: ListTile(
+                        leading: Text(
+                          snapshot.data![index].id.toString(),
+                          style: TextStyle(fontSize: 30),
+                        ),
+                        title: Image.network(
+                          snapshot.data![index].imgURL.toString(),
+                          width: 150,
+                          height: 150,
+                          fit: BoxFit.fill,
+                        ),
+                        // Text(snapshot.data![index].name.toString()),
+                        // subtitle: Column(
+                        //   crossAxisAlignment: CrossAxisAlignment.start,
+                        //   children: [
+                        //     Text(snapshot.data![index].genre.toString()),
+                        //     Text(snapshot.data![index].released.toString()),
+                        //   ],
+                        // ),
+                        trailing: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(snapshot.data![index].name.toString()),
+                            Text(snapshot.data![index].genre.toString()),
+                            Text(snapshot.data![index].released.toString()),
+                          ],
+                        ),
                       ),
-                      title: Text(snapshot.data![index].name.toString()),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(snapshot.data![index].genre.toString()),
-                          Text(snapshot.data![index].released.toString()),
-                        ],
-                      ),
-                      trailing: Image.network(
-                        snapshot.data![index].imgURL.toString(),
-                      ),
-                    ),
-                  ),
-                );
+                    ));
               });
         }),
       ),
