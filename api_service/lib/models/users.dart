@@ -5,16 +5,16 @@ class MoviesList {
   String? name;
   String? genre;
   int? released;
-  //Image? img;
+  String? imgURL;
 
-  MoviesList({this.id, this.name, this.genre, this.released});
+  MoviesList({this.id, this.name, this.genre, this.released, this.imgURL});
 
   MoviesList.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     genre = json['genre'];
     released = json['released'];
-    //img = json['img'];
+    imgURL = json['img'];
   }
 
   Map<String, dynamic> toJson() {
@@ -23,7 +23,7 @@ class MoviesList {
     data['name'] = this.name;
     data['genre'] = this.genre;
     data['released'] = this.released;
-    // data['img'] = this.img;
+    data['img'] = this.imgURL;
     return data;
   }
 }

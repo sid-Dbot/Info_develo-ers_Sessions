@@ -7,10 +7,12 @@ import 'package:http/http.dart';
 class ApiService {
   Future<List<MoviesList>> getData() async {
     Response response = await get(
-        Uri.parse("https://mocki.io/v1/07d800c4-2a10-4c67-a012-adce556c18ca"));
+        Uri.parse("https://mocki.io/v1/0653266b-eca0-46cd-835e-b0d3aabec459"));
     if (response.statusCode == 200) {
       print(response.body);
-      final List datas = jsonDecode(response.body);
+      final List datas = jsonDecode(
+        response.body,
+      );
       return datas.map((e) => MoviesList.fromJson(e)).toList();
     } else {
       throw Exception("Failed");
@@ -58,6 +60,9 @@ class DatasPages extends StatelessWidget {
                           Text(snapshot.data![index].genre.toString()),
                           Text(snapshot.data![index].released.toString()),
                         ],
+                      ),
+                      trailing: Image.network(
+                        snapshot.data![index].imgURL.toString(),
                       ),
                     ),
                   ),
