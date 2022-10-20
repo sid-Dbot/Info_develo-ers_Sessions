@@ -48,3 +48,20 @@
 //     );
 //   }
 // }
+
+
+// class ApiService {
+//   Future<List<MoviesList>> getData() async {
+//     Response response = await get(
+//         Uri.parse("https://mocki.io/v1/0653266b-eca0-46cd-835e-b0d3aabec459"));
+//     if (response.statusCode == 200) {
+//       print(response.body);
+//       final List datas = jsonDecode(
+//         response.body,
+//       );
+//       return datas.map((e) => MoviesList.fromJson(e)).toList();
+//     } else {
+//       throw Exception("Failed");
+//     }
+//   }
+// }
