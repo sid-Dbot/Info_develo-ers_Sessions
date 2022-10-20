@@ -41,7 +41,7 @@ class DatasPages extends StatelessWidget {
                       borderRadius: BorderRadius.circular(9),
                       boxShadow: [
                         BoxShadow(
-                          blurRadius: 4,
+                          blurRadius: 5,
                           blurStyle: BlurStyle.outer,
                           color: Colors.black,
                         )
