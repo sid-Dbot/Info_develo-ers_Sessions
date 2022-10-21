@@ -19,6 +19,12 @@ class DataItems extends StatelessWidget {
               itemBuilder: ((context, index) {
                 return ListTile(
                   leading: Text(snapshot.data![index].id.toString()),
+                  title: Container(
+                    height: 150,
+                    width: 150,
+                    child:
+                        Image.network(snapshot.data![index].imgURL.toString()),
+                  ),
                 );
               }));
         },
