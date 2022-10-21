@@ -16,6 +16,8 @@ class ApiService {
       return Aaa.map((_) => MoviesList.fromJson(_)).toList();
     }
   }
+
+  Stream<List<MoviesList>> getdata() async* {}
 }
 
 class DatasPages extends StatelessWidget {
