@@ -15,7 +15,9 @@ class DataItems extends StatelessWidget {
           return ListView.builder(
             itemCount: snapshot.data!.length,
             itemBuilder: ((context, index) {
-              
+              return ListTile(
+                leading: Text(snapshot.data![index].id.toString()),
+              );
 
             
 
