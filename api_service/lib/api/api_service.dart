@@ -18,7 +18,10 @@ class ApiService {
       return Aaa.map((_) => MoviesList.fromJson(_)).toList();
     }
   }
+}
 
+class DatasPages extends StatelessWidget {
+  const DatasPages({super.key});
   Stream<List<MoviesList>> getdata() async* {
     Response response = await get(Uri.parse(url));
     final List bbb = jsonDecode(response.body);
@@ -27,10 +30,6 @@ class ApiService {
       yield bbb.map((e) => MoviesList.fromJson(e)).toList();
     }
   }
-}
-
-class DatasPages extends StatelessWidget {
-  const DatasPages({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +38,10 @@ class DatasPages extends StatelessWidget {
           title: Text("Movies List"),
         ),
         body: StreamBuilder(
-          stream: ApiService.getdata,
-          builder: (context, snapshot) {},
+          stream: getdata(),
+          builder: (context, snapshot) {
+            return Card(elevation: 8, child: Text(snapshot.data.toString()));
+          },
         ));
   }
 }
