@@ -22,14 +22,18 @@ class DataItems extends StatelessWidget {
                   title: Container(
                     height: 150,
                     width: 150,
-                    child:
-                        Image.network(snapshot.data![index].imgURL.toString()),
+                    child: Image.network(
+                      snapshot.data![index].imgURL.toString(),
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                  trailing: Column(children: [
-                    Text(snapshot.data![index].name.toString()),
-                    Text(snapshot.data![index].genre.toString()),
-                    Text(snapshot.data![index].released.toString())
-                  ]),
+                  trailing: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(snapshot.data![index].name.toString()),
+                        Text(snapshot.data![index].genre.toString()),
+                        Text(snapshot.data![index].released.toString())
+                      ]),
                 );
               }));
         },
