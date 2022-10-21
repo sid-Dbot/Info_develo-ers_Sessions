@@ -6,10 +6,10 @@ import 'package:http/http.dart';
 
 class ApiService {
   String url = "https://mocki.io/v1/0653266b-eca0-46cd-835e-b0d3aabec459";
-    
+
   Future<List<MoviesList>> getData() async {
     //await Future.delayed(Duration(seconds: 1));
-  
+
     Response response = await get(Uri.parse(url));
     if (response == null) {
       throw Exception("Server down");
@@ -19,7 +19,14 @@ class ApiService {
     }
   }
 
-  Stream<List<MoviesList>> getdata() async* {while response}
+  Stream<List<MoviesList>> getdata() async* {
+    Response response = await get(Uri.parse(url));
+    final List bbb = jsonDecode(response.body);
+
+    while (response != null) {
+      yield bbb.map((e) => MoviesList.fromJson(e)).toList();
+    }
+  }
 }
 
 class DatasPages extends StatelessWidget {
