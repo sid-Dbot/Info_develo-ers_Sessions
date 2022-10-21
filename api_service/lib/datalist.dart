@@ -10,7 +10,7 @@ class DataItems extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Movies List"),),
       body: FutureBuilder(
-        future: _Apiservice,
+        future: Apiservice,
         builder: (context, snapshot) {
         
       },),
