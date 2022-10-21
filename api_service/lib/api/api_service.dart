@@ -23,7 +23,8 @@ class ApiService {
 class DatasPages extends StatelessWidget {
   const DatasPages({super.key});
   Stream<List<MoviesList>> getdata() async* {
-    Response response = await get(Uri.parse(url));
+    Response response = await get(
+        Uri.parse("https://mocki.io/v1/0653266b-eca0-46cd-835e-b0d3aabec459"));
     final List bbb = jsonDecode(response.body);
 
     while (response != null) {
