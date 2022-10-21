@@ -25,6 +25,11 @@ class DataItems extends StatelessWidget {
                     child:
                         Image.network(snapshot.data![index].imgURL.toString()),
                   ),
+                  trailing: Column(children: [
+                    Text(snapshot.data![index].name.toString()),
+                    Text(snapshot.data![index].genre.toString()),
+                    Text(snapshot.data![index].released.toString())
+                  ]),
                 );
               }));
         },
