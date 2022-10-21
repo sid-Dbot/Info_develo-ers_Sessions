@@ -1,12 +1,8 @@
 import 'dart:convert';
 
 import 'package:api_service/models/users.dart';
-import 'package:flutter/material.dart';
+
 import 'package:http/http.dart';
-
-import 'dart:html';
-
-import 'package:http/testing.dart';
 
 class Apiservice {
   String url = "https://mocki.io/v1/0653266b-eca0-46cd-835e-b0d3aabec459";
