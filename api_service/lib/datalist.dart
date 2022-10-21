@@ -8,22 +8,21 @@ class DataItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Movies List"),),
+      appBar: AppBar(
+        title: Text("Movies List"),
+      ),
       body: FutureBuilder(
         future: Apiservice().getData(),
         builder: (context, snapshot) {
           return ListView.builder(
-            itemCount: snapshot.data!.length,
-            itemBuilder: ((context, index) {
-              return ListTile(
-                leading: Text(snapshot.data![index].id.toString()),
-              );
-
-            
-
-          }));
-        
-      },),
-    )
+              itemCount: snapshot.data!.length,
+              itemBuilder: ((context, index) {
+                return ListTile(
+                  leading: Text(snapshot.data![index].id.toString()),
+                );
+              }));
+        },
+      ),
+    );
   }
 }
