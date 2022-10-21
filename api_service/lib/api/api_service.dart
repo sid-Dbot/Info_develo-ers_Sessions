@@ -8,7 +8,7 @@ import 'dart:html';
 
 import 'package:http/testing.dart';
 
-class _Apiservice {
+class Apiservice {
   String url = "https://mocki.io/v1/0653266b-eca0-46cd-835e-b0d3aabec459";
   Future<List<MoviesList>> getData() async {
     Response response = await get(Uri.parse(url));
