@@ -54,6 +54,7 @@ class customTextField extends StatelessWidget {
               prefixIcon: Icon(
                 icon,
               ),
+              prefixIconColor: Colors.lightBlueAccent,
               labelText: label)),
     );
   }
