@@ -8,10 +8,26 @@ class MoviesForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
-        body: ListView.builder(
-          itemCount: textfieldData.length,
-          itemBuilder: (context, index) =>
-              customTextField(textfieldData[index], Icons.title_rounded),
+        body: Column(
+          children: [
+            Center(
+              child: Text(
+                'Please enter movie details:',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontStyle: FontStyle.italic,
+                  backgroundColor: Colors.lightBlueAccent,
+                  decoration: TextDecoration.underline,
+                  decorationStyle: TextDecorationStyle.dashed,
+                ),
+              ),
+            ),
+            ListView.builder(
+              itemCount: textfieldData.length,
+              itemBuilder: (context, index) =>
+                  customTextField(textfieldData[index], Icons.title_rounded),
+            ),
+          ],
         ));
   }
 }
