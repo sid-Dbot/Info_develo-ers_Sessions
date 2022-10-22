@@ -44,6 +44,10 @@ class DataItems extends StatelessWidget {
               }));
         },
       ),
+      floatingActionButton: IconButton(
+        icon: Icon(Icons.add_box_rounded),
+        onPressed: () {},
+      ),
     );
   }
 }
