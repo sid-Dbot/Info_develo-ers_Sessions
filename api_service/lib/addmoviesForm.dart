@@ -2,31 +2,30 @@ import 'package:flutter/material.dart';
 
 class MoviesForm extends StatelessWidget {
   List textfieldData = ['Title', 'Genre', 'Released Year', 'Poster Url'];
-  List iconfieldData=[];
+  List iconfieldData = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(children: [
-        Center(
-          child: Text(
-            'Please enter movie details:',
-            style: TextStyle(
-              fontSize: 25,
-              fontStyle: FontStyle.italic,
-              backgroundColor: Colors.lightBlueAccent,
-              decoration: TextDecoration.underline,
-              decorationStyle: TextDecorationStyle.dashed,
+        appBar: AppBar(),
+        body: Column(children: [
+          Center(
+            child: Text(
+              'Please enter movie details:',
+              style: TextStyle(
+                fontSize: 25,
+                fontStyle: FontStyle.italic,
+                backgroundColor: Colors.lightBlueAccent,
+                decoration: TextDecoration.underline,
+                decorationStyle: TextDecorationStyle.dashed,
+              ),
             ),
           ),
-        ),
-        ListView.builder(
-          itemBuilder: (context, index) =>
-              customTextField(textfieldData[index], Icons.title_rounded),
-        ),
-        
-    );
+          ListView.builder(
+            itemBuilder: (context, index) =>
+                customTextField(textfieldData[index], Icons.title_rounded),
+          ),
+        ]));
   }
 }
 
