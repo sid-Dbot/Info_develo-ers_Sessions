@@ -29,7 +29,6 @@ class MoviesForm extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 25,
                     fontStyle: FontStyle.italic,
-                    backgroundColor: Colors.lightBlueAccent,
                     decoration: TextDecoration.underline,
                     decorationStyle: TextDecorationStyle.dashed,
                   ),
