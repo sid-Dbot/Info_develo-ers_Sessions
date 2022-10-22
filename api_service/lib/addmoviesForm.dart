@@ -20,7 +20,8 @@ class MoviesForm extends StatelessWidget {
             ),
           ),
         ),
-        customTextField('Title', Icons.title_rounded)
+        customTextField('Title', Icons.title_rounded),
+        customTextField('Genre', Icons.category_outlined)
       ]),
     );
   }
