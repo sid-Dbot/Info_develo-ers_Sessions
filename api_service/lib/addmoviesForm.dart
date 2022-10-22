@@ -60,7 +60,11 @@ class MoviesForm extends StatelessWidget {
                       textControllers[index]),
                 ),
               ),
-              ElevatedButton(onPressed: () {}, child: Text('Submit'))
+              ElevatedButton(
+                  onPressed: () {
+                    _submit();
+                  },
+                  child: Text('Submit'))
             ],
           ),
         ));
