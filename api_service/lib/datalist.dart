@@ -44,12 +44,15 @@ class DataItems extends StatelessWidget {
               }));
         },
       ),
-      floatingActionButton: IconButton(
-        iconSize: 50,
-        icon: Icon(Icons.add_box_rounded),
-        onPressed: () {},
-        splashColor: Colors.amber,
-        color: Colors.lightBlue,
+      floatingActionButton: Center(
+        child: IconButton(
+          iconSize: 40,
+          icon: Icon(Icons.add_circle),
+          onPressed: () {},
+          splashColor: Colors.amber,
+          splashRadius: 30,
+          color: Colors.lightBlue,
+        ),
       ),
     );
   }
