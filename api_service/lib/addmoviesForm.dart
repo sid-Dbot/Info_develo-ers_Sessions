@@ -20,7 +20,7 @@ class MoviesForm extends StatelessWidget {
             ),
           ),
         ),
-        customTextField()
+        customTextField('Title',Icons.title_rounded)
       ]),
     );
   }
@@ -37,7 +37,7 @@ customTextField(this.label,this.icon)
       child: TextField(
           decoration: InputDecoration(
               prefixIcon: Icon(
-                Icons.title,
+                icon,
               ),
               labelText: label)),
     );
