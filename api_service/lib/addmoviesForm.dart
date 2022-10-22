@@ -9,6 +9,13 @@ class MoviesForm extends StatelessWidget {
     Icons.link
   ];
 
+  var textEditingControllers = {
+    'title': TextEditingController(),
+    'genre': TextEditingController(),
+    'year': TextEditingController(),
+    'url': TextEditingController()
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +40,9 @@ class MoviesForm extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: textfieldData.length,
                   itemBuilder: (context, index) => customTextField(
-                      textfieldData[index], iconfieldData[index]),
+                      textfieldData[index],
+                      iconfieldData[index],
+                      textEditingControllers[index]),
                 ),
               ),
               ElevatedButton(onPressed: () {}, child: Text('Submit'))
@@ -45,12 +54,10 @@ class MoviesForm extends StatelessWidget {
 
 class customTextField extends StatelessWidget {
   String label;
+  var texteditingcontroller;
   final IconData icon;
 
-  customTextField(
-    this.label,
-    this.icon,
-  );
+  customTextField(this.label, this.icon, this.texteditingcontroller);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -67,6 +74,7 @@ class customTextField extends StatelessWidget {
                   spreadRadius: 4)
             ]),
         child: TextField(
+            controller: texteditingcontroller,
             decoration: InputDecoration(
                 prefixIcon: Icon(
                   icon,
