@@ -9,7 +9,12 @@ class MoviesForm extends StatelessWidget {
       appBar: AppBar(),
       body: Column(children: [
         Center(
-          child: Text('Please enter movie details:'),
+          child: Text(
+            'Please enter movie details:',
+            style: TextStyle(
+              backgroundColor: Colors.lightBlueAccent,
+            ),
+          ),
         ),
         Container(
           child: TextField(decoration: InputDecoration()),
