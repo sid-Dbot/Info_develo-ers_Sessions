@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class MoviesForm extends StatelessWidget {
   List textfieldData = ['Title', 'Genre', 'Released Year', 'Poster Url'];
+  List iconfieldData=[];
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +23,9 @@ class MoviesForm extends StatelessWidget {
         ),
         ListView.builder(
           itemBuilder: (context, index) =>
-              customTextField('Title', Icons.title_rounded),
+              customTextField(textfieldData[index], Icons.title_rounded),
         ),
-        customTextField('Genre', Icons.category_outlined)
-      ]),
+        
     );
   }
 }
