@@ -15,7 +15,6 @@ class MoviesForm extends StatelessWidget {
         appBar: AppBar(),
         body: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Center(
                 child: Text(
@@ -30,13 +29,14 @@ class MoviesForm extends StatelessWidget {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height * .7,
+                height: MediaQuery.of(context).size.height * .55,
                 child: ListView.builder(
                   itemCount: textfieldData.length,
                   itemBuilder: (context, index) => customTextField(
                       textfieldData[index], iconfieldData[index]),
                 ),
               ),
+              ElevatedButton(onPressed: () {}, child: Text('Submit'))
             ],
           ),
         ));
@@ -47,7 +47,10 @@ class customTextField extends StatelessWidget {
   String label;
   final IconData icon;
 
-  customTextField(this.label, this.icon);
+  customTextField(
+    this.label,
+    this.icon,
+  );
   @override
   Widget build(BuildContext context) {
     return Padding(
