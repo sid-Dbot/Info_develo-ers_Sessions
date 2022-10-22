@@ -45,8 +45,11 @@ class DataItems extends StatelessWidget {
         },
       ),
       floatingActionButton: IconButton(
+        iconSize: 50,
         icon: Icon(Icons.add_box_rounded),
         onPressed: () {},
+        splashColor: Colors.amber,
+        color: Colors.lightBlue,
       ),
     );
   }
