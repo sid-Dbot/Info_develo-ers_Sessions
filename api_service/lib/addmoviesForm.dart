@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 
 class MoviesForm extends StatelessWidget {
   List textfieldData = ['Title', 'Genre', 'Released Year', 'Poster Url'];
-  List iconfieldData = [];
+  List iconfieldData = [
+    Icons.title,
+    Icons.category_outlined,
+    Icons.date_range,
+    Icons.link
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Center(
               child: Text(
@@ -28,7 +33,7 @@ class MoviesForm extends StatelessWidget {
               child: ListView.builder(
                 itemCount: textfieldData.length,
                 itemBuilder: (context, index) =>
-                    customTextField(textfieldData[index], Icons.title_rounded),
+                    customTextField(textfieldData[index], iconfieldData[index]),
               ),
             ),
           ],
