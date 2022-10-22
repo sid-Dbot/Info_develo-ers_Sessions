@@ -50,14 +50,25 @@ class customTextField extends StatelessWidget {
   customTextField(this.label, this.icon);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: TextField(
-          decoration: InputDecoration(
-              prefixIcon: Icon(
-                icon,
-              ),
-              prefixIconColor: Colors.lightBlueAccent,
-              labelText: label)),
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 3,
+              )
+            ]),
+        child: TextField(
+            decoration: InputDecoration(
+                prefixIcon: Icon(
+                  icon,
+                ),
+                prefixIconColor: Colors.lightBlueAccent,
+                labelText: label)),
+      ),
     );
   }
 }
