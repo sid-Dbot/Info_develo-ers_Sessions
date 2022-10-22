@@ -1,3 +1,4 @@
+import 'package:api_service/api/api_service.dart';
 import 'package:flutter/material.dart';
 
 class MoviesForm extends StatelessWidget {
@@ -21,19 +22,14 @@ class MoviesForm extends StatelessWidget {
     urlcontroller
   ];
 
-  //   'title': TextEditingController(),
-  //   'genre': TextEditingController(),
-  //   'year': TextEditingController(),
-  //   'url': TextEditingController()
-  // };
-
-  submit() async {
+  _submit() async {
     var data = {
       'name': titlecontroller.text,
       'genre': genrecontroller.text,
       'released': datecontroller.text,
       'imgURL': urlcontroller,
     };
+    var res = await Apiservice().postData(data);
   }
 
   @override
