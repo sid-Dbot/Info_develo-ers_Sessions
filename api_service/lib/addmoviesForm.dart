@@ -12,12 +12,20 @@ class MoviesForm extends StatelessWidget {
           child: Text(
             'Please enter movie details:',
             style: TextStyle(
+              fontSize: 25,
+              fontStyle: FontStyle.italic,
               backgroundColor: Colors.lightBlueAccent,
+              decoration: TextDecoration.underline,
+              decorationStyle: TextDecorationStyle.dashed,
             ),
           ),
         ),
         Container(
-          child: TextField(decoration: InputDecoration()),
+          child: TextField(
+              decoration: InputDecoration(
+                  prefixIcon: Icon(
+            Icons.title,
+          ))),
         )
       ]),
     );
