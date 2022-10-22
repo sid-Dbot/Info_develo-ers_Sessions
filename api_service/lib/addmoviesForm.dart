@@ -9,6 +9,7 @@ class MoviesForm extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Center(
               child: Text(
