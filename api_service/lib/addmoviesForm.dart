@@ -20,7 +20,7 @@ class MoviesForm extends StatelessWidget {
             ),
           ),
         ),
-        customTextField('Title',Icons.title_rounded)
+        customTextField('Title', Icons.title_rounded)
       ]),
     );
   }
@@ -30,7 +30,7 @@ class customTextField extends StatelessWidget {
   String label;
   final IconData icon;
 
-customTextField(this.label,this.icon)
+  customTextField(this.label, this.icon);
   @override
   Widget build(BuildContext context) {
     return Container(
