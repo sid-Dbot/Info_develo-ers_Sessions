@@ -9,6 +9,7 @@ class MoviesForm extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         body: ListView.builder(
+          itemCount: textfieldData.length,
           itemBuilder: (context, index) =>
               customTextField(textfieldData[index], Icons.title_rounded),
         ));
