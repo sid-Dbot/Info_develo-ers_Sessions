@@ -24,8 +24,9 @@ class MoviesForm extends StatelessWidget {
           child: TextField(
               decoration: InputDecoration(
                   prefixIcon: Icon(
-            Icons.title,
-          ))),
+                    Icons.title,
+                  ),
+                  labelText: 'Name')),
         )
       ]),
     );
