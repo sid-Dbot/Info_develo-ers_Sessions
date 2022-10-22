@@ -9,12 +9,27 @@ class MoviesForm extends StatelessWidget {
     Icons.link
   ];
 
-  var textEditingControllers = {
-    'title': TextEditingController(),
-    'genre': TextEditingController(),
-    'year': TextEditingController(),
-    'url': TextEditingController()
-  };
+var titlecontroller = TextEditingController();
+var genrecontroller = TextEditingController();
+var datecontroller = TextEditingController();
+var urlcontroller = TextEditingController();
+
+List textControllers=[titlecontroller,genrecontroller,datecontroller,urlcontroller];
+  // var textEditingControllers = {
+  //   'title': TextEditingController(),
+  //   'genre': TextEditingController(),
+  //   'year': TextEditingController(),
+  //   'url': TextEditingController()
+  // };
+
+  submit()async{
+    var data={
+      'name':titlecontroller.text,
+      'genre'
+
+    }
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +56,7 @@ class MoviesForm extends StatelessWidget {
                   itemBuilder: (context, index) => customTextField(
                       textfieldData[index],
                       iconfieldData[index],
-                      textEditingControllers[index]),
+                      textControllers[index]),
                 ),
               ),
               ElevatedButton(onPressed: () {}, child: Text('Submit'))
