@@ -9,27 +9,31 @@ class MoviesForm extends StatelessWidget {
     Icons.link
   ];
 
-static TextEditingController titlecontroller=TextEditingController();
-static var genrecontroller = TextEditingController();
-static var datecontroller=TextEditingController();
-static var urlcontroller=TextEditingController();
+  static TextEditingController titlecontroller = TextEditingController();
+  static var genrecontroller = TextEditingController();
+  static var datecontroller = TextEditingController();
+  static var urlcontroller = TextEditingController();
 
-List<TextEditingController> textControllers=[titlecontroller,genrecontroller,datecontroller,urlcontroller];
+  List<TextEditingController> textControllers = [
+    titlecontroller,
+    genrecontroller,
+    datecontroller,
+    urlcontroller
+  ];
 
- 
   //   'title': TextEditingController(),
   //   'genre': TextEditingController(),
   //   'year': TextEditingController(),
   //   'url': TextEditingController()
   // };
 
-  submit()async{
-    var data={
-      'name':titlecontroller.text,
-      'genre'
-
-    }
-
+  submit() async {
+    var data = {
+      'name': titlecontroller.text,
+      'genre': genrecontroller.text,
+      'released': datecontroller.text,
+      'imgURL': urlcontroller,
+    };
   }
 
   @override
