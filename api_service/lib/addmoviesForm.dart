@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MoviesForm extends StatelessWidget {
-  const MoviesForm({super.key});
+  List textfieldData = ['Title', 'Genre', 'Released Year', 'Poster Url'];
 
   @override
   Widget build(BuildContext context) {
