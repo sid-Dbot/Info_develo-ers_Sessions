@@ -1,3 +1,4 @@
+import 'package:api_service/addmoviesForm.dart';
 import 'package:flutter/material.dart';
 
 import 'api/api_service.dart';
@@ -48,7 +49,10 @@ class DataItems extends StatelessWidget {
         alignment: Alignment.center,
         iconSize: 40,
         icon: Icon(Icons.add_circle_sharp),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => MoviesForm()));
+        },
         splashColor: Colors.amber,
         splashRadius: 30,
         color: Colors.lightBlue,
