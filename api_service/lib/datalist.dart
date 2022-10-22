@@ -47,7 +47,7 @@ class DataItems extends StatelessWidget {
       floatingActionButton: IconButton(
         alignment: Alignment.center,
         iconSize: 40,
-        icon: Icon(Icons.add_circle_outline),
+        icon: Icon(Icons.add_circle_sharp),
         onPressed: () {},
         splashColor: Colors.amber,
         splashRadius: 30,
