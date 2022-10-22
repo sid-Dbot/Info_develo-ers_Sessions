@@ -45,7 +45,7 @@ class DataItems extends StatelessWidget {
               }));
         },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterTop,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: IconButton(
         alignment: Alignment.center,
         iconSize: 40,
