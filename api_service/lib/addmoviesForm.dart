@@ -20,15 +20,26 @@ class MoviesForm extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          child: TextField(
-              decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.title,
-                  ),
-                  labelText: 'Name')),
-        )
+        customTextField()
       ]),
+    );
+  }
+}
+
+class customTextField extends StatelessWidget {
+  String label;
+  final IconData icon;
+
+customTextField(this.label,this.icon)
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: TextField(
+          decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.title,
+              ),
+              labelText: label)),
     );
   }
 }
