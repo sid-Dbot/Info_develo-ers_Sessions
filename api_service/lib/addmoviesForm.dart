@@ -20,7 +20,10 @@ class MoviesForm extends StatelessWidget {
             ),
           ),
         ),
-        customTextField('Title', Icons.title_rounded),
+        ListView.builder(
+          itemBuilder: (context, index) =>
+              customTextField('Title', Icons.title_rounded),
+        ),
         customTextField('Genre', Icons.category_outlined)
       ]),
     );
