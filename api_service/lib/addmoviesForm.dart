@@ -30,7 +30,7 @@ class MoviesForm extends StatelessWidget {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height * .5,
+                height: MediaQuery.of(context).size.height * .55,
                 child: ListView.builder(
                   itemCount: textfieldData.length,
                   itemBuilder: (context, index) => customTextField(
@@ -56,11 +56,7 @@ class customTextField extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 3,
-              )
-            ]),
+            boxShadow: [BoxShadow(blurRadius: 9, color: Colors.blueGrey)]),
         child: TextField(
             decoration: InputDecoration(
                 prefixIcon: Icon(
