@@ -14,13 +14,14 @@ class Apiservice {
 
   postData() async {
     return await http.post(
-      Uri.parse("https://jsonplaceholder.typicode.com/posts/1"),
-      body: {
-        "userid": 1,
-        "id": 1,
-        "title": "DIY",
-        "email": "jhinpajii",
-      },
-    );
+        Uri.parse("https://jsonplaceholder.typicode.com/posts/1"),
+        body: jsonEncode(
+          <String, String>{
+            "userid": 1.toString(),
+            "id": 1.toString(),
+            "title": "DIY",
+            "body": "jhinpajii",
+          },
+        ));
   }
 }
