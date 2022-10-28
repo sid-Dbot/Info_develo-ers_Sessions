@@ -13,6 +13,11 @@ class _MyWidgetState extends State<MyWidget> {
     return num++;
   }
 
+  Stream<int> _stream(int num) async* {
+    await Future.delayed(Duration(seconds: 2));
+    yield num += 3;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
