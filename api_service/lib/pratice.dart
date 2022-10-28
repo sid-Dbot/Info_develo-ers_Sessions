@@ -29,6 +29,7 @@ class _MyWidgetState extends State<MyWidget> {
           title: Text('MyWidget'),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             FutureBuilder(
