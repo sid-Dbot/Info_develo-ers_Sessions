@@ -13,7 +13,7 @@ class Apiservice {
   }
 
   postData() async {
-    return await http.post(
+    var res = await http.post(
         Uri.parse("https://jsonplaceholder.typicode.com/posts/1"),
         body: jsonEncode(
           <String, String>{
@@ -23,5 +23,7 @@ class Apiservice {
             "body": "jhinpajii",
           },
         ));
+    return res;
+    print(res.body);
   }
 }
