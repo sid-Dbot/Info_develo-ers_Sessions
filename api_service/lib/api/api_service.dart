@@ -15,7 +15,9 @@ class Apiservice {
   postData(data) async {
     return await http.post(
       Uri.parse(url),
-      body: jsonEncode(data),
+      body: jsonEncode(<String, String>{
+        'title': 'title',
+      }),
     );
   }
 }
