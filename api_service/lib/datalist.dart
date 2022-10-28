@@ -24,7 +24,7 @@ class DataItems extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: ListTile(
-                    leading: Text(snapshot.data![index].id.toString()),
+                    leading: Text(snapshot.data![index].id.toString()+"."),
                     title: Container(
                       height: 150,
                       width: 150,

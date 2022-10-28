@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:api_service/api/api_service.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +29,7 @@ class MoviesForm extends StatelessWidget {
       'name': titlecontroller.text,
       'genre': genrecontroller.text,
       'released': datecontroller.text,
-      'imgURL': urlcontroller,
+      'imgURL': urlcontroller.text,
     };
     var res = await Apiservice().postData(data);
   }
