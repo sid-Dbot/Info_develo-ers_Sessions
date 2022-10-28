@@ -31,6 +31,7 @@ class MoviesForm extends StatelessWidget {
       'released': datecontroller.text,
       'imgURL': urlcontroller.text,
     };
+    print(data);
     var res = await Apiservice().postData(data);
   }
 
