@@ -14,8 +14,10 @@ class _MyWidgetState extends State<MyWidget> {
   }
 
   Stream<int> _stream(int num) async* {
-    await Future.delayed(Duration(seconds: 2));
-    yield num += 3;
+    while (num < 100) {
+      await Future.delayed(Duration(seconds: 2));
+      yield num += 3;
+    }
   }
 
   @override
