@@ -23,17 +23,22 @@ class MoviesForm extends StatelessWidget {
     datecontroller,
     urlcontroller
   ];
-
-  _submit() async {
-    var data = {
-      'name': titlecontroller.text,
-      'genre': genrecontroller.text,
-      'released': datecontroller.text,
-      'imgURL': urlcontroller.text,
-    };
-    print(data);
-    return Apiservice().postData();
-  }
+  var data = {
+    'name': titlecontroller.text,
+    'genre': genrecontroller.text,
+    'released': datecontroller.text,
+    'imgURL': urlcontroller.text,
+  };
+  // _submit() async {
+  //   var data = {
+  //     'name': titlecontroller.text,
+  //     'genre': genrecontroller.text,
+  //     'released': datecontroller.text,
+  //     'imgURL': urlcontroller.text,
+  //   };
+  //   print(data);
+  //   return Apiservice().postData();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +70,7 @@ class MoviesForm extends StatelessWidget {
               ),
               ElevatedButton(
                   onPressed: () {
-                    Apiservice().postData();
+                    Apiservice().postData(data);
                   },
                   child: Text('Submit'))
             ],
