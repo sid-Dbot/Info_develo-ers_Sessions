@@ -12,18 +12,21 @@ class Apiservice {
     return Aaa.map((e) => MoviesList.fromJson(e)).toList();
   }
 
-  postData() async {
-    var res = await http.post(
+  postData(data) async {
+    // var res = await http.post(
+    //     Uri.parse("https://jsonplaceholder.typicode.com/posts/1"),
+    //     body: json.encode(
+    //       <String, String>{
+    //         "userid": 1.toString(),
+    //         "id": 1.toString(),
+    //         "title": "DIY",
+    //         "body": "jhinpajii",
+    //       },
+    //     ));
+    // return res;
+    return await http.post(
         Uri.parse("https://jsonplaceholder.typicode.com/posts/1"),
-        body: jsonEncode(
-          <String, String>{
-            "userid": 1.toString(),
-            "id": 1.toString(),
-            "title": "DIY",
-            "body": "jhinpajii",
-          },
-        ));
-    return res;
-    print(res.body);
+        body: jsonEncode(data));
+    print(data);
   }
 }
