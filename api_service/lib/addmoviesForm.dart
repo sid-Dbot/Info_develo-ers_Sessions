@@ -65,7 +65,7 @@ class MoviesForm extends StatelessWidget {
               ),
               ElevatedButton(
                   onPressed: () {
-                    _submit();
+                    Apiservice().postData();
                   },
                   child: Text('Submit'))
             ],
