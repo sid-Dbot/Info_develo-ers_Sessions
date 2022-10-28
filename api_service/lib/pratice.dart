@@ -24,8 +24,18 @@ class _MyWidgetState extends State<MyWidget> {
         appBar: AppBar(
           title: Text('MyWidget'),
         ),
-        body: FutureBuilder(
-            future: _calc(5),
-            builder: (context, snapshot) => Text(snapshot.data.toString())));
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            FutureBuilder(
+                future: _calc(5),
+                builder: (context, snapshot) => Text(snapshot.data.toString())),
+            StreamBuilder(
+                stream: _stream(6),
+                builder: (context, snapshot) {
+                  return Text(snapshot.data.toString());
+                })
+          ],
+        ));
   }
 }
