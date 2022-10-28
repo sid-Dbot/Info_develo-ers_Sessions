@@ -9,6 +9,7 @@ class MyWidget extends StatefulWidget {
 
 class _MyWidgetState extends State<MyWidget> {
   Future<int> _calc(int num) async {
+    await Future.delayed(Duration(seconds: 1));
     return num++;
   }
 
