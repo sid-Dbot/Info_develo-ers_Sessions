@@ -32,7 +32,7 @@ class MoviesForm extends StatelessWidget {
       'imgURL': urlcontroller.text,
     };
     print(data);
-    Apiservice().postData();
+    return Apiservice().postData();
   }
 
   @override
