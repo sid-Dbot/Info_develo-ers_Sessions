@@ -12,10 +12,15 @@ class Apiservice {
     return Aaa.map((e) => MoviesList.fromJson(e)).toList();
   }
 
-  postData(data) async {
+  postData() async {
     return await http.post(
-      Uri.parse(url),
-      body: jsonEncode(data),
+      Uri.parse("https://jsonplaceholder.typicode.com/posts/1"),
+      body: {
+        "userid": 1,
+        "id": 1,
+        "title": "DIY",
+        "email": "jhinpajii",
+      },
     );
   }
 }
