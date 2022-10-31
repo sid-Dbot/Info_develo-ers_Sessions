@@ -10,6 +10,7 @@ Future<Album> _futureAlbum() async {
       await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
   final Album data = jsonDecode(res.body);
   return data;
+}
 
 //POST REQUEST-------
 Future<Album> createAlbum(String title) async {
