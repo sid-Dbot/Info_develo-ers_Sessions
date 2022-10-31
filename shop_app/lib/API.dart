@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class ApiService extends StatelessWidget {
-  const ApiService({super.key});
+class ApiService {
   Future<http.Response> createAlbum(String title) {
     return http.post(
       Uri.parse('https://jsonplaceholder.typicode.com/albums'),
@@ -14,10 +13,5 @@ class ApiService extends StatelessWidget {
         'title': title,
       }),
     );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
