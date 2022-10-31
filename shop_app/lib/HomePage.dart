@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
         body: Container(
           alignment: Alignment.center,
           padding: const EdgeInsets.all(8.0),
-          child: (_futureAlbum == null) ? buildColumn() : buildFutureBuilder(),
+          child: (futureAlbum == null) ? buildColumn() : buildFutureBuilder(),
         ),
       ),
     );
@@ -89,9 +89,9 @@ class _HomePageState extends State<HomePage> {
         ),
         ElevatedButton(
           onPressed: () {
-            setState(() {
-              _futureAlbum = createAlbum(_controller.text);
-            });
+            // setState(() {
+            //   futureAlbum ()= createAlbum(_controller.text);
+            // });
           },
           child: const Text('Create Data'),
         ),
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
 
   FutureBuilder<Album> buildFutureBuilder() {
     return FutureBuilder<Album>(
-      future: _futureAlbum,
+      future: futureAlbum(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return Text(snapshot.data!.title);
