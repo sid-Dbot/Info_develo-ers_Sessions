@@ -3,6 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+//get Reauest---------------------
+Future<Album>? _futureAlbum() async {
+  final res =
+      http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
+  return res;
+}
+
+//POST REQUEST-------
 Future<Album> createAlbum(String title) async {
   final response = await http.post(
     Uri.parse('https://jsonplaceholder.typicode.com/albums'),
@@ -48,7 +56,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final TextEditingController _controller = TextEditingController();
-  Future<Album>? _futureAlbum;
 
   @override
   Widget build(BuildContext context) {
