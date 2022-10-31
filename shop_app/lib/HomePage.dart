@@ -2,13 +2,14 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:shop_app/album.dart';
 
 //get Reauest---------------------
-Future<Album>? _futureAlbum() async {
-  final res =
-      http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
-  return res;
-}
+Future<Album> _futureAlbum() async {
+  http.Response res =
+      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
+  final Album data = jsonDecode(res.body);
+  return data;
 
 //POST REQUEST-------
 Future<Album> createAlbum(String title) async {
