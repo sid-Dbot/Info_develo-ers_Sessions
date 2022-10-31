@@ -1,112 +1,114 @@
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
-import 'package:shop_app/CategpriesPage.dart';
-import 'package:shop_app/ListViews/listview_featuredHomePage.dart';
+Future<Album> createAlbum(String title) async {
+  final response = await http.post(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums'),
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    body: jsonEncode(<String, String>{
+      'title': title,
+    }),
+  );
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  if (response.statusCode == 201) {
+    // If the server did return a 201 CREATED response,
+    // then parse the JSON.
+    return Album.fromJson(jsonDecode(response.body));
+  } else {
+    // If the server did not return a 201 CREATED response,
+    // then throw an exception.
+    throw Exception('Failed to create album.');
+  }
+}
+
+class Album {
+  final int id;
+  final String title;
+
+  const Album({required this.id, required this.title});
+
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
+      id: json['id'],
+      title: json['title'],
+    );
+  }
+}
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() {
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  final TextEditingController _controller = TextEditingController();
+  Future<Album>? _futureAlbum;
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Stack(children: [
-        Container(
-          width: size.width,
-          color: Colors.grey[800],
+    return MaterialApp(
+      title: 'Create Data Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Create Data Example'),
         ),
-        Positioned(
-            top: size.height * 0.07,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Shop',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
-                    ),
-                  ),
-                  Container(
-                    height: size.height * 0.09,
-                    //margin: EdgeInsets.all(8),
-                    width: size.width * 0.95,
-                    child: Card(
-                        child: TextField(
-                      decoration: InputDecoration(
-                          suffixIcon: Icon(Icons.search),
-                          label: Text('Search All..'),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7),
-                          )),
-                    )),
-                  ),
-                ],
-              ),
-            )),
-        Positioned(
-          top: size.height * 0.24,
-          child: Container(
-            height: size.height,
-            width: size.width,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(11),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text('Featured'),
-                  SizedBox(
-                    height: 100,
-                    child: Featured(),
-                  ),
-                  OutlinedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return categoriesPage();
-                          }),
-                        );
-                      },
-                      child: Text('Categories')),
-                ],
-              ),
-            ),
-          ),
+        body: Container(
+          alignment: Alignment.center,
+          padding: const EdgeInsets.all(8.0),
+          child: (_futureAlbum == null) ? buildColumn() : buildFutureBuilder(),
         ),
-      ]),
-      bottomNavigationBar:
-          BottomNavigationBar(type: BottomNavigationBarType.fixed, items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.h_mobiledata),
-          label: 'H',
+      ),
+    );
+  }
+
+  Column buildColumn() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        TextField(
+          controller: _controller,
+          decoration: const InputDecoration(hintText: 'Enter Title'),
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.h_mobiledata),
-          label: 'H',
+        ElevatedButton(
+          onPressed: () {
+            setState(() {
+              _futureAlbum = createAlbum(_controller.text);
+            });
+          },
+          child: const Text('Create Data'),
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.h_mobiledata),
-          label: 'H',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.h_mobiledata),
-          label: 'H',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.h_mobiledata),
-          label: 'H',
-        ),
-      ]),
+      ],
+    );
+  }
+
+  FutureBuilder<Album> buildFutureBuilder() {
+    return FutureBuilder<Album>(
+      future: _futureAlbum,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Text(snapshot.data!.title);
+        } else if (snapshot.hasError) {
+          return Text('${snapshot.error}');
+        }
+
+        return const CircularProgressIndicator();
+      },
     );
   }
 }
