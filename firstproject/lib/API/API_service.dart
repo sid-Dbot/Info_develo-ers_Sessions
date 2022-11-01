@@ -1,3 +1,4 @@
+import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -9,10 +10,9 @@ class Api_service {
   Api_service({required this.Url});
 
 //===========GET METHOD===============
-  Future<List<homeData>> getData()async{
-    var response =await http.get(Uri.parse(Url));
+  Future<homeData> getData() async {
+    var response = await http.get(Uri.parse(Url));
     print(response.body);
-    return 
-    
+    return homeData.fromJson(jsonDecode(response.body));
   }
 }
