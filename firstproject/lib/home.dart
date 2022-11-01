@@ -21,7 +21,7 @@ class Home_Page extends StatelessWidget {
         )),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.person))],
       ),
-      body: Column(children: [
+      body: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
         ListView(
           scrollDirection: Axis.horizontal,
           children: [
