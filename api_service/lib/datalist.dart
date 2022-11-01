@@ -35,8 +35,8 @@ class _DataItemsState extends State<DataItems> {
               itemBuilder: ((context, index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyWidget()));
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (context) => MyWidget()));
                   },
                   child: Container(
                     decoration: BoxDecoration(

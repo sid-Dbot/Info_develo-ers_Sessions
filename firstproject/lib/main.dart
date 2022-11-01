@@ -28,11 +28,9 @@ class _HomePageState extends State<HomePage> {
         child: FutureBuilder(
           future: H,
           builder: (context, snapshot) {
-            return ListView.builder(itemBuilder: (context, index) {
-              return Column(
-                children: [Text(snapshot.data!.name.toString())],
-              );
-            });
+            return ListView.builder(itemBuilder: ((context, index) {
+              return Text(snapshot.data![index].name.toString());
+            }));
           },
         ),
       ),
