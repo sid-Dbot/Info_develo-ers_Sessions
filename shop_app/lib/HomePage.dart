@@ -62,21 +62,28 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Create Data Example',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Create Data Example'),
+        title: 'Create Data Example',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
         ),
-        body: Container(
-          alignment: Alignment.center,
-          padding: const EdgeInsets.all(8.0),
-          child: (futureAlbum == null) ? buildColumn() : buildFutureBuilder(),
-        ),
-      ),
-    );
+        home: Scaffold(
+            appBar: AppBar(
+              title: const Text('Create Data Example'),
+            ),
+            body: Container(
+                child: FutureBuilder(
+                    future: futureAlbum(),
+                    builder: (context, snapshot) {
+                      return GridView.builder(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2),
+                          itemBuilder: (context, int index) => Container(
+                                child: Text(
+                                  snapshot.data![index].title.toString(),
+                                ),
+                              ));
+                    }))));
   }
 
   Column buildColumn() {
