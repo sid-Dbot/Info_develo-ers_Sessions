@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                                   crossAxisCount: 2),
                           itemBuilder: (context, int i) => Container(
                                 child: Text(
-                                  snapshot.data![i].title.toString(),
+                                  snapshot.data!.title.toString(),
                                 ),
                               ));
                     }))));
