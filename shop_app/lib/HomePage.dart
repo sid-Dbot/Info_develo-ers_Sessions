@@ -80,44 +80,44 @@ class _HomePageState extends State<HomePage> {
                                   crossAxisCount: 2),
                           itemBuilder: (context, int index) => Container(
                                 child: Text(
-                                  snapshot.data![index].title.toString(),
+                                  snapshot.data!.title.toString(),
                                 ),
                               ));
                     }))));
   }
 
-  Column buildColumn() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        TextField(
-          controller: _controller,
-          decoration: const InputDecoration(hintText: 'Enter Title'),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            // setState(() {
-            //   futureAlbum ()= createAlbum(_controller.text);
-            // });
-          },
-          child: const Text('Create Data'),
-        ),
-      ],
-    );
-  }
+  // Column buildColumn() {
+  //   return Column(
+  //     mainAxisAlignment: MainAxisAlignment.center,
+  //     children: <Widget>[
+  //       TextField(
+  //         controller: _controller,
+  //         decoration: const InputDecoration(hintText: 'Enter Title'),
+  //       ),
+  //       ElevatedButton(
+  //         onPressed: () {
+  //           // setState(() {
+  //           //   futureAlbum ()= createAlbum(_controller.text);
+  //           // });
+  //         },
+  //         child: const Text('Create Data'),
+  //       ),
+  //     ],
+  //   );
+  // }
 
-  FutureBuilder<Album> buildFutureBuilder() {
-    return FutureBuilder<Album>(
-      future: futureAlbum(),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return Text(snapshot.data!.title);
-        } else if (snapshot.hasError) {
-          return Text('${snapshot.error}');
-        }
+//   FutureBuilder<Album> buildFutureBuilder() {
+//     return FutureBuilder<Album>(
+//       future: futureAlbum(),
+//       builder: (context, snapshot) {
+//         if (snapshot.hasData) {
+//           return Text(snapshot.data!.title);
+//         } else if (snapshot.hasError) {
+//           return Text('${snapshot.error}');
+//         }
 
-        return const CircularProgressIndicator();
-      },
-    );
-  }
+//         return const CircularProgressIndicator();
+//       },
+//     );
+//   }
 }
