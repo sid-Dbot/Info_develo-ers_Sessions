@@ -1,11 +1,25 @@
 import 'package:api_service/addmoviesForm.dart';
+import 'package:api_service/models/users.dart';
 import 'package:api_service/pratice.dart';
 import 'package:flutter/material.dart';
 
 import 'api/api_service.dart';
 
-class DataItems extends StatelessWidget {
+class DataItems extends StatefulWidget {
   const DataItems({super.key});
+
+  @override
+  State<DataItems> createState() => _DataItemsState();
+}
+
+class _DataItemsState extends State<DataItems> {
+  late Future<List<MoviesList>> loadData;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    loadData = Apiservice().getData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +28,7 @@ class DataItems extends StatelessWidget {
         title: Text("Movies List"),
       ),
       body: FutureBuilder(
-        future: Apiservice().getData(),
+        future: loadData,
         builder: (context, snapshot) {
           return ListView.builder(
               itemCount: snapshot.data!.length,
