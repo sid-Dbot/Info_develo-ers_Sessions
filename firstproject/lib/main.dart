@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  late Future<homeData> H;
+  late Future<List<homeData>> H;
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -23,15 +23,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Container(
-        color: Colors.white,
-        child: FutureBuilder(
-          future: H,
-          builder: (context, snapshot) {
-            return ListView.builder(itemBuilder: ((context, index) {
-              return Text(snapshot.data![index].name.toString());
-            }));
-          },
+      home: Scaffold(
+        body: Container(
+          color: Colors.white,
+          child: FutureBuilder(
+            future: H,
+            builder: (context, snapshot) {
+              return ListView.builder(
+                  itemCount: snapshot.data!.length,
+                  itemBuilder: ((context, index) {
+                    return Text(snapshot.data![index].name.toString());
+                  }));
+            },
+          ),
         ),
       ),
     );

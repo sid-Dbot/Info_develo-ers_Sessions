@@ -10,9 +10,10 @@ class Api_service {
   Api_service({required this.Url});
 
 //===========GET METHOD===============
-  Future<homeData> getData() async {
+  Future<List<homeData>> getData() async {
     var response = await http.get(Uri.parse(Url));
     print(response.body);
-    return homeData.fromJson(jsonDecode(response.body));
+    List Aaa = jsonDecode(response.body);
+    return Aaa.map((e) => homeData.fromJson(e)).toList();
   }
 }
