@@ -78,9 +78,9 @@ class _HomePageState extends State<HomePage> {
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2),
-                          itemBuilder: (context, int index) => Container(
+                          itemBuilder: (context, int i) => Container(
                                 child: Text(
-                                  snapshot.data!.title.toString(),
+                                  snapshot.data![i].title.toString(),
                                 ),
                               ));
                     }))));
