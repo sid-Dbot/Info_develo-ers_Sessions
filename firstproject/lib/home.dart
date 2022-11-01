@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class Home_Page extends StatelessWidget {
   const Home_Page({super.key});
@@ -20,15 +21,20 @@ class Home_Page extends StatelessWidget {
         )),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.person))],
       ),
-      body: Column(
-        children: [
-          ListView(children: [
+      body: Column(children: [
+        ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
             Container(
-              color: Colors.white,
-            ),
-          ]),
-        ],
-      ),
+              height: MediaQuery.of(context).size.height * 0.25,
+              decoration: BoxDecoration(
+                color: Colors.cyan,
+                borderRadius: BorderRadius.circular(7),
+              ),
+            )
+          ],
+        )
+      ]),
     );
   }
 }
