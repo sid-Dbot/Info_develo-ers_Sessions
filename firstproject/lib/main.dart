@@ -7,6 +7,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      home: Container(
+        color: Colors.white,
+        child: Center(child: Text("HEYY")),
+      ),
+    );
   }
 }
