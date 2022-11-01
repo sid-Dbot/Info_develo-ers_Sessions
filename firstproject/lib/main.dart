@@ -25,7 +25,16 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       home: Container(
         color: Colors.white,
-        child: Center(child: Text("HEYY")),
+        child: FutureBuilder(
+          future: H,
+          builder: (context, snapshot) {
+            return ListView.builder(itemBuilder: (context, index) {
+              return Column(
+                children: [Text(snapshot.data!.name.toString())],
+              );
+            });
+          },
+        ),
       ),
     );
   }
