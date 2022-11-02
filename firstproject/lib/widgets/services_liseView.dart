@@ -19,6 +19,7 @@ class Services extends StatelessWidget {
             ],
           ),
           SizedBox(
+            height: 250,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Container(
