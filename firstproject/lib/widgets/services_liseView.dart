@@ -19,22 +19,19 @@ class Services extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
-            height: 250,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => Container(
-                height: 100,
-                width: 100,
-                child: ListTile(
-                  title: Container(
-                    color: Colors.redAccent,
-                  ),
-                  subtitle: Text('Zzzzz'),
+          ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) => Container(
+              height: 100,
+              width: 100,
+              child: ListTile(
+                title: Container(
+                  color: Colors.redAccent,
                 ),
+                subtitle: Text('Zzzzz'),
               ),
-              itemCount: 4,
             ),
+            itemCount: 4,
           ),
         ]),
       ),
