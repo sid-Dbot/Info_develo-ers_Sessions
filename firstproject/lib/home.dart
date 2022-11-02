@@ -31,7 +31,7 @@ class _Home_PageState extends State<Home_Page> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Carousel_Slider(),
-            //Services(),
+            Services(),
             News(),
 
             // Container(

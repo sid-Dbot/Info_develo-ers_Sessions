@@ -5,35 +5,37 @@ class Services extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text("Services"),
-            TextButton(
-              onPressed: () {},
-              child: Text("See all>"),
-            )
-          ],
-        ),
-        ListView.builder(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) => Container(
-            height: 100,
-            width: 100,
-            child: ListTile(
-              title: Container(
-                color: Colors.redAccent,
+    return Flexible(
+      child: Container(
+        child: Column(children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Services"),
+              TextButton(
+                onPressed: () {},
+                child: Text("See all>"),
+              )
+            ],
+          ),
+          SizedBox(
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => Container(
+                height: 100,
+                width: 100,
+                child: ListTile(
+                  title: Container(
+                    color: Colors.redAccent,
+                  ),
+                  subtitle: Text('Zzzzz'),
+                ),
               ),
-              subtitle: Text('Zzzzz'),
+              itemCount: 4,
             ),
           ),
-          itemCount: 4,
-        ),
-      ]),
+        ]),
+      ),
     );
   }
 }
