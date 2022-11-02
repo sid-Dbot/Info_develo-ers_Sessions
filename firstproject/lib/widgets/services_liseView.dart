@@ -1,3 +1,26 @@
+import 'package:flutter/material.dart';
+
+class Services extends StatelessWidget {
+  const Services({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text("Services"),
+          TextButton(
+            onPressed: () {},
+            child: Text("See all>"),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
 //  ListView.builder(
 //                 shrinkWrap: true,
 //                 physics: NeverScrollableScrollPhysics(),
