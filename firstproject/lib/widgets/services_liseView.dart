@@ -7,6 +7,7 @@ class Services extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flexible(
       child: Container(
+        height: 250,
         child: Column(children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
