@@ -1,10 +1,5 @@
-import 'dart:html';
-
-import 'package:carousel_slider/utils.dart';
+import 'package:firstproject/widgets/carousel_Slider.dart';
 import 'package:flutter/material.dart';
-
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:carousel_indicator/carousel_indicator.dart';
 
 class Home_Page extends StatefulWidget {
   @override
@@ -12,10 +7,6 @@ class Home_Page extends StatefulWidget {
 }
 
 class _Home_PageState extends State<Home_Page> {
-  int index = 5;
-
-  int pageindex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,49 +27,7 @@ class _Home_PageState extends State<Home_Page> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          CarouselSlider.builder(
-            itemCount: index,
-            options: CarouselOptions(
-              enableInfiniteScroll: false,
-              viewportFraction: 1,
-              onPageChanged: (index, _) {
-                pageindex = index;
-                setState(() {});
-              },
-              autoPlay: true,
-              height: MediaQuery.of(context).size.height * 0.3,
-            ),
-            itemBuilder: (context, index, realindex) => Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(11),
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 2,
-                      color: Colors.grey,
-                      offset: Offset(2, 3),
-                    )
-                  ]),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-                elevation: 8,
-                child: Image.network(
-                  fit: BoxFit.fill,
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrceo--QeW1CZHYUSfdy4q6BNRvT9np6x0BQ&usqp=CAU",
-                ),
-              ),
-            ),
-          ),
-          Center(
-            child: CarouselIndicator(
-              height: 5,
-              width: 5,
-              activeColor: Colors.grey,
-              color: Colors.black,
-              count: index,
-              index: pageindex,
-            ),
-          ),
+          Carousel_Slider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -89,27 +38,57 @@ class _Home_PageState extends State<Home_Page> {
               )
             ],
           ),
-          // Container(
-          //   height: MediaQuery.of(context).size.height * 0.3,
-          //   child: ListView.builder(
-          //     scrollDirection: Axis.horizontal,
-          //     itemBuilder: (context, index) => Container(
-          //       height: MediaQuery.of(context).size.height * 0.3,
-          //       width: 100,
-          //       color: Colors.redAccent,
-          //     ),
-          //     itemCount: 4,
-          //   ),
-          // ),
-          Row(
-            children: [
-              Text('News'),
-              TextButton(
-                onPressed: () {},
-                child: Text('See All>'),
-              )
-            ],
-          )
+          Container(
+            height: 185,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(
+                            left: 10,
+                          ),
+                          height: 190,
+                          width: 150,
+                          decoration: BoxDecoration(),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(10),
+                                      topLeft: Radius.circular(10)),
+                                  image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"),
+                                      fit: BoxFit.cover),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Container(
+                                height: 30,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'snapshot.data![index].title.toString()',
+                                      overflow: TextOverflow.clip,
+                                      maxLines: 2,
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    )),
+          ),
         ],
       ),
     );
