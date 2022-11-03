@@ -14,7 +14,7 @@ class Services extends StatelessWidget {
             children: [
               Text(
                 "Services",
-                style: TextStyle(color: Colors.orange),
+                style: TextStyle(color: Colors.deepOrange),
               ),
               TextButton(
                 style: ButtonStyle(
