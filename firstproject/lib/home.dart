@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:firstproject/widgets/News_listView.dart';
 import 'package:firstproject/widgets/carousel_Slider.dart';
 import 'package:firstproject/widgets/services_liseView.dart';
