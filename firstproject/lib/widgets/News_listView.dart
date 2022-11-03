@@ -14,7 +14,9 @@ class News extends StatelessWidget {
             style: TextStyle(color: Colors.orange),
           ),
           TextButton(
-            style: Button,
+            style: ButtonStyle(
+                foregroundColor:
+                    MaterialStateProperty.all(Colors.deepOrangeAccent)),
             onPressed: () {},
             child: Text('See All>'),
           )
