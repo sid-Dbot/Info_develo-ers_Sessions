@@ -23,7 +23,7 @@ class Services extends StatelessWidget {
           children: [
             ListTile(
               title: SizedBox.square(
-                dimension: 10,
+                dimension: 2,
                 child: Container(
                   child: Image.network(
                       fit: BoxFit.fill,
