@@ -12,7 +12,10 @@ class Services extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Services"),
+              Text(
+                "Services",
+                style: TextStyle(color: Colors.orange),
+              ),
               TextButton(
                 onPressed: () {},
                 child: Text("See all>"),
