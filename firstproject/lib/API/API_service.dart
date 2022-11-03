@@ -12,15 +12,9 @@ class Api_service {
   Api_service({required this.Url});
 
 //===========GET METHOD===============
-  // Future<List<Services_data>> getData() async {
-  //   http.Response response = await http.get(Uri.parse(Url));
-  //   print(response.body);
-  //   final List Aaa = jsonDecode(response.body);
-  //   return Aaa.map((e) => Services_data.fromJson(e)).toList();
-  // }
-
   Future<List<Services_data>> getData() async {
     http.Response response = await http.get(Uri.parse(Url));
+    print(response.body);
     final List Aaa = jsonDecode(response.body);
     return Aaa.map((e) => Services_data.fromJson(e)).toList();
   }

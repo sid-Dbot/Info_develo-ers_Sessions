@@ -46,7 +46,7 @@ class _ServicesState extends State<Services> {
             child: Container(
                 child: FutureBuilder(
               future: loadData,
-              builder: (BuildContext context, snapshot) {
+              builder: (context, snapshot) {
                 return ListView.builder(
                   itemCount: snapshot.data!.length,
                   scrollDirection: Axis.horizontal,
