@@ -18,7 +18,8 @@ class Services extends StatelessWidget {
               ),
               TextButton(
                 style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all(Colors.orange)),
+                    foregroundColor:
+                        MaterialStateProperty.all(Colors.deepOrange)),
                 onPressed: () {},
                 child: Text("See all>"),
               )
