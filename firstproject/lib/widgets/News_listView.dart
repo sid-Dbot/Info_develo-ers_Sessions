@@ -61,7 +61,7 @@ class _NewsState extends State<News> {
                               snapshot.data![index].image.toString()),
                         ),
                       ),
-                      Text("Latest News..."),
+                      Text(snapshot.data![index].title.toString()),
                     ]),
                   ),
                 ),
