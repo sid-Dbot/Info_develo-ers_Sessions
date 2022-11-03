@@ -9,7 +9,10 @@ class News extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('News'),
+          Text(
+            'News',
+            style: TextStyle(color: Colors.orange),
+          ),
           TextButton(
             onPressed: () {},
             child: Text('See All>'),
