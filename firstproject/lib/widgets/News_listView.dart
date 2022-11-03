@@ -58,7 +58,7 @@ class _NewsState extends State<News> {
                           width: 100,
                           child: Image.network(
                               fit: BoxFit.fill,
-                              "https://thumbs.dreamstime.com/b/education-news-24845353.jpg"),
+                              snapshot.data![index].image.toString()),
                         ),
                       ),
                       Text("Latest News..."),
