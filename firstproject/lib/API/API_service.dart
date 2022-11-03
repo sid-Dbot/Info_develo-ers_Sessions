@@ -11,7 +11,7 @@ class Api_service {
 
 //===========GET METHOD===============
   Future<List<homeData>> getData() async {
-    var response = await http.get(Uri.parse(Url));
+    http.Response response = await http.get(Uri.parse(Url));
     print(response.body);
     List Aaa = jsonDecode(response.body);
     return Aaa.map((e) => homeData.fromJson(e)).toList();
