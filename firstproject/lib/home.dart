@@ -35,28 +35,30 @@ class _Home_PageState extends State<Home_Page> {
             Carousel_Slider(),
             //Services(),
             //News(),
-            SizedBox(
-              height: 200,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Flexible(
-                      child: SizedBox.square(
-                        dimension: 100,
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Card(
-                            elevation: 8,
-                            color: Colors.amberAccent,
+            Expanded(
+              child: SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Flexible(
+                        child: SizedBox.square(
+                          dimension: 100,
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Card(
+                              elevation: 8,
+                              color: Colors.amberAccent,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  );
-                },
-                itemCount: 2,
+                    );
+                  },
+                  itemCount: 2,
+                ),
               ),
             ),
 
