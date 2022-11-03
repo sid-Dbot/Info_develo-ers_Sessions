@@ -44,6 +44,7 @@ class _NewsState extends State<News> {
             child: FutureBuilder(
               future: _loadData,
               builder: (context, snapshot) => ListView.builder(
+                itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.all(3.0),
                   child: Container(
