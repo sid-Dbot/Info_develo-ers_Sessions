@@ -42,7 +42,7 @@ class News extends StatelessWidget {
                             "https://thumbs.dreamstime.com/b/education-news-24845353.jpg"),
                       ),
                     ),
-                    Text("Book"),
+                    Text("Latest News..."),
                   ]),
                 ),
               ),
