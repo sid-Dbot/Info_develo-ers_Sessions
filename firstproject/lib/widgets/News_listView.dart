@@ -22,19 +22,23 @@ class News extends StatelessWidget {
             child: ListView.builder(
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.all(3.0),
-                child: Row(children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: Container(
-                      height: 100,
-                      width: 100,
-                      child: Image.network(
-                          fit: BoxFit.fill,
-                          "https://thumbs.dreamstime.com/b/education-news-24845353.jpg"),
+                child: Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black, width: 0.4)),
+                  child: Row(children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Container(
+                        height: 100,
+                        width: 100,
+                        child: Image.network(
+                            fit: BoxFit.fill,
+                            "https://thumbs.dreamstime.com/b/education-news-24845353.jpg"),
+                      ),
                     ),
-                  ),
-                  Text("Book"),
-                ]),
+                    Text("Book"),
+                  ]),
+                ),
               ),
             ),
           ))
