@@ -48,7 +48,7 @@ class _ServicesState extends State<Services> {
               future: loadData,
               builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                 return ListView.builder(
-                  itemCount: snapshot.data.length,
+                  itemCount: snapshot.data!.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => Padding(
                     padding: const EdgeInsets.all(3.0),
