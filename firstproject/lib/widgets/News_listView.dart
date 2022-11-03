@@ -14,6 +14,7 @@ class News extends StatelessWidget {
             style: TextStyle(color: Colors.orange),
           ),
           TextButton(
+            style: Button,
             onPressed: () {},
             child: Text('See All>'),
           )
