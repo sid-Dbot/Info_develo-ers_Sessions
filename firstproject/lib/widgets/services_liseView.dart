@@ -64,7 +64,7 @@ class _ServicesState extends State<Services> {
                           ),
                         ),
                       ),
-                      Text("Book"),
+                      Text(snapshot.data![index].title.toString()),
                     ]),
                   ),
                 );
