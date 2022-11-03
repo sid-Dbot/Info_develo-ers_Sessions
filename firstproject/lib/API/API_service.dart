@@ -8,8 +8,8 @@ import 'package:firstproject/models/home_Data.dart';
 
 class Api_service {
   String Url;
-  String contents;
-  Api_service({required this.Url, required this.contents});
+
+  Api_service({required this.Url});
 
 //===========GET METHOD===============
   Future<List<Services_data>> getData() async {

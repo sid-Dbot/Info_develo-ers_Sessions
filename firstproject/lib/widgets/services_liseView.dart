@@ -10,14 +10,13 @@ class Services extends StatefulWidget {
 }
 
 class _ServicesState extends State<Services> {
-  late Future<List<Services_data>> _loadData;
+  late Future<List<Services_data>> loadData;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _loadData =
-        Api_service(Url: 'https://goldmineedu.com/admin/page/my-service')
-            .getData() as Future<List<Services_data>>;
+    loadData = Api_service(Url: 'https://goldmineedu.com/admin/page/my-service')
+        .getData();
   }
 
   @override
@@ -46,10 +45,10 @@ class _ServicesState extends State<Services> {
             height: MediaQuery.of(context).size.height * .23,
             child: Container(
                 child: FutureBuilder(
-              future: _loadData,
+              future: loadData,
               builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                 return ListView.builder(
-                  itemCount: snapshot.data!.length,
+                  itemCount: snapshot.data.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => Padding(
                     padding: const EdgeInsets.all(3.0),
