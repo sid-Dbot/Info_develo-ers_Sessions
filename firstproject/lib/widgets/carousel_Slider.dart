@@ -28,7 +28,7 @@ class _Carousel_SliderState extends State<Carousel_Slider> {
               setState(() {});
             },
             autoPlay: true,
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: MediaQuery.of(context).size.height * 0.27,
           ),
           itemBuilder: (context, index, realindex) => Padding(
             padding: const EdgeInsets.all(3.0),
