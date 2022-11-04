@@ -1,6 +1,4 @@
-import 'package:firstproject/API/API_service.dart';
 import 'package:firstproject/home.dart';
-import 'package:firstproject/models/home_Data.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MainApp());
@@ -26,12 +24,7 @@ class MainApp extends StatelessWidget {
 
 // class _HomePageState extends State<HomePage> {
 //   @override
-//   late Future<List<homeData>> H;
-//   void initState() {
-//     // TODO: implement initState
-//     super.initState();
-//     H = Api_service(Url: "https://goldmineedu.com/admin/home/all").getData();
-//   }
+//   
 
 //   @override
 //   Widget build(BuildContext context) {
