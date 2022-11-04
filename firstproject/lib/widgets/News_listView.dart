@@ -15,6 +15,7 @@ class _NewsState extends State<News> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    print('debug');
     _loadData = Api_service(Url: 'https://goldmineedu.com/admin/page/blog/data')
         .getData();
   }
@@ -38,12 +39,13 @@ class _NewsState extends State<News> {
           )
         ],
       ),
-      SizedBox(
-          height: MediaQuery.of(context).size.height * .23,
-          child: Container(
-            child: FutureBuilder(
-              future: _loadData,
-              builder: (context, snapshot) => ListView.builder(
+      FutureBuilder(
+          future: _loadData,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return ListView.builder(
+                //physics: ScrollPhysics(),
+                shrinkWrap: true,
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.all(3.0),
@@ -58,16 +60,19 @@ class _NewsState extends State<News> {
                           width: 100,
                           child: Image.network(
                               fit: BoxFit.fill,
-                              snapshot.data![index].image.toString()),
+                              'https://goldmineedu.com/${snapshot.data![index].image.toString()}'),
                         ),
                       ),
                       Text(snapshot.data![index].title.toString()),
                     ]),
                   ),
                 ),
-              ),
-            ),
-          ))
+              );
+            } else {
+              return CircularProgressIndicator();
+            }
+            ;
+          })
     ]);
   }
 }

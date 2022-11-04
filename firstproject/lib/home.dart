@@ -26,15 +26,13 @@ class _Home_PageState extends State<Home_Page> {
         )),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.person))],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Carousel_Slider(),
-            Services(),
-            News(),
-          ],
-        ),
+      body: ListView(
+        //crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Carousel_Slider(),
+          Services(),
+          News(),
+        ],
       ),
     );
   }

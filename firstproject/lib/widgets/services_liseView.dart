@@ -43,36 +43,40 @@ class _ServicesState extends State<Services> {
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height * .23,
-            child: Container(
-                child: FutureBuilder(
+            child: FutureBuilder<List<Services_data>>(
               future: loadData,
               builder: (context, snapshot) {
-                return ListView.builder(
-                  itemCount: snapshot.data!.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: Column(children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(5),
-                        child: Container(
-                          height: 100,
-                          width: 100,
-                          child: Image.network(
-                            fit: BoxFit.fill,
-                            snapshot.data![index].image.toString(),
+                if (snapshot.hasData) {
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: snapshot.data!.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Column(children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(5),
+                          child: Container(
+                            height: 100,
+                            width: 100,
+                            child: Image.network(
+                              fit: BoxFit.fill,
+                              'https://goldmineedu.com/${snapshot.data![index].image.toString()}',
+                            ),
                           ),
                         ),
-                      ),
-                      Text(
-                        snapshot.data![index].title.toString(),
-                        overflow: TextOverflow.clip,
-                      ),
-                    ]),
-                  ),
-                );
+                        Text(
+                          snapshot.data![index].title.toString(),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ]),
+                    ),
+                  );
+                } else {
+                  return Center(child: CircularProgressIndicator());
+                }
               },
-            )),
+            ),
           ),
         ]);
   }
