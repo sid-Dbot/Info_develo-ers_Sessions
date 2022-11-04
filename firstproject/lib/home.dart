@@ -16,19 +16,19 @@ class _Home_PageState extends State<Home_Page> {
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         leading: IconButton(
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           onPressed: () {},
         ),
-        title: Center(
+        title: const Center(
             child: Text(
           "Home",
           style: TextStyle(fontWeight: FontWeight.bold),
         )),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.person))],
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.person))],
       ),
       body: ListView(
         //crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
+        children: const [
           Carousel_Slider(),
           Services(),
           News(),
