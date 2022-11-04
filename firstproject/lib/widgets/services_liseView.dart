@@ -28,7 +28,7 @@ class _ServicesState extends State<Services> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 "Services",
                 style: TextStyle(color: Colors.deepOrange),
               ),
@@ -37,7 +37,7 @@ class _ServicesState extends State<Services> {
                     foregroundColor:
                         MaterialStateProperty.all(Colors.deepOrange)),
                 onPressed: () {},
-                child: Text("See all>"),
+                child: const Text("See all>"),
               )
             ],
           ),
@@ -56,7 +56,7 @@ class _ServicesState extends State<Services> {
                       child: Column(children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(5),
-                          child: Container(
+                          child: SizedBox(
                             height: 100,
                             width: 100,
                             child: Image.network(
@@ -73,7 +73,7 @@ class _ServicesState extends State<Services> {
                     ),
                   );
                 } else {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
               },
             ),
