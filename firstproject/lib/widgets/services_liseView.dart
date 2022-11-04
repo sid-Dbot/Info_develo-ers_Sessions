@@ -65,7 +65,8 @@ class _ServicesState extends State<Services> {
                             ),
                           ),
                         ),
-                        Container(
+                        SizedBox(
+                          width: 100,
                           child: Center(
                             child: Text(
                               snapshot.data![index].title.toString(),
