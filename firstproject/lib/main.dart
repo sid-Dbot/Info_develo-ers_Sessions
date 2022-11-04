@@ -3,7 +3,7 @@ import 'package:firstproject/home.dart';
 import 'package:firstproject/models/home_Data.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MainApp());
+void main() => runApp(const MainApp());
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
