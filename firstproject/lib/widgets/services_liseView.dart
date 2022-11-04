@@ -42,7 +42,7 @@ class _ServicesState extends State<Services> {
             ],
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * .23,
+            height: MediaQuery.of(context).size.height * .25,
             child: FutureBuilder<List<Services_data>>(
               future: loadData,
               builder: (context, snapshot) {
@@ -70,6 +70,7 @@ class _ServicesState extends State<Services> {
                           child: Center(
                             child: Text(
                               snapshot.data![index].title.toString(),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                         ),
