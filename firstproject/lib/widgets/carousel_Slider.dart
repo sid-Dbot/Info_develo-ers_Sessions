@@ -1,7 +1,10 @@
+import 'package:firstproject/models/services_data.dart';
 import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_indicator/carousel_indicator.dart';
+
+import '../API/API_service.dart';
 
 class Carousel_Slider extends StatefulWidget {
   const Carousel_Slider({super.key});
@@ -11,6 +14,15 @@ class Carousel_Slider extends StatefulWidget {
 }
 
 class _Carousel_SliderState extends State<Carousel_Slider> {
+  late Future<List<Services_data>> _loadData;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _loadData =
+        Api_service(Url: "https://goldmineedu.com/admin/home/all").getData();
+  }
+
   int index = 5;
   int pageindex = 0;
 
@@ -18,33 +30,36 @@ class _Carousel_SliderState extends State<Carousel_Slider> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CarouselSlider.builder(
-          itemCount: index,
-          options: CarouselOptions(
-            enableInfiniteScroll: false,
-            viewportFraction: 1,
-            onPageChanged: (index, _) {
-              pageindex = index;
-              setState(() {});
-            },
-            autoPlay: true,
-            height: MediaQuery.of(context).size.height * 0.3,
-          ),
-          itemBuilder: (context, index, realindex) => Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: Container(
-              decoration: BoxDecoration(boxShadow: [
-                BoxShadow(
-                  blurRadius: 11,
-                  color: Colors.grey,
-                  offset: Offset(2, 1),
-                )
-              ]),
-              child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(11)),
-                child: Image.network(
-                  fit: BoxFit.fill,
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrceo--QeW1CZHYUSfdy4q6BNRvT9np6x0BQ&usqp=CAU",
+        FutureBuilder(
+          future: _loadData,
+          builder: (context, snapshot) => CarouselSlider.builder(
+            itemCount: snapshot.data!.length,
+            options: CarouselOptions(
+              enableInfiniteScroll: false,
+              viewportFraction: 1,
+              onPageChanged: (index, _) {
+                pageindex = index;
+                setState(() {});
+              },
+              autoPlay: true,
+              height: MediaQuery.of(context).size.height * 0.3,
+            ),
+            itemBuilder: (context, index, realindex) => Padding(
+              padding: const EdgeInsets.all(3.0),
+              child: Container(
+                decoration: const BoxDecoration(boxShadow: [
+                  BoxShadow(
+                    blurRadius: 11,
+                    color: Colors.grey,
+                    offset: Offset(2, 1),
+                  )
+                ]),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(11)),
+                  child: Image.network(
+                    fit: BoxFit.fill,
+                    "https://goldmineedu.com/${snapshot.data![index].image.toString()}",
+                  ),
                 ),
               ),
             ),
