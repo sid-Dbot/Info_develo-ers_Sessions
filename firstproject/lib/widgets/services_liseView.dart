@@ -65,9 +65,10 @@ class _ServicesState extends State<Services> {
                             ),
                           ),
                         ),
-                        Text(
-                          snapshot.data![index].title.toString(),
-                          overflow: TextOverflow.ellipsis,
+                        Center(
+                          child: Text(
+                            snapshot.data![index].title.toString(),
+                          ),
                         ),
                       ]),
                     ),
