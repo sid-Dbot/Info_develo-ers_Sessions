@@ -26,7 +26,7 @@ class _NewsState extends State<News> {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
+          const Text(
             'News',
             style: TextStyle(color: Colors.deepOrange),
           ),
@@ -35,7 +35,7 @@ class _NewsState extends State<News> {
                 foregroundColor:
                     MaterialStateProperty.all(Colors.deepOrangeAccent)),
             onPressed: () {},
-            child: Text('See All>'),
+            child: const Text('See All>'),
           )
         ],
       ),
@@ -55,7 +55,7 @@ class _NewsState extends State<News> {
                     child: Row(children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(5),
-                        child: Container(
+                        child: SizedBox(
                           height: 100,
                           width: 100,
                           child: Image.network(
@@ -69,9 +69,8 @@ class _NewsState extends State<News> {
                 ),
               );
             } else {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             }
-            ;
           })
     ]);
   }
