@@ -14,6 +14,7 @@ class Apiservice {
 
   postData() async {
     var res = await http.post(Uri.parse(url),
+        headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "name": 'IT',
           "genre": "Horror",
