@@ -44,17 +44,19 @@ class _MoviesFormState extends State<MoviesForm> {
   ];
 
   submit() async {
-    se
-    Future data = {
-      'name': MoviesForm.namecontroller.text,
-      'email': MoviesForm.emailcontroller.text,
-      'national_id': MoviesForm.idcontroller.text,
-      'complain_office': MoviesForm.officecontroller.text,
-      'complain_title': MoviesForm.complaincontroller.text,
-      'complain_desc': MoviesForm.desccontroller.text
-    };
-    print(data);
-    return Apiservice().postData(data);
+    setState(() {
+      _data = {
+        'name': MoviesForm.namecontroller.text,
+        'email': MoviesForm.emailcontroller.text,
+        'national_id': MoviesForm.idcontroller.text,
+        'complain_office': MoviesForm.officecontroller.text,
+        'complain_title': MoviesForm.complaincontroller.text,
+        'complain_desc': MoviesForm.desccontroller.text
+      } as Future<List>?;
+    });
+
+    print(_data);
+    return Apiservice().postData(_data);
   }
 
   @override
