@@ -44,7 +44,7 @@ class _MoviesFormState extends State<MoviesForm> {
     MoviesForm.desccontroller
   ];
 
-  submit() {
+  submit() async {
     var data = {
       "name": MoviesForm.namecontroller.text,
       "email": MoviesForm.emailcontroller.text,
