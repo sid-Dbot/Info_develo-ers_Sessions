@@ -103,7 +103,7 @@ class _MoviesFormState extends State<MoviesForm> {
       builder: (context, snapshot) => (snapshot.hasData)
           ? const Text("Data submition Sucess")
           : const Text("Data submission failed"),
-      future: _data,
+      future: _sentdata,
     );
   }
 }
