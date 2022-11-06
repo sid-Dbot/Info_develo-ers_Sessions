@@ -13,12 +13,13 @@ class Apiservice {
   }
 
   postData() async {
-    var res = await http.post(Uri.parse('http://www.wedothakre.com/api/submit'),
+    var res = await http.post(
+        Uri.parse('https://jsonplaceholder.typicode.com/albums'),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode(<String, dynamic>{
-          "firstname": 'IT',
+          "title": 'IT',
         }));
     print(res.body);
   }
