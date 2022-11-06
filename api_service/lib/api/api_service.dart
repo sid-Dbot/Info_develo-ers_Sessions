@@ -12,17 +12,15 @@ class Apiservice {
     return Aaa.map((e) => MoviesList.fromJson(e)).toList();
   }
 
-  Future<MoviesList> postData() async {
-    var res = await http.post(
-        Uri.parse('https://jsonplaceholder.typicode.com/posts/1'),
+  postData() async {
+    var res = await http.post(Uri.parse('http://www.wedothakre.com/api/submit'),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode(<String, dynamic>{
-          "title": 'IT',
+          "firstname": 'IT',
         }));
     print(res.body);
-    return MoviesList.fromJson(jsonDecode(res.body));
   }
 
   // postData(data) async {
