@@ -69,13 +69,13 @@ class MoviesForm extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * .75,
                 child: ListView.builder(
-                  itemCount: textfieldData.length,
-                  itemBuilder: (context, index) => customTextField({
-                    textfieldData[index],
-                    iconfieldData[index],
-                    textControllers[index]
-                  }),
-                ),
+                    itemCount: textfieldData.length,
+                    itemBuilder: (context, index) {
+                      return customTextField(
+                          label: textfieldData[index],
+                          icon: iconfieldData[index],
+                          texteditingcontroller: textControllers[index]);
+                    }),
               ),
               ElevatedButton(onPressed: _submit, child: const Text('Submit'))
             ],
