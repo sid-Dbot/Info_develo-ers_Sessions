@@ -13,12 +13,13 @@ class Apiservice {
   }
 
   postData() async {
-    return await http.post(Uri.parse(url),
+    var res = await http.post(Uri.parse(url),
         body: jsonEncode({
           "name": 'IT',
           "genre": "Horror",
           "released": 2021,
         }));
+    print(res.body);
   }
 
   // postData(data) async {
