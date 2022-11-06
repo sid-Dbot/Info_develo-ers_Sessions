@@ -13,7 +13,8 @@ class Apiservice {
   }
 
   Future<MoviesList> postData() async {
-    var res = await http.post(Uri.parse(url),
+    var res = await http.post(
+        Uri.parse('https://jsonplaceholder.typicode.com/posts/1'),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
         },
