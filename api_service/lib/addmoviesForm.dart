@@ -88,7 +88,10 @@ class customTextField extends StatelessWidget {
   var texteditingcontroller;
   final IconData icon;
 
-  customTextField(this.label, this.icon, this.texteditingcontroller);
+  customTextField(
+      {required this.label,
+      required this.icon,
+      required this.texteditingcontroller});
   @override
   Widget build(BuildContext context) {
     return Padding(
