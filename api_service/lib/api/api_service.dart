@@ -12,15 +12,18 @@ class Apiservice {
     return Aaa.map((e) => MoviesList.fromJson(e)).toList();
   }
 
-  postData() async {
+  Future<MoviesList> postData() async {
     var res = await http.post(Uri.parse(url),
-        headers: {"Content-Type": "application/json"},
-        body: jsonEncode({
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, dynamic>{
           "name": 'IT',
           "genre": "Horror",
           "released": 2021,
         }));
     print(res.body);
+    return MoviesList.fromJson(jsonDecode(res.body));
   }
 
   // postData(data) async {
