@@ -14,7 +14,8 @@ class MoviesForm extends StatefulWidget {
 }
 
 class _MoviesFormState extends State<MoviesForm> {
-  static var _data;
+  late Future _sentdata;
+  // var _data = {};
 
   List<String> textfieldData = [
     'name',
@@ -44,19 +45,20 @@ class _MoviesFormState extends State<MoviesForm> {
   ];
 
   submit() {
+    var data = {
+      'name': MoviesForm.namecontroller.text,
+      'email': MoviesForm.emailcontroller.text,
+      'national_id': MoviesForm.idcontroller.text,
+      'complain_office': MoviesForm.officecontroller.text,
+      'complain_title': MoviesForm.complaincontroller.text,
+      'complain_desc': MoviesForm.desccontroller.text
+    };
     setState(() {
-      _data = {
-        'name': MoviesForm.namecontroller.text,
-        'email': MoviesForm.emailcontroller.text,
-        'national_id': MoviesForm.idcontroller.text,
-        'complain_office': MoviesForm.officecontroller.text,
-        'complain_title': MoviesForm.complaincontroller.text,
-        'complain_desc': MoviesForm.desccontroller.text
-      };
+      _sentdata = data;
     });
 
-    print(_data);
-    Apiservice().postData(_data);
+    print(data);
+    Apiservice().postData(data);
   }
 
   @override
