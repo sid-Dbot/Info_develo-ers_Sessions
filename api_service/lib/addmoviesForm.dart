@@ -100,8 +100,9 @@ class _MoviesFormState extends State<MoviesForm> {
   FutureBuilder SucessScreen() {
     return FutureBuilder(
       future: _sentdata,
-      builder: (context, snapshot) =>
-          (snapshot.hasData) ? const Text("Sucess!") : const Text("failed!"),
+      builder: (context, snapshot) => (snapshot.hasData)
+          ? const Text("Sucess!")
+          : const CircularProgressIndicator(),
     );
   }
 }
