@@ -1,8 +1,21 @@
 import 'package:api_service/api/api_service.dart';
 import 'package:flutter/material.dart';
 
-class MoviesForm extends StatelessWidget {
+class MoviesForm extends StatefulWidget {
+  static TextEditingController namecontroller = TextEditingController();
+  static var emailcontroller = TextEditingController();
+  static var idcontroller = TextEditingController();
+  static var officecontroller = TextEditingController();
+  static var complaincontroller = TextEditingController();
+  static var desccontroller = TextEditingController();
+
+  @override
+  State<MoviesForm> createState() => _MoviesFormState();
+}
+
+class _MoviesFormState extends State<MoviesForm> {
   Future? _data;
+
   List<String> textfieldData = [
     'name',
     'email',
@@ -11,6 +24,7 @@ class MoviesForm extends StatelessWidget {
     'complain_title',
     'complain_decs',
   ];
+
   List<IconData> iconfieldData = [
     Icons.person,
     Icons.email,
@@ -20,30 +34,24 @@ class MoviesForm extends StatelessWidget {
     Icons.description_sharp
   ];
 
-  static TextEditingController namecontroller = TextEditingController();
-  static var emailcontroller = TextEditingController();
-  static var idcontroller = TextEditingController();
-  static var officecontroller = TextEditingController();
-  static var complaincontroller = TextEditingController();
-  static var desccontroller = TextEditingController();
-
   List<TextEditingController> textControllers = [
-    namecontroller,
-    emailcontroller,
-    idcontroller,
-    officecontroller,
-    complaincontroller,
-    desccontroller
+    MoviesForm.namecontroller,
+    MoviesForm.emailcontroller,
+    MoviesForm.idcontroller,
+    MoviesForm.officecontroller,
+    MoviesForm.complaincontroller,
+    MoviesForm.desccontroller
   ];
 
   submit() async {
-    var data = {
-      'name': namecontroller.text,
-      'email': emailcontroller.text,
-      'national_id': idcontroller.text,
-      'complain_office': officecontroller.text,
-      'complain_title': complaincontroller.text,
-      'complain_desc': desccontroller.text
+    se
+    Future data = {
+      'name': MoviesForm.namecontroller.text,
+      'email': MoviesForm.emailcontroller.text,
+      'national_id': MoviesForm.idcontroller.text,
+      'complain_office': MoviesForm.officecontroller.text,
+      'complain_title': MoviesForm.complaincontroller.text,
+      'complain_desc': MoviesForm.desccontroller.text
     };
     print(data);
     return Apiservice().postData(data);
