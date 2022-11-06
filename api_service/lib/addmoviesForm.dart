@@ -10,7 +10,7 @@ class MoviesForm extends StatelessWidget {
     'complain_title',
     'complain_decs',
   ];
-  List iconfieldData = [
+  List<IconData> iconfieldData = [
     Icons.person,
     Icons.email,
     Icons.nat_outlined,
@@ -26,7 +26,7 @@ class MoviesForm extends StatelessWidget {
   static var complaincontroller = TextEditingController();
   static var desccontroller = TextEditingController();
 
-  List<TextEditingController> textControllers = [
+  TextEditingController textControllers = [
     namecontroller,
     emailcontroller,
     idcontroller,
