@@ -26,7 +26,7 @@ class MoviesForm extends StatelessWidget {
   static var complaincontroller = TextEditingController();
   static var desccontroller = TextEditingController();
 
-  var textControllers = [
+  List<TextEditingController> textControllers = [
     namecontroller,
     emailcontroller,
     idcontroller,
