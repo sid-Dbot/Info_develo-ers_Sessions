@@ -77,19 +77,23 @@ class _MoviesFormState extends State<MoviesForm> {
                   ),
                 ),
               ),
-              ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: textfieldData.length,
-                  itemBuilder: (context, index) {
-                    return customTextField(
-                        label: textfieldData[index],
-                        icon: iconfieldData[index],
-                        texteditingcontroller: textControllers[index]);
-                  }),
+              (_data == null) ? textFields() : SucessScreen(),
               ElevatedButton(onPressed: submit, child: const Text('Submit'))
             ],
           ),
         ));
+  }
+
+  ListView textFields() {
+    return ListView.builder(
+        shrinkWrap: true,
+        itemCount: textfieldData.length,
+        itemBuilder: (context, index) {
+          return customTextField(
+              label: textfieldData[index],
+              icon: iconfieldData[index],
+              texteditingcontroller: textControllers[index]);
+        });
   }
 
   FutureBuilder SucessScreen() {
