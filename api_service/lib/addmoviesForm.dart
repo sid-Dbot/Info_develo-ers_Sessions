@@ -14,7 +14,7 @@ class MoviesForm extends StatefulWidget {
 }
 
 class _MoviesFormState extends State<MoviesForm> {
-  Future? _data;
+  late var _data;
 
   List<String> textfieldData = [
     'name',
