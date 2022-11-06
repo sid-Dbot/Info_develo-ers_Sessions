@@ -45,16 +45,14 @@ class _MoviesFormState extends State<MoviesForm> {
 
   submit() {
     setState(() {
-      _data = [
-        {
-          'name': MoviesForm.namecontroller.text,
-          'email': MoviesForm.emailcontroller.text,
-          'national_id': MoviesForm.idcontroller.text,
-          'complain_office': MoviesForm.officecontroller.text,
-          'complain_title': MoviesForm.complaincontroller.text,
-          'complain_desc': MoviesForm.desccontroller.text
-        }
-      ];
+      _data = {
+        'name': MoviesForm.namecontroller.text,
+        'email': MoviesForm.emailcontroller.text,
+        'national_id': MoviesForm.idcontroller.text,
+        'complain_office': MoviesForm.officecontroller.text,
+        'complain_title': MoviesForm.complaincontroller.text,
+        'complain_desc': MoviesForm.desccontroller.text
+      };
     });
 
     print(_data);
