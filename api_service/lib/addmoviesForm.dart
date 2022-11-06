@@ -2,7 +2,7 @@ import 'package:api_service/api/api_service.dart';
 import 'package:flutter/material.dart';
 
 class MoviesForm extends StatelessWidget {
-  List textfieldData = [
+  List<String> textfieldData = [
     'name',
     'email',
     'national_id',
