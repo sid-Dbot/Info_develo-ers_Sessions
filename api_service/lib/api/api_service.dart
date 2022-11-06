@@ -12,15 +12,13 @@ class Apiservice {
     return Aaa.map((e) => MoviesList.fromJson(e)).toList();
   }
 
-  postData() async {
+  postData(var data) async {
     var res = await http.post(
         Uri.parse('https://jsonplaceholder.typicode.com/albums'),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
         },
-        body: jsonEncode(<String, dynamic>{
-          "title": 'IT',
-        }));
+        body: jsonEncode(data));
     print(res.body);
   }
 

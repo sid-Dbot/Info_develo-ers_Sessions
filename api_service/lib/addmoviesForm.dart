@@ -72,7 +72,7 @@ class MoviesForm extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * .55,
+                height: MediaQuery.of(context).size.height * .75,
                 child: ListView.builder(
                   itemCount: textfieldData.length,
                   itemBuilder: (context, index) => customTextField(
@@ -83,7 +83,7 @@ class MoviesForm extends StatelessWidget {
               ),
               ElevatedButton(
                   onPressed: () {
-                    Apiservice().postData();
+                    Apiservice().postData(data);
                   },
                   child: const Text('Submit'))
             ],
