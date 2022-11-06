@@ -19,6 +19,7 @@ class Apiservice {
               'Content-Type': 'application/json; charset=UTF-8',
             },
             body: jsonEncode(data));
+    print(res.body);
     return jsonDecode(res.body);
   }
 
