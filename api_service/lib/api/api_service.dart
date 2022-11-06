@@ -13,12 +13,13 @@ class Apiservice {
   }
 
   postData(data) async {
-    var res =
-        await http.post(Uri.parse('https://www.wedothakre.com/api/submit'),
-            headers: {
-              'Content-Type': 'application/json; charset=UTF-8',
-            },
-            body: jsonEncode(data));
+    var res = await http.post(
+        Uri.parse('https://www.wedothakre.com/api/submit'),
+        headers: {
+          'accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: jsonEncode(data));
     print(res.body);
     return jsonDecode(res.body);
   }
