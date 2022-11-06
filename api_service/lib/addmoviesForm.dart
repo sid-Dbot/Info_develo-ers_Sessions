@@ -77,18 +77,15 @@ class _MoviesFormState extends State<MoviesForm> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .75,
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: textfieldData.length,
-                    itemBuilder: (context, index) {
-                      return customTextField(
-                          label: textfieldData[index],
-                          icon: iconfieldData[index],
-                          texteditingcontroller: textControllers[index]);
-                    }),
-              ),
+              ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: textfieldData.length,
+                  itemBuilder: (context, index) {
+                    return customTextField(
+                        label: textfieldData[index],
+                        icon: iconfieldData[index],
+                        texteditingcontroller: textControllers[index]);
+                  }),
               ElevatedButton(onPressed: submit, child: const Text('Submit'))
             ],
           ),
