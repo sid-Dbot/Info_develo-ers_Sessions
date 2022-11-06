@@ -79,7 +79,7 @@ class _MoviesFormState extends State<MoviesForm> {
                   ),
                 ),
               ),
-              (_data == null) ? textFields() : SucessScreen(),
+              (_sentdata == null) ? textFields() : SucessScreen(),
               ElevatedButton(onPressed: submit, child: const Text('Submit'))
             ],
           ),
