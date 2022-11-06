@@ -19,9 +19,7 @@ class Apiservice {
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode(<String, dynamic>{
-          "name": 'IT',
-          "genre": "Horror",
-          "released": 2021,
+          "title": 'IT',
         }));
     print(res.body);
     return MoviesList.fromJson(jsonDecode(res.body));
