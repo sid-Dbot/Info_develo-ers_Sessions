@@ -46,7 +46,7 @@ class _MoviesFormState extends State<MoviesForm> {
 
   submit() {
     var data = {
-      'name': MoviesForm.namecontroller.text,
+      "name": MoviesForm.namecontroller.text.toString(),
       'email': MoviesForm.emailcontroller.text,
       'national_id': MoviesForm.idcontroller.text,
       'complain_office': MoviesForm.officecontroller.text,
