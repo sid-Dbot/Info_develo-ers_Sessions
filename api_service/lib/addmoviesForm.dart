@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class MoviesForm extends StatefulWidget {
   static TextEditingController namecontroller = TextEditingController();
-  static var emailcontroller = TextEditingController();
-  static var idcontroller = TextEditingController();
-  static var officecontroller = TextEditingController();
-  static var complaincontroller = TextEditingController();
-  static var desccontroller = TextEditingController();
+  static TextEditingController emailcontroller = TextEditingController();
+  static TextEditingController idcontroller = TextEditingController();
+  static TextEditingController officecontroller = TextEditingController();
+  static TextEditingController complaincontroller = TextEditingController();
+  static TextEditingController desccontroller = TextEditingController();
 
   @override
   State<MoviesForm> createState() => _MoviesFormState();
@@ -47,11 +47,11 @@ class _MoviesFormState extends State<MoviesForm> {
   submit() {
     var data = {
       "name": MoviesForm.namecontroller.text.toString(),
-      'email': MoviesForm.emailcontroller.text,
-      'national_id': MoviesForm.idcontroller.text,
-      'complain_office': MoviesForm.officecontroller.text,
-      'complain_title': MoviesForm.complaincontroller.text,
-      'complain_desc': MoviesForm.desccontroller.text
+      'email': MoviesForm.emailcontroller.text.toString(),
+      'national_id': MoviesForm.idcontroller.text.toString(),
+      'complain_office': MoviesForm.officecontroller.text.toString(),
+      'complain_title': MoviesForm.complaincontroller.text.toString(),
+      'complain_desc': MoviesForm.desccontroller.text.toString()
     };
     setState(() {
       _sentdata = Apiservice().postData(data);
