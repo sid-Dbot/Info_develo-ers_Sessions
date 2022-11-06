@@ -14,7 +14,7 @@ class MoviesForm extends StatefulWidget {
 }
 
 class _MoviesFormState extends State<MoviesForm> {
-  late var _data;
+  late Future<List<dynamic>> _data;
 
   List<String> textfieldData = [
     'name',
@@ -45,14 +45,14 @@ class _MoviesFormState extends State<MoviesForm> {
 
   submit() {
     setState(() {
-      _data = {
+      _data = ({
         'name': MoviesForm.namecontroller.text,
         'email': MoviesForm.emailcontroller.text,
         'national_id': MoviesForm.idcontroller.text,
         'complain_office': MoviesForm.officecontroller.text,
         'complain_title': MoviesForm.complaincontroller.text,
         'complain_desc': MoviesForm.desccontroller.text
-      } as Future<List>?;
+      } as Future<List>?)!;
     });
 
     print(_data);
