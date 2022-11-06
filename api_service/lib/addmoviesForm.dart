@@ -47,7 +47,7 @@ class MoviesForm extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Center(
+              const Center(
                 child: Text(
                   'Please enter movie details:',
                   style: TextStyle(
@@ -58,7 +58,7 @@ class MoviesForm extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * .55,
                 child: ListView.builder(
                   itemCount: textfieldData.length,
@@ -70,9 +70,9 @@ class MoviesForm extends StatelessWidget {
               ),
               ElevatedButton(
                   onPressed: () {
-                    Apiservice().postData(data);
+                    Apiservice().postData();
                   },
-                  child: Text('Submit'))
+                  child: const Text('Submit'))
             ],
           ),
         ));
@@ -93,7 +93,7 @@ class customTextField extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                   blurRadius: 9,
                   color: Colors.blueGrey,
