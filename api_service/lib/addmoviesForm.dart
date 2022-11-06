@@ -54,11 +54,10 @@ class _MoviesFormState extends State<MoviesForm> {
       'complain_desc': MoviesForm.desccontroller.text
     };
     setState(() {
-      _sentdata = data as Future;
+      _sentdata = Apiservice().postData(data);
     });
 
     print(data);
-    Apiservice().postData(data);
   }
 
   @override
