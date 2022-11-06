@@ -12,6 +12,10 @@ class Apiservice {
     return Aaa.map((e) => MoviesList.fromJson(e)).toList();
   }
 
+  postData() async {
+    return await http.post(Uri.parse(url), body: jsonEncode({""}));
+  }
+
   // postData(data) async {
   //   // var res = await http.post(
   //   //     Uri.parse("https://jsonplaceholder.typicode.com/posts/1"),
