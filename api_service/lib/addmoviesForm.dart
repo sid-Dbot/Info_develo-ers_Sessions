@@ -34,24 +34,19 @@ class MoviesForm extends StatelessWidget {
     complaincontroller,
     desccontroller
   ];
-  var data = {
-    'name': namecontroller.text,
-    'email': emailcontroller.text,
-    'national_id': idcontroller.text,
-    'complain_office': officecontroller.text,
-    'complain_title': complaincontroller,
-    'complain_desc': desccontroller
-  };
-  // _submit() async {
-  //   var data = {
-  //     'name': namecontroller.text,
-  //     'genre': emailcontroller.text,
-  //     'released': idcontroller.text,
-  //     'imgURL': officecontroller.text,
-  //   };
-  //   print(data);
-  //   return Apiservice().postData();
-  // }
+
+  _submit() async {
+    var data = {
+      'name': namecontroller.text,
+      'email': emailcontroller.text,
+      'national_id': idcontroller.text,
+      'complain_office': officecontroller.text,
+      'complain_title': complaincontroller,
+      'complain_desc': desccontroller
+    };
+    print(data);
+    return Apiservice().postData(data);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,11 +76,7 @@ class MoviesForm extends StatelessWidget {
                       textControllers[index]),
                 ),
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    Apiservice().postData(data);
-                  },
-                  child: const Text('Submit'))
+              ElevatedButton(onPressed: _submit, child: const Text('Submit'))
             ],
           ),
         ));
