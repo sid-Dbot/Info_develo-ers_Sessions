@@ -99,9 +99,8 @@ class _MoviesFormState extends State<MoviesForm> {
 
   FutureBuilder SucessScreen() {
     return FutureBuilder(
-      builder: (context, snapshot) => (snapshot.hasData)
-          ? const Text("Data submition Sucess")
-          : const Text("Data submission failed"),
+      builder: (context, snapshot) =>
+          (snapshot.hasData) ? const Text("Sucess!") : const Text("failed!"),
       future: _sentdata,
     );
   }
