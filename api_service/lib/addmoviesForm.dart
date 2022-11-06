@@ -47,11 +47,11 @@ class _MoviesFormState extends State<MoviesForm> {
   submit() {
     var data = {
       "name": MoviesForm.namecontroller.text.toString(),
-      'email': MoviesForm.emailcontroller.text.toString(),
-      'national_id': MoviesForm.idcontroller.text.toString(),
-      'complain_office': MoviesForm.officecontroller.text.toString(),
-      'complain_title': MoviesForm.complaincontroller.text.toString(),
-      'complain_desc': MoviesForm.desccontroller.text.toString()
+      "email": MoviesForm.emailcontroller.text.toString(),
+      "national_id": MoviesForm.idcontroller.text.toString(),
+      "complain_office": MoviesForm.officecontroller.text.toString(),
+      "complain_title": MoviesForm.complaincontroller.text.toString(),
+      "complain_desc": MoviesForm.desccontroller.text.toString()
     };
     setState(() {
       _sentdata = Apiservice().postData(data);
