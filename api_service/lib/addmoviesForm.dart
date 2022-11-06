@@ -1,10 +1,15 @@
-import 'dart:convert';
-
 import 'package:api_service/api/api_service.dart';
 import 'package:flutter/material.dart';
 
 class MoviesForm extends StatelessWidget {
-  List textfieldData = ['Title', 'Genre', 'Released Year', 'Poster Url'];
+  List textfieldData = [
+    'name',
+    'email',
+    'national_id',
+    "complain_office",
+    'complain_title',
+    'complain_decs',
+  ];
   List iconfieldData = [
     Icons.title,
     Icons.category_outlined,
