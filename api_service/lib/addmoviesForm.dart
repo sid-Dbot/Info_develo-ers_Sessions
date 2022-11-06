@@ -85,7 +85,7 @@ class MoviesForm extends StatelessWidget {
 
 class customTextField extends StatelessWidget {
   String label;
-  var texteditingcontroller;
+  final TextEditingController texteditingcontroller;
   final IconData icon;
 
   customTextField(
