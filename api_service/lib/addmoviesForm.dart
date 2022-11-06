@@ -80,6 +80,7 @@ class _MoviesFormState extends State<MoviesForm> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * .75,
                 child: ListView.builder(
+                    shrinkWrap: true,
                     itemCount: textfieldData.length,
                     itemBuilder: (context, index) {
                       return customTextField(
