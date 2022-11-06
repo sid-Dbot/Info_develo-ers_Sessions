@@ -26,7 +26,7 @@ class MoviesForm extends StatelessWidget {
   static var complaincontroller = TextEditingController();
   static var desccontroller = TextEditingController();
 
-  TextEditingController textControllers = [
+  var textControllers = [
     namecontroller,
     emailcontroller,
     idcontroller,
@@ -70,10 +70,11 @@ class MoviesForm extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * .75,
                 child: ListView.builder(
                   itemCount: textfieldData.length,
-                  itemBuilder: (context, index) => customTextField(
-                      textfieldData[index],
-                      iconfieldData[index],
-                      textControllers[index]),
+                  itemBuilder: (context, index) => customTextField({
+                    textfieldData[index],
+                    iconfieldData[index],
+                    textControllers[index]
+                  }),
                 ),
               ),
               ElevatedButton(onPressed: _submit, child: const Text('Submit'))
