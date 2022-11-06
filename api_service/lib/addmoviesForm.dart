@@ -11,35 +11,43 @@ class MoviesForm extends StatelessWidget {
     'complain_decs',
   ];
   List iconfieldData = [
+    Icons.person,
+    Icons.email,
+    Icons.nat_outlined,
+    Icons.local_post_office_rounded,
     Icons.title,
-    Icons.category_outlined,
-    Icons.date_range,
-    Icons.link
+    Icons.description_sharp
   ];
 
-  static TextEditingController titlecontroller = TextEditingController();
-  static var genrecontroller = TextEditingController();
-  static var datecontroller = TextEditingController();
-  static var urlcontroller = TextEditingController();
+  static TextEditingController namecontroller = TextEditingController();
+  static var emailcontroller = TextEditingController();
+  static var idcontroller = TextEditingController();
+  static var officecontroller = TextEditingController();
+  static var complaincontroller = TextEditingController();
+  static var desccontroller = TextEditingController();
 
   List<TextEditingController> textControllers = [
-    titlecontroller,
-    genrecontroller,
-    datecontroller,
-    urlcontroller
+    namecontroller,
+    emailcontroller,
+    idcontroller,
+    officecontroller,
+    complaincontroller,
+    desccontroller
   ];
   var data = {
-    'name': titlecontroller.text,
-    'genre': genrecontroller.text,
-    'released': datecontroller.text,
-    'imgURL': urlcontroller.text,
+    'name': namecontroller.text,
+    'email': emailcontroller.text,
+    'id': idcontroller.text,
+    'complain_id': officecontroller.text,
+    'complain_title': complaincontroller,
+    'desc': desccontroller
   };
   // _submit() async {
   //   var data = {
-  //     'name': titlecontroller.text,
-  //     'genre': genrecontroller.text,
-  //     'released': datecontroller.text,
-  //     'imgURL': urlcontroller.text,
+  //     'name': namecontroller.text,
+  //     'genre': emailcontroller.text,
+  //     'released': idcontroller.text,
+  //     'imgURL': officecontroller.text,
   //   };
   //   print(data);
   //   return Apiservice().postData();
@@ -54,7 +62,7 @@ class MoviesForm extends StatelessWidget {
             children: [
               const Center(
                 child: Text(
-                  'Please enter movie details:',
+                  'Please fill the details:',
                   style: TextStyle(
                     fontSize: 25,
                     fontStyle: FontStyle.italic,
