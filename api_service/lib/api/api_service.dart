@@ -12,12 +12,13 @@ class Apiservice {
     return Aaa.map((e) => MoviesList.fromJson(e)).toList();
   }
 
-  postData(var data) async {
-    return await http.post(Uri.parse('https://www.wedothakre.com/api/submit'),
-        headers: {
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
-        body: jsonEncode(data));
+  postData(data) async {
+    var res =
+        await http.post(Uri.parse('https://www.wedothakre.com/api/submit'),
+            headers: {
+              'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: jsonEncode(data));
   }
 
   // postData(data) async {
