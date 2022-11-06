@@ -35,14 +35,14 @@ class MoviesForm extends StatelessWidget {
     desccontroller
   ];
 
-  _submit() async {
+  submit() async {
     var data = {
       'name': namecontroller.text,
       'email': emailcontroller.text,
       'national_id': idcontroller.text,
       'complain_office': officecontroller.text,
-      'complain_title': complaincontroller,
-      'complain_desc': desccontroller
+      'complain_title': complaincontroller.text,
+      'complain_desc': desccontroller.text
     };
     print(data);
     return Apiservice().postData(data);
@@ -77,7 +77,7 @@ class MoviesForm extends StatelessWidget {
                           texteditingcontroller: textControllers[index]);
                     }),
               ),
-              ElevatedButton(onPressed: _submit, child: const Text('Submit'))
+              ElevatedButton(onPressed: submit, child: const Text('Submit'))
             ],
           ),
         ));
