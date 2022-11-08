@@ -18,6 +18,7 @@ class _MoviesFormState extends State<MoviesForm> {
   Future? _sentdata;
   String title = "Please fill the details:";
   String saveddata = '';
+  var data;
 
   // var _data = {};
 
@@ -51,8 +52,9 @@ class _MoviesFormState extends State<MoviesForm> {
   submit() async {
     final prefs = await SharedPreferences.getInstance();
     final String? title = prefs.getString('title');
-    final String? data = prefs.getString("data");
+    final String? saveddata = prefs.getString("data");
     await prefs.setString('title', 'Feedback recorded:');
+
     var data = {
       "name": MoviesForm.namecontroller.text,
       "email": MoviesForm.emailcontroller.text,
@@ -61,7 +63,7 @@ class _MoviesFormState extends State<MoviesForm> {
       "complain_title": MoviesForm.complaincontroller.text,
       "complain_desc": MoviesForm.desccontroller.text
     };
-
+    //await prefs.setString('saveddata', data);
     setState(() {
       _sentdata = Apiservice().postData(data);
     });
@@ -110,7 +112,7 @@ class _MoviesFormState extends State<MoviesForm> {
     return FutureBuilder(
       future: _sentdata,
       builder: (context, snapshot) => (snapshot.hasData)
-          ? const Text(data)
+          ? Text(saveddata)
           : const CircularProgressIndicator(),
     );
   }
