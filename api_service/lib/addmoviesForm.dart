@@ -15,7 +15,9 @@ class MoviesForm extends StatefulWidget {
 
 class _MoviesFormState extends State<MoviesForm> {
   Future? _sentdata;
+  final String title="Please fill the details:";
   // var _data = {};
+  final String newtitle = prefs.get
 
   List<String> textfieldData = [
     'name',
@@ -69,7 +71,7 @@ class _MoviesFormState extends State<MoviesForm> {
             children: [
               const Center(
                 child: Text(
-                  'Please fill the details:',
+                  title,
                   style: TextStyle(
                     fontSize: 25,
                     fontStyle: FontStyle.italic,
