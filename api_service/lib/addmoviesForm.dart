@@ -17,6 +17,7 @@ class MoviesForm extends StatefulWidget {
 class _MoviesFormState extends State<MoviesForm> {
   Future? _sentdata;
   String title = "Please fill the details:";
+  String data = '';
 
   // var _data = {};
 
@@ -107,7 +108,7 @@ class _MoviesFormState extends State<MoviesForm> {
     return FutureBuilder(
       future: _sentdata,
       builder: (context, snapshot) => (snapshot.hasData)
-          ? const Text("Sucess!")
+          ? const Text(data)
           : const CircularProgressIndicator(),
     );
   }
