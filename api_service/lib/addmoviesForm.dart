@@ -17,7 +17,7 @@ class MoviesForm extends StatefulWidget {
 class _MoviesFormState extends State<MoviesForm> {
   Future? _sentdata;
   String title = "Please fill the details:";
-  String data = '';
+  String saveddata = '';
 
   // var _data = {};
 
@@ -51,6 +51,7 @@ class _MoviesFormState extends State<MoviesForm> {
   submit() async {
     final prefs = await SharedPreferences.getInstance();
     final String? title = prefs.getString('title');
+    final String? data = prefs.getString("data");
     await prefs.setString('title', 'Feedback recorded:');
     var data = {
       "name": MoviesForm.namecontroller.text,
@@ -60,6 +61,7 @@ class _MoviesFormState extends State<MoviesForm> {
       "complain_title": MoviesForm.complaincontroller.text,
       "complain_desc": MoviesForm.desccontroller.text
     };
+
     setState(() {
       _sentdata = Apiservice().postData(data);
     });
