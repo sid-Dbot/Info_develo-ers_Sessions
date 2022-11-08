@@ -49,6 +49,7 @@ class _MoviesFormState extends State<MoviesForm> {
 
   submit() async {
     final prefs = await SharedPreferences.getInstance();
+    final String? title = prefs.getString('title');
     var data = {
       "name": MoviesForm.namecontroller.text,
       "email": MoviesForm.emailcontroller.text,
