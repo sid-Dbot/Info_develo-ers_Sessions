@@ -74,15 +74,15 @@ class _MoviesFormState extends State<MoviesForm> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const Center(
+               Center(
                 child: Text(
                   title,
-                  // style: TextStyle(
-                  //   fontSize: 25,
-                  //   fontStyle: FontStyle.italic,
-                  //   decoration: TextDecoration.underline,
-                  //   decorationStyle: TextDecorationStyle.dashed,
-                  // ),
+                  style: const TextStyle(
+                    fontSize: 25,
+                    fontStyle: FontStyle.italic,
+                    decoration: TextDecoration.underline,
+                    decorationStyle: TextDecorationStyle.dashed,
+                  ),
                 ),
               ),
               (_sentdata == null) ? textFields() : SucessScreen(),
