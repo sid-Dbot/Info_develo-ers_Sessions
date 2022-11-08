@@ -1,5 +1,6 @@
 import 'package:api_service/api/api_service.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MoviesForm extends StatefulWidget {
   static TextEditingController namecontroller = TextEditingController();
@@ -15,9 +16,9 @@ class MoviesForm extends StatefulWidget {
 
 class _MoviesFormState extends State<MoviesForm> {
   Future? _sentdata;
-  final String title="Please fill the details:";
+  final String title = "Please fill the details:";
+
   // var _data = {};
-  final String newtitle = prefs.get
 
   List<String> textfieldData = [
     'name',
@@ -47,6 +48,7 @@ class _MoviesFormState extends State<MoviesForm> {
   ];
 
   submit() async {
+    final prefs = await SharedPreferences.getInstance();
     var data = {
       "name": MoviesForm.namecontroller.text,
       "email": MoviesForm.emailcontroller.text,
