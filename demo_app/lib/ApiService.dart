@@ -1,9 +1,13 @@
 import 'package:demo_app/model/dataModel.dart';
+import 'package:http/http.dart' as http;
 
 class Api {
   List<BlogData> blogdata = [];
 
-  getData() async {}
+  getData() async {
+    var res = await http
+        .get(Uri.parse('https://goldmineedu.com/admin/page/blog/data'));
+  }
 }
 
 
