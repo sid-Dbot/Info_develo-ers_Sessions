@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 class ApiServie with ChangeNotifier {
   List<BlogData> blogdata = [];
 
-  Future<void> getdata() async {
+  getdata() async {
     var res = await http
         .get(Uri.parse('https://goldmineedu.com/admin/page/blog/data'));
     if (res.statusCode == 200) {
