@@ -32,7 +32,7 @@ class Providerspratice extends StatelessWidget {
     return Scaffold(
       body: Consumer<ApiServie>(
         builder: (context, value, child) {
-          return value.blogdata == null
+          return (value.blogdata.isEmpty)
               ? const CircularProgressIndicator()
               : ListView.builder(
                   itemCount: value.blogdata.length,
