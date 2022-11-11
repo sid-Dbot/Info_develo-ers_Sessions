@@ -32,25 +32,27 @@ class Providerspratice extends StatelessWidget {
     return Scaffold(
       body: Consumer<ApiServie>(
         builder: (context, value, child) {
-          return ListView.builder(
-            itemCount: value.blogdata.length,
-            itemBuilder: (context, index) {
-              return Column(
-                children: [
-                  Text(
-                    value.blogdata[index].title ?? 'No Data',
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                        fontStyle: FontStyle.italic),
-                  ),
-                  Html(
-                    data: value.blogdata[index].content ?? 'Null',
-                  ),
-                ],
-              );
-            },
-          );
+          return value.blogdata == null
+              ? const CircularProgressIndicator()
+              : ListView.builder(
+                  itemCount: value.blogdata.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Text(
+                          value.blogdata[index].title ?? 'No Data',
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                              fontStyle: FontStyle.italic),
+                        ),
+                        Html(
+                          data: value.blogdata[index].content ?? 'Null',
+                        ),
+                      ],
+                    );
+                  },
+                );
         },
       ),
     );
