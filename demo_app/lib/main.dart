@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
+        ChangeNotifierProvider<Api>(
           create: (context) => Api(),
         )
       ],
@@ -24,11 +24,14 @@ class BlogPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<Api>().getData;
     return Scaffold(
         body: Consumer(builder: (context, value, child) {
-          return ListView.builder(itemBuilder: (context, index) {
+          return ListView.builder(
+            itemCount: value.,
+            itemBuilder: (context, index) {
             
-            return Text(blo)
+            return Text(value);
           },)
         },),
       ),
