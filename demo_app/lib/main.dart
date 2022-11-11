@@ -44,7 +44,9 @@ class Providerspratice extends StatelessWidget {
                         fontSize: 25,
                         fontStyle: FontStyle.italic),
                   ),
-                  Html(data: value.blogdata[index].content ?? 'Null'),
+                  Html(
+                    data: value.blogdata[index].content ?? 'Null',
+                  ),
                 ],
               );
             },
