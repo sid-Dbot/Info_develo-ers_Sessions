@@ -32,7 +32,11 @@ class BlogPage extends StatelessWidget {
           return ListView.builder(
             itemCount: value.blogdata.length,
             itemBuilder: (context, index) {
-              return Text(value.blogdata[index].title.toString());
+              return Column(
+                children: [
+                  Text(value.blogdata[index].title.toString()),
+                ],
+              );
             },
           );
         },
