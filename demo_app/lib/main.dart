@@ -40,7 +40,9 @@ class Providerspratice extends StatelessWidget {
                   Text(
                     value.blogdata[index].title ?? 'No Data',
                     style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 25),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                        fontStyle: FontStyle.italic),
                   ),
                   Html(data: value.blogdata[index].content ?? 'Null'),
                 ],
