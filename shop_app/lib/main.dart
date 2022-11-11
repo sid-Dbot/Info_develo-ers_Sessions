@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
 class BlogPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    context.read<Api>().getData;
+    context.read<Api>().getData();
     return Scaffold(
       body: Consumer<Api>(
         builder: (context, value, child) {
