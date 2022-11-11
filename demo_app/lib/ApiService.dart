@@ -1,9 +1,10 @@
 import 'dart:convert';
 
 import 'package:demo_app/model/dataModel.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
-class Api {
+class Api with ChangeNotifier {
   List<BlogData> blogdata = [];
 
   getData() async {
@@ -13,7 +14,12 @@ class Api {
       blogdata = [];
       blogdata.addAll(List<BlogData>.from(
           jsonDecode(res.body.toString())..map((e) => BlogData.fromJson(e))));
+      notifyListeners();
+    } else {
+      throw Exception('Failed to load ');
+      notifyListeners();
     }
+    notifyListeners();
   }
 }
 
