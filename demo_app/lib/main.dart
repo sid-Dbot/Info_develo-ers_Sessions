@@ -37,7 +37,6 @@ class Providerspratice extends StatelessWidget {
               return Column(
                 children: [
                   Text(value.blogdata[index].title ?? 'No Data'),
-                  html
                 ],
               );
             },
