@@ -1,3 +1,39 @@
+import 'package:demo_app/model/dataModel.dart';
+
+class Api {
+  List<BlogData> blogdata = [];
+
+  getData() async {}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import 'dart:convert';
 
 // import 'package:demo_app/model/dataModel.dart';
