@@ -7,14 +7,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
           create: (context) => Api(),
         )
       ],
-      child: const MaterialApp(),
+      child:  MaterialApp(home:BlogPage() ),
     );
+  }
+}
+
+class BlogPage extends StatelessWidget {
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Consumer(builder: (context, value, child) {
+          return ListView.builder(itemBuilder: (context, index) {
+            
+            return Text(blo)
+          },)
+        },),
+      ),
   }
 }
 
