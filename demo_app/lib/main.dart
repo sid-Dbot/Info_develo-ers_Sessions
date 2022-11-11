@@ -37,7 +37,10 @@ class Providerspratice extends StatelessWidget {
             itemBuilder: (context, index) {
               return Column(
                 children: [
-                  Text(value.blogdata[index].title ?? 'No Data'),
+                  Text(
+                    value.blogdata[index].title ?? 'No Data',
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   Html(data: value.blogdata[index].content ?? 'Null'),
                 ],
               );
