@@ -7,34 +7,33 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<Api>(
           create: (context) => Api(),
         )
       ],
-      child:  MaterialApp(home:BlogPage() ),
+      child: MaterialApp(home: BlogPage()),
     );
   }
 }
 
 class BlogPage extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     context.read<Api>().getData;
     return Scaffold(
-        body: Consumer(builder: (context, value, child) {
+      body: Consumer<Api>(
+        builder: (context, value, child) {
           return ListView.builder(
-            itemCount: value.,
+            itemCount: value.blogdata.length,
             itemBuilder: (context, index) {
-            
-            return Text(value);
-          },)
-        },),
+              return Text(value.blogdata[index].title.toString());
+            },
+          );
+        },
       ),
+    );
   }
 }
 
