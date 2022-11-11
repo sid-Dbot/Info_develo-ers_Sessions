@@ -1,29 +1,24 @@
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'album.dart';
+import 'package:flutter/cupertino.dart';
+import 'dataModel.dart';
+import 'package:http/http.dart' as http;
 
-class ApiService {
-  Future<Album> createAlbum(String title) async {
-    final response = await http.post(
-      Uri.parse('https://jsonplaceholder.typicode.com/albums'),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode(<String, String>{
-        'title': title,
-      }),
-    );
+class Api with ChangeNotifier {
+  List<BlogData> blogdata = [];
 
-    if (response.statusCode == 201) {
-      // If the server did return a 201 CREATED response,
-      // then parse the JSON.
-      return Album.fromJson(jsonDecode(response.body));
+  getData() async {
+    var res = await http
+        .get(Uri.parse('https://goldmineedu.com/admin/page/blog/data'));
+    if (res.statusCode == 200) {
+      blogdata = [];
+      blogdata.addAll(List<BlogData>.from(
+          jsonDecode(res.body.toString())..map((e) => BlogData.fromJson(e))));
+      notifyListeners();
     } else {
-      // If the server did not return a 201 CREATED response,
-      // then throw an exception.
-      throw Exception('Failed to create album.');
+      throw Exception('Failed to load ');
+      notifyListeners();
     }
+    notifyListeners();
   }
 }
