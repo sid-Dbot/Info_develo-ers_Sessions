@@ -1,3 +1,5 @@
+import 'package:flutter_html/flutter_html.dart';
+
 import 'API.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -35,6 +37,7 @@ class BlogPage extends StatelessWidget {
               return Column(
                 children: [
                   Text(value.blogdata[index].title.toString()),
+                  Html(data: value.blogdata[index].content)
                 ],
               );
             },
