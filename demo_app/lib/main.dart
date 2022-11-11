@@ -1,13 +1,23 @@
-import 'package:demo_app/login_screen.dart';
+import 'package:demo_app/ApiService.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Providerspratice(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ApiServie>(
+          create: (context) {
+            return ApiServie();
+          },
+        )
+      ],
+      child: const MaterialApp(
+        home: Providerspratice(),
+      ),
     );
   }
 }
@@ -17,8 +27,22 @@ class Providerspratice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Text('hello'),
+    context.read<ApiServie>().getdata();
+    return Scaffold(
+      body: Consumer<ApiServie>(
+        builder: (context, value, child) {
+          return ListView.builder(
+            itemCount: value.blogdata.length,
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  Text(value.blogdata[index].title ?? 'No Data'),
+                ],
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }
