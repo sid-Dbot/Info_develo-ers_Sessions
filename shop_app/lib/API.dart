@@ -11,7 +11,7 @@ class Api with ChangeNotifier {
     var res = await http
         .get(Uri.parse('https://goldmineedu.com/admin/page/blog/data'));
     if (res.statusCode == 200) {
-      //blogdata = [];
+      blogdata = [];
       blogdata.addAll(List<BlogData>.from(
           jsonDecode(res.body.toString()).map((e) => BlogData.fromJson(e))));
       notifyListeners();
