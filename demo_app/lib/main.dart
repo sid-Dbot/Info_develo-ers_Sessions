@@ -6,8 +6,17 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: LoginScreen(),
+    return const MaterialApp(
+      home: Providerspratice(),
     );
+  }
+}
+
+class Providerspratice extends StatelessWidget {
+  const Providerspratice({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
