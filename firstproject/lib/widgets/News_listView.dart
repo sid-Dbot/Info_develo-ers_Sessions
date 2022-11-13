@@ -16,8 +16,8 @@ class _NewsState extends State<News> {
     // TODO: implement initState
     super.initState();
     print('debug');
-    _loadData = Api_service(Url: 'https://goldmineedu.com/admin/page/blog/data')
-        .getData();
+    _loadData =
+        Api_service().getData('https://goldmineedu.com/admin/page/blog/data');
   }
 
   @override
