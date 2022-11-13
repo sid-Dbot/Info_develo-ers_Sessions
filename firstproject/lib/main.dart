@@ -1,5 +1,7 @@
+import 'package:firstproject/API/API_service.dart';
 import 'package:firstproject/home.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(const MainApp());
 
@@ -8,9 +10,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(),
-      home: Home_Page(),
+    return ChangeNotifierProvider(
+      create: (context) => Api_service(),
+      child: MaterialApp(
+        theme: ThemeData(),
+        home: Home_Page(),
+      ),
     );
   }
 }
