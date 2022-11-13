@@ -15,8 +15,8 @@ class _ServicesState extends State<Services> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    loadData = Api_service(Url: 'https://goldmineedu.com/admin/page/my-service')
-        .getData();
+    loadData =
+        Api_service().getData('https://goldmineedu.com/admin/page/my-service');
   }
 
   @override
