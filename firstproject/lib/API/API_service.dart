@@ -13,9 +13,12 @@ class Api_service with ChangeNotifier {
 //===========GET METHOD===============
   getData() async {
     var response = await http.get(Uri.parse(Url));
+    if (response.statusCode == 200) {
+      loadedData.addAll(List<homeData>.from(jsonDecode(response.body.toString())
+          .map((e) => homeData.fromJson(e))));
+      notifyListeners();
+    }
 
-    loadedData.addAll(List<homeData>.from(
-        jsonDecode(response.body.toString()).map((e) => homeData.fromJson(e))));
     // final List Aaa = jsonDecode(response.body);
     // return Aaa.map((e) => Services_data.fromJson(e)).toList();
   }
