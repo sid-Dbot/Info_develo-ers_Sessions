@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_indicator/carousel_indicator.dart';
+import 'package:provider/provider.dart';
 
 import '../API/API_service.dart';
 
@@ -14,24 +15,27 @@ class Carousel_Slider extends StatefulWidget {
 }
 
 class _Carousel_SliderState extends State<Carousel_Slider> {
-  late Future<List<Services_data>> _loadData;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _loadData =
-        Api_service(Url: "https://goldmineedu.com/admin/home/all").getData();
-  }
+  // late Future<List<Services_data>> _loadData;
+
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   _loadData =
+  //       Api_service(Url: ).getData();
+  // }
 
   int index = 5;
   int pageindex = 0;
 
   @override
   Widget build(BuildContext context) {
+    final loadData = Provider.of<Api_service>(context)
+        .getData("https://goldmineedu.com/admin/home/all");
     return Column(
       children: [
         FutureBuilder(
-            future: _loadData,
+            future: loadData,
             builder: (context, snapshot) => snapshot.hasData
                 ? CarouselSlider.builder(
                     itemCount: snapshot.data!.length,
