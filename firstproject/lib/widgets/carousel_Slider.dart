@@ -54,10 +54,10 @@ class _Carousel_SliderState extends State<Carousel_Slider> {
                   offset: Offset(2, 1),
                 )
               ]),
-              child: ChangeNotifierProvider(
-                create: (context) => loadData[index],
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.all(Radius.circular(11)),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(11)),
+                child: ChangeNotifierProvider(
+                  create: (context) => loadData[index],
                   child: Image.network(
                     fit: BoxFit.fill,
                     "https://goldmineedu.com/${loadData.image.toString()}",
