@@ -12,23 +12,26 @@ class Carousel_Slider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     context.read<Api_service>().getData;
-    return Consumer(builder: (context, value, child) {
-      return ListView.builder(
-        itemCount:  value.,
-      itemBuilder: (context, index) {
-        return ClipRRect(
-                      borderRadius: const BorderRadius.all(Radius.circular(11)),
-                      child: Image.network(
-                        fit: BoxFit.fill,
-                        "https://goldmineedu.com/${loaddimage.toString()}",
-                      ),
-                    );
-      },
+    return Scaffold(
+      
+      body: Consumer(builder: (context, value, child) {
+        return ListView.builder(
+          itemCount:  value.,
+        itemBuilder: (context, index) {
+          return ClipRRect(
+                        borderRadius: const BorderRadius.all(Radius.circular(11)),
+                        child: Image.network(
+                          fit: BoxFit.fill,
+                          "https://goldmineedu.com/${loaddimage.toString()}",
+                        ),
+                      );
+        },
+            
           
-        
-      );
-  }
-}
+        );
+      }
+    ,
+    )}
 
 // class Carousel_Slider extends StatefulWidget {
 //   const Carousel_Slider({super.key});

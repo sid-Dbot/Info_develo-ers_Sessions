@@ -1,4 +1,5 @@
 import 'package:firstproject/API/API_service.dart';
+import 'package:firstproject/widgets/carousel_Slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +18,7 @@ class MainApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: ThemeData(),
-        home: Carousel_Slider(),
+        home: const Carousel_Slider(),
       ),
     );
   }
