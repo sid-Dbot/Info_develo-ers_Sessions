@@ -28,9 +28,9 @@ class _Carousel_SliderState extends State<Carousel_Slider> {
 
   @override
   Widget build(BuildContext context) {
-    final loadData = Provider.of<Api_service>(context)
-        .getData("https://goldmineedu.com/admin/home/all");
-
+    // final loadData = Provider.of<Api_service>(context)
+    //     .getData("https://goldmineedu.com/admin/home/all");
+context.read<Api_service>().getData("https://goldmineedu.com/admin/home/all");
     return Consumer(builder: (context, value, child) {
       return Column(
         children: [
