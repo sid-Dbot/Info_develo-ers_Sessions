@@ -14,6 +14,7 @@ class Api_service with ChangeNotifier {
   getData(String url) async {
     var response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
+      loadedData = [];
       loadedData.addAll(List<homeData>.from(jsonDecode(response.body.toString())
           .map((e) => homeData.fromJson(e))));
       notifyListeners();

@@ -30,6 +30,7 @@ class _Carousel_SliderState extends State<Carousel_Slider> {
   Widget build(BuildContext context) {
     final loadData = Provider.of<Api_service>(context)
         .getData("https://goldmineedu.com/admin/home/all");
+
     return Column(
       children: [
         CarouselSlider.builder(
