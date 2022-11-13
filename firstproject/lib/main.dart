@@ -1,5 +1,4 @@
 import 'package:firstproject/API/API_service.dart';
-import 'package:firstproject/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +17,7 @@ class MainApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: ThemeData(),
-        home: Home_Page(),
+        home: Carousel_Slider(),
       ),
     );
   }
