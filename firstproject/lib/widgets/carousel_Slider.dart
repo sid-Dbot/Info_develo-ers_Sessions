@@ -4,34 +4,29 @@ import 'package:provider/provider.dart';
 
 import '../API/API_service.dart';
 
-
-
 class Carousel_Slider extends StatelessWidget {
   const Carousel_Slider({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final loaddata = Provider.of<Api_service>(context).loadedData;
     context.read<Api_service>().getData;
     return Scaffold(
-      
-      body: Consumer(builder: (context, value, child) {
-        return ListView.builder(
-          itemCount:  value.,
-        itemBuilder: (context, index) {
-          return ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(11)),
-                        child: Image.network(
-                          fit: BoxFit.fill,
-                          "https://goldmineedu.com/${loaddimage.toString()}",
-                        ),
-                      );
-        },
-            
-          
+        body: ListView.builder(
+      itemCount: loaddata.length,
+      itemBuilder: (context, index) {
+        return ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(11)),
+          child: Image.network(
+            fit: BoxFit.fill,
+            "https://goldmineedu.com/${loaddata[index].toString()}",
+          ),
         );
-      }
-    ,
-    )}
+      },
+    ));
+  }
+}
+   
 
 // class Carousel_Slider extends StatefulWidget {
 //   const Carousel_Slider({super.key});
