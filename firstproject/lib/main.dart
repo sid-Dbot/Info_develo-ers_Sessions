@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
+        ChangeNotifierProvider<Api_service>(
           create: (context) => Api_service(),
         )
       ],
