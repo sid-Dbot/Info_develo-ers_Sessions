@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:provider/provider.dart';
 
 import '../API/API_service.dart';
@@ -30,42 +29,52 @@ class _Carousel_SliderState extends State<Carousel_Slider> {
   Widget build(BuildContext context) {
     // final loadData = Provider.of<Api_service>(context)
     //     .getData("https://goldmineedu.com/admin/home/all");
-context.read<Api_service>().getData("https://goldmineedu.com/admin/home/all");
+context.read<Api_service>().getData();
     return Consumer(builder: (context, value, child) {
-      return Column(
+      return ListView.builder(
+        itemCount: value.,
         children: [
-          CarouselSlider.builder(
-            itemCount: loadData.length,
-            options: CarouselOptions(
-              enableInfiniteScroll: false,
-              viewportFraction: 1,
-              onPageChanged: (index, _) {
-                pageindex = index;
-                setState(() {});
-              },
-              autoPlay: true,
-              height: MediaQuery.of(context).size.height * 0.3,
-            ),
-            itemBuilder: (context, index, realindex) => Padding(
-              padding: const EdgeInsets.all(3.0),
-              child: Container(
-                decoration: const BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    blurRadius: 11,
-                    color: Colors.grey,
-                    offset: Offset(2, 1),
-                  )
-                ]),
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.all(Radius.circular(11)),
-                  child: Image.network(
-                    fit: BoxFit.fill,
-                    "https://goldmineedu.com/${loadData.image.toString()}",
-                  ),
-                ),
-              ),
-            ),
-          )
+          ClipRRect(
+                      borderRadius: const BorderRadius.all(Radius.circular(11)),
+                      child: Image.network(
+                        fit: BoxFit.fill,
+                        "https://goldmineedu.com/${value..image.toString()}",
+                      ),
+                    ),
+        ],
+      );
+      //   children: [
+      //     CarouselSlider.builder(
+      //       itemCount: ,         options: CarouselOptions(
+      //         enableInfiniteScroll: false,
+      //         viewportFraction: 1,
+      //         onPageChanged: (index, _) {
+      //           pageindex = index;
+      //           setState(() {});
+      //         },
+      //         autoPlay: true,
+      //         height: MediaQuery.of(context).size.height * 0.3,
+      //       ),
+      //       itemBuilder: (context, index, realindex) => Padding(
+      //         padding: const EdgeInsets.all(3.0),
+      //         child: Container(
+      //           decoration: const BoxDecoration(boxShadow: [
+      //             BoxShadow(
+      //               blurRadius: 11,
+      //               color: Colors.grey,
+      //               offset: Offset(2, 1),
+      //             )
+      //           ]),
+      //           child: ClipRRect(
+      //             borderRadius: const BorderRadius.all(Radius.circular(11)),
+      //             child: Image.network(
+      //               fit: BoxFit.fill,
+      //               "https://goldmineedu.com/${loadData.image.toString()}",
+      //             ),
+      //           ),
+      //         ),
+      //       ),
+      //     )
           // FutureBuilder(
           //     future: loadData,
           //     builder: (context, snapshot) => snapshot.hasData
