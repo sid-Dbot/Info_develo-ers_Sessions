@@ -19,7 +19,9 @@ class Api_service with ChangeNotifier {
       notifyListeners();
     } else {
       throw Exception('no Data');
+      notifyListeners();
     }
+    notifyListeners();
 
     // final List Aaa = jsonDecode(response.body);
     // return Aaa.map((e) => Services_data.fromJson(e)).toList();

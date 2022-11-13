@@ -1,4 +1,3 @@
-import 'package:firstproject/models/services_data.dart';
 import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
@@ -33,12 +32,8 @@ class _Carousel_SliderState extends State<Carousel_Slider> {
     final loadData = Provider.of<Api_service>(context)
         .getData("https://goldmineedu.com/admin/home/all");
     return Column(
-      children: [
-        FutureBuilder(
-            future: loadData,
-            builder: (context, snapshot) => snapshot.hasData
-                ? CarouselSlider.builder(
-                    itemCount: snapshot.data!.length,
+      children: [CarouselSlider.builder(
+                    itemCount: loadData.length,
                     options: CarouselOptions(
                       enableInfiniteScroll: false,
                       viewportFraction: 1,
@@ -64,12 +59,16 @@ class _Carousel_SliderState extends State<Carousel_Slider> {
                               const BorderRadius.all(Radius.circular(11)),
                           child: Image.network(
                             fit: BoxFit.fill,
-                            "https://goldmineedu.com/${snapshot.data![index].image.toString()}",
+                            "https://goldmineedu.com/${loaddata[index].image.toString()}",
                           ),
                         ),
                       ),
                     ),
                   )
+        FutureBuilder(
+            future: loadData,
+            builder: (context, snapshot) => snapshot.hasData
+                ? 
                 : const CircularProgressIndicator()),
         Center(
           child: CarouselIndicator(
