@@ -56,12 +56,9 @@ class _Carousel_SliderState extends State<Carousel_Slider> {
               ]),
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(11)),
-                child: ChangeNotifierProvider(
-                  create: (context) => loadData[index],
-                  child: Image.network(
-                    fit: BoxFit.fill,
-                    "https://goldmineedu.com/${loadData.image.toString()}",
-                  ),
+                child: Image.network(
+                  fit: BoxFit.fill,
+                  "https://goldmineedu.com/${loadData.image.toString()}",
                 ),
               ),
             ),
