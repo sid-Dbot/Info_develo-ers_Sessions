@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:firstproject/models/home_Data.dart';
-import 'package:firstproject/models/services_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
@@ -17,7 +16,7 @@ class Api_service with ChangeNotifier {
 
     loadedData.addAll(List<homeData>.from(
         jsonDecode(response.body.toString()).map((e) => homeData.fromJson(e))));
-    final List Aaa = jsonDecode(response.body);
-    return Aaa.map((e) => Services_data.fromJson(e)).toList();
+    // final List Aaa = jsonDecode(response.body);
+    // return Aaa.map((e) => Services_data.fromJson(e)).toList();
   }
 }
