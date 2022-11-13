@@ -17,6 +17,8 @@ class Api_service with ChangeNotifier {
       loadedData.addAll(List<homeData>.from(jsonDecode(response.body.toString())
           .map((e) => homeData.fromJson(e))));
       notifyListeners();
+    } else {
+      throw Exception('no Data');
     }
 
     // final List Aaa = jsonDecode(response.body);
