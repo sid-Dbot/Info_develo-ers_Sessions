@@ -1,6 +1,4 @@
-import 'package:firstproject/widgets/News_listView.dart';
 import 'package:firstproject/widgets/carousel_Slider.dart';
-import 'package:firstproject/widgets/services_liseView.dart';
 import 'package:flutter/material.dart';
 
 class Home_Page extends StatefulWidget {
@@ -30,8 +28,8 @@ class _Home_PageState extends State<Home_Page> {
         //crossAxisAlignment: CrossAxisAlignment.stretch,
         children: const [
           Carousel_Slider(),
-          Services(),
-          News(),
+          //Services(),
+          //News(),
         ],
       ),
     );
