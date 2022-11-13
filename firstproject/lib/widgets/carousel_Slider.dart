@@ -31,56 +31,60 @@ class _Carousel_SliderState extends State<Carousel_Slider> {
     final loadData = Provider.of<Api_service>(context)
         .getData("https://goldmineedu.com/admin/home/all");
 
-    return Column(
-      children: [
-        CarouselSlider.builder(
-          itemCount: loadData.length,
-          options: CarouselOptions(
-            enableInfiniteScroll: false,
-            viewportFraction: 1,
-            onPageChanged: (index, _) {
-              pageindex = index;
-              setState(() {});
-            },
-            autoPlay: true,
-            height: MediaQuery.of(context).size.height * 0.3,
-          ),
-          itemBuilder: (context, index, realindex) => Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: Container(
-              decoration: const BoxDecoration(boxShadow: [
-                BoxShadow(
-                  blurRadius: 11,
-                  color: Colors.grey,
-                  offset: Offset(2, 1),
-                )
-              ]),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(11)),
-                child: Image.network(
-                  fit: BoxFit.fill,
-                  "https://goldmineedu.com/${loadData.image.toString()}",
+    return Consumer(builder: (context, value, child) {
+      return Column(
+        children: [
+          CarouselSlider.builder(
+            itemCount: loadData.length,
+            options: CarouselOptions(
+              enableInfiniteScroll: false,
+              viewportFraction: 1,
+              onPageChanged: (index, _) {
+                pageindex = index;
+                setState(() {});
+              },
+              autoPlay: true,
+              height: MediaQuery.of(context).size.height * 0.3,
+            ),
+            itemBuilder: (context, index, realindex) => Padding(
+              padding: const EdgeInsets.all(3.0),
+              child: Container(
+                decoration: const BoxDecoration(boxShadow: [
+                  BoxShadow(
+                    blurRadius: 11,
+                    color: Colors.grey,
+                    offset: Offset(2, 1),
+                  )
+                ]),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(11)),
+                  child: Image.network(
+                    fit: BoxFit.fill,
+                    "https://goldmineedu.com/${loadData.image.toString()}",
+                  ),
                 ),
               ),
             ),
-          ),
-        )
-        // FutureBuilder(
-        //     future: loadData,
-        //     builder: (context, snapshot) => snapshot.hasData
-        //         ?
-        //         : const CircularProgressIndicator()),
-        // Center(
-        //   child: CarouselIndicator(
-        //     height: 5,
-        //     width: 5,
-        //     activeColor: Colors.grey,
-        //     color: Colors.black,
-        //     count: index,
-        //     index: pageindex,
-        //   ),
-        // ),
-      ],
+          )
+          // FutureBuilder(
+          //     future: loadData,
+          //     builder: (context, snapshot) => snapshot.hasData
+          //         ?
+          //         : const CircularProgressIndicator()),
+          // Center(
+          //   child: CarouselIndicator(
+          //     height: 5,
+          //     width: 5,
+          //     activeColor: Colors.grey,
+          //     color: Colors.black,
+          //     count: index,
+          //     index: pageindex,
+          //   ),
+          // ),
+        ],
+      ),
+    },
+      child: 
     );
   }
 }
