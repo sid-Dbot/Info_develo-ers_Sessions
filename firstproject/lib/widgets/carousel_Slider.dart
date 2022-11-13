@@ -60,7 +60,7 @@ class _Carousel_SliderState extends State<Carousel_Slider> {
                   borderRadius: const BorderRadius.all(Radius.circular(11)),
                   child: Image.network(
                     fit: BoxFit.fill,
-                    "https://goldmineedu.com/${_loaddata[index].image.toString()}",
+                    "https://goldmineedu.com/${loadData.image.toString()}",
                   ),
                 ),
               ),
