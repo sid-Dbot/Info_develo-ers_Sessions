@@ -20,7 +20,7 @@ class Carousel_Slider extends StatelessWidget {
                       borderRadius: const BorderRadius.all(Radius.circular(11)),
                       child: Image.network(
                         fit: BoxFit.fill,
-                        "https://goldmineedu.com/${value..image.toString()}",
+                        "https://goldmineedu.com/${loaddimage.toString()}",
                       ),
                     );
       },
