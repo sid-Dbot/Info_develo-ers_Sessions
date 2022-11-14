@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:http/http.dart' as http;
 
+import 'model/dataModel.dart';
+
 class Api with ChangeNotifier {
   List<BlogData> blogdata = [];
 
