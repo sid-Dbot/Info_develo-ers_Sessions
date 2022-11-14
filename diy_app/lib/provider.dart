@@ -4,19 +4,19 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:http/http.dart' as http;
 
-import './dataModel.dart';
+import 'models/users.dart';
 
 class Api with ChangeNotifier {
-  List<BlogData> blogdata = [];
+  List<Users> userdata = [];
 
   Future<void> getData() async {
-    var res = await http
-        .get(Uri.parse('https://goldmineedu.com/admin/page/blog/data'));
+    var res = await http.get(
+        Uri.parse('https://mocki.io/v1/ae72f366-6a74-4600-a93a-9b2227d64800'));
     if (res.statusCode == 200) {
-      blogdata = [];
+      userdata = [];
 
-      blogdata.addAll(List<BlogData>.from(
-          jsonDecode(res.body.toString()).map((e) => BlogData.fromJson(e))));
+      userdata.addAll(List<Users>.from(
+          jsonDecode(res.body.toString()).map((e) => Users.fromJson(e))));
 
       notifyListeners();
     } else {
