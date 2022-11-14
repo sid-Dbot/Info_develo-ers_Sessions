@@ -1,4 +1,3 @@
-import 'package:firstproject/API/API_service.dart';
 import 'package:firstproject/models/services_data.dart';
 import 'package:flutter/material.dart';
 
@@ -12,12 +11,12 @@ class Services extends StatefulWidget {
 class _ServicesState extends State<Services> {
   late Future<List<Services_data>> loadData;
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    loadData =
-        Api_service().getData('https://goldmineedu.com/admin/page/my-service');
-  }
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   loadData =
+  //       Api_service().getData('https://goldmineedu.com/admin/page/my-service');
+  // }
 
   @override
   Widget build(BuildContext context) {

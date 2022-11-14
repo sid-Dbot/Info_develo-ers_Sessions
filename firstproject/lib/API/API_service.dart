@@ -11,7 +11,7 @@ class Api_service with ChangeNotifier {
   //Api_service({required this.Url});
 
 //===========GET METHOD===============
-  getData() async {
+  Future<void>getData() async {
     var response =
         await http.get(Uri.parse("https://goldmineedu.com/admin/home/all"));
     if (response.statusCode == 200) {
