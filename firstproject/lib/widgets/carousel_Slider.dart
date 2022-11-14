@@ -9,11 +9,10 @@ class Carousel_Slider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final loaddata = Provider.of<Api_service>(context).loadedData;
     context.read<Api_service>().getData;
     return Scaffold(body: Consumer(builder: (context, value, child) {
       return ListView.builder(
-        itemCount: loaddata.length,
+        itemCount: value.loadedData.length,
         itemBuilder: (context, index) {
           return ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(11)),
