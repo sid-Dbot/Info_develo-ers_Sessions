@@ -3,11 +3,7 @@ class Users {
   String? name;
   String? address;
   String? email;
-  Users(
-      {required this.id,
-      required this.name,
-      required this.address,
-      required this.email});
+  Users({this.id, this.name, this.address, this.email});
 
   Users.fromJson(Map<String, dynamic> json) {
     id = json["id"];

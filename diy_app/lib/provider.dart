@@ -11,7 +11,7 @@ class Api with ChangeNotifier {
 
   Future<void> getData() async {
     var res = await http.get(
-        Uri.parse('https://mocki.io/v1/ae72f366-6a74-4600-a93a-9b2227d64800'));
+        Uri.parse('https://mocki.io/v1/5cf947a0-45ca-4e87-9a8e-8df174c6f88f'));
     if (res.statusCode == 200) {
       userdata = [];
 

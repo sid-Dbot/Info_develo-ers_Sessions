@@ -1,4 +1,5 @@
-import './provider.dart';
+import 'package:diy_app/User.dart';
+import 'package:diy_app/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -32,7 +33,14 @@ class BlogPage extends StatelessWidget {
           itemCount: value.userdata.length,
           itemBuilder: (context, index) {
             return TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return userPage(
+                          name: value.userdata[index].name.toString());
+                    },
+                  ));
+                },
                 child: Text(value.userdata[index].email.toString()));
           },
         );
