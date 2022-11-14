@@ -15,10 +15,7 @@ def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
     flutterVersionCode = '1'
 }
-android {
-  compileSdkVersion 32
-  ...
-}
+
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
@@ -65,6 +62,10 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+}
+android {
+  compileSdkVersion 32
+  ...
 }
 
 flutter {
