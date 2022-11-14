@@ -17,11 +17,10 @@ class Api_service with ChangeNotifier {
     if (response.statusCode == 200) {
       loadedData = [];
       loadedData.addAll(List<homeData>.from(jsonDecode(response.body.toString())
-        ..map((e) => homeData.fromJson(e))));
+          .map((e) => homeData.fromJson(e))));
       notifyListeners();
     } else {
       throw Exception('no Data');
-      notifyListeners();
     }
     notifyListeners();
 
