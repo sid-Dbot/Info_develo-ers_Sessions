@@ -57,7 +57,7 @@ class BlogPage extends StatelessWidget {
             ),
           ),
           const TextField(
-            decoration: InputDecoration(label: Text('Name')),
+            decoration: InputDecoration(label: Text('Name'),border: OutlineInputBorder())),
           )
         ],
       ),
