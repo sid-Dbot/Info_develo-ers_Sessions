@@ -57,8 +57,8 @@ class BlogPage extends StatelessWidget {
             ),
           ),
           const TextField(
-            decoration: InputDecoration(label: Text('Name'),border: OutlineInputBorder())),
-          )
+              decoration: InputDecoration(
+                  label: Text('Name'), border: OutlineInputBorder())),
         ],
       ),
       floatingActionButton:
