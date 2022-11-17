@@ -12,14 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<Api>(
-          create: (context) => Api(),
-        )
-      ],
-      child: MaterialApp(home: BlogPage()),
-    );
+    return ChangeNotifierProvider(
+        create: (context) {
+          return Api();
+        },
+        child: MaterialApp(home: BlogPage()));
   }
 }
 

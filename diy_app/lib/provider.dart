@@ -8,6 +8,9 @@ import 'models/users.dart';
 
 class Api with ChangeNotifier {
   List<Users> userdata = [];
+  List<Users> get data {
+    return [...userdata];
+  }
 
   Future<void> getData() async {
     var res = await http.get(
