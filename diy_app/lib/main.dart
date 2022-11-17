@@ -33,16 +33,20 @@ class BlogPage extends StatelessWidget {
     final datas = Provider.of<Api>(context).userdata;
 
     return Scaffold(
-      body: ListView.builder(
-        itemCount: datas.length,
-        itemBuilder: (context, index) {
-          return TextButton(
-              onPressed: () {
-                Navigator.pushNamed(
-                    arguments: datas[index].id, context, 'details');
-              },
-              child: Text(datas[index].email.toString()));
-        },
+      body: Column(
+        children: [
+          ListView.builder(
+            itemCount: datas.length,
+            itemBuilder: (context, index) {
+              return TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(
+                        arguments: datas[index].id, context, 'details');
+                  },
+                  child: Text(datas[index].email.toString()));
+            },
+          ),
+        ],
       ),
       floatingActionButton:
           FloatingActionButton(onPressed: () {}, child: const Icon(Icons.send)),
