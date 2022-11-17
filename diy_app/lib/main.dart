@@ -36,6 +36,7 @@ class BlogPage extends StatelessWidget {
       body: Column(
         children: [
           ListView.builder(
+            shrinkWrap: true,
             itemCount: datas.length,
             itemBuilder: (context, index) {
               return TextButton(
