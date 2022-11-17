@@ -16,9 +16,12 @@ class MyApp extends StatelessWidget {
         create: (context) {
           return Api();
         },
-        child: MaterialApp(home: BlogPage(),routes: {
-          'details':(context) => userPage();
-        },));
+        child: MaterialApp(
+          home: BlogPage(),
+          routes: {
+            'details': (context) => userPage(),
+          },
+        ));
   }
 }
 
@@ -35,7 +38,8 @@ class BlogPage extends StatelessWidget {
         itemBuilder: (context, index) {
           return TextButton(
               onPressed: () {
-                Navigator.pushNamed(arguments: ,context,'');
+                Navigator.pushNamed(
+                    arguments: datas[index].id, context, 'details');
               },
               child: Text(datas[index].email.toString()));
         },
