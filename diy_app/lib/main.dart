@@ -1,4 +1,5 @@
 import 'package:diy_app/User.dart';
+import 'package:diy_app/customTextField.dart';
 import 'package:diy_app/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -58,20 +59,21 @@ class BlogPage extends StatelessWidget {
               style: TextStyle(fontSize: 25),
             ),
           ),
-          TextField(
-              controller: nameController,
-              decoration: const InputDecoration(
-                  label: Text('Name'),
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide(),
-                      borderRadius: BorderRadius.all(Radius.circular(9))))),
-          TextField(
-              controller: job,
-              decoration: const InputDecoration(
-                  label: Text('Job Title'),
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide(),
-                      borderRadius: BorderRadius.all(Radius.circular(9))))),
+          customTextField(textController: nameController, hintText: 'Name')
+          // TextField(
+          //     controller: nameController,
+          //     decoration: const InputDecoration(
+          //         label: Text('Name'),
+          //         border: OutlineInputBorder(
+          //             borderSide: BorderSide(),
+          //             borderRadius: BorderRadius.all(Radius.circular(9))))),
+          // TextField(
+          //     controller: job,
+          //     decoration: const InputDecoration(
+          //         label: Text('Job Title'),
+          //         border: OutlineInputBorder(
+          //             borderSide: BorderSide(),
+          //             borderRadius: BorderRadius.all(Radius.circular(9))))),
         ],
       ),
       floatingActionButton:
