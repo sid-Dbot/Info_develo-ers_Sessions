@@ -59,7 +59,8 @@ class BlogPage extends StatelessWidget {
               style: TextStyle(fontSize: 25),
             ),
           ),
-          customTextField(textController: nameController, hintText: 'Name')
+          customTextField(textController: nameController, hintText: 'Name'),
+          customTextField(textController: job, hintText: 'Job Title'),
           // TextField(
           //     controller: nameController,
           //     decoration: const InputDecoration(
