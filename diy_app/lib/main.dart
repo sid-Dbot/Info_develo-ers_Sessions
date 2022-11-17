@@ -28,18 +28,17 @@ class BlogPage extends StatelessWidget {
     return Scaffold(body: Consumer<Api>(
       builder: (context, value, child) {
         return ListView.builder(
-          itemCount: value.userdata.length,
+          itemCount: value.data.length,
           itemBuilder: (context, index) {
             return TextButton(
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
-                      return userPage(
-                          name: value.userdata[index].name.toString());
+                      return userPage(name: value.data[index].name.toString());
                     },
                   ));
                 },
-                child: Text(value.userdata[index].email.toString()));
+                child: Text(value.data[index].email.toString()));
           },
         );
       },
