@@ -65,6 +65,13 @@ class BlogPage extends StatelessWidget {
                   border: OutlineInputBorder(
                       borderSide: BorderSide(),
                       borderRadius: BorderRadius.all(Radius.circular(9))))),
+          TextField(
+              controller: job,
+              decoration: const InputDecoration(
+                  label: Text('Name'),
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(),
+                      borderRadius: BorderRadius.all(Radius.circular(9))))),
         ],
       ),
       floatingActionButton:
