@@ -44,6 +44,8 @@ class BlogPage extends StatelessWidget {
               child: Text(datas[index].email.toString()));
         },
       ),
+      floatingActionButton:
+          FloatingActionButton(onPressed: () {}, child: const Icon(Icons.send)),
     );
   }
 }
