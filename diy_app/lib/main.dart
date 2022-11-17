@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
 class BlogPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var name = TextEditingController();
+    TextEditingController nameController = TextEditingController();
     var job = TextEditingController();
     //context.read<Api>().getData();
     Provider.of<Api>(context).getData();
@@ -59,7 +59,7 @@ class BlogPage extends StatelessWidget {
             ),
           ),
           const TextField(
-              controller: name,
+              controller: nameController,
               decoration: InputDecoration(
                   label: Text('Name'),
                   border: OutlineInputBorder(
