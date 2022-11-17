@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
         create: (context) {
           return Api();
         },
-        child: MaterialApp(home: BlogPage()));
+        child: MaterialApp(home: BlogPage(),routes: {
+          'details':(context) => userPage();
+        },));
   }
 }
 
@@ -33,11 +35,7 @@ class BlogPage extends StatelessWidget {
         itemBuilder: (context, index) {
           return TextButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return userPage(name: datas[index].name.toString());
-                  },
-                ));
+                Navigator.pushNamed(arguments: ,context,'');
               },
               child: Text(datas[index].email.toString()));
         },
