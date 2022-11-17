@@ -30,8 +30,8 @@ class customTextField extends StatelessWidget {
       child: TextField(
         controller: textController,
         decoration: InputDecoration(
-            fillColor: Colors.cyan,
-            filled: true,
+            // fillColor: Colors.cyan,
+            // filled: true,
             //hintText,
             hintText: hintText,
             // prefixIcon
