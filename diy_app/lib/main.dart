@@ -60,6 +60,7 @@ class BlogPage extends StatelessWidget {
               decoration: InputDecoration(
                   label: Text('Name'),
                   border: OutlineInputBorder(
+                      borderSide: BorderSide(),
                       borderRadius: BorderRadius.all(Radius.circular(9))))),
         ],
       ),
