@@ -26,10 +26,10 @@ class MyApp extends StatelessWidget {
 }
 
 class BlogPage extends StatelessWidget {
-  var name = TextEditingController();
-  var job = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    var name = TextEditingController();
+    var job = TextEditingController();
     //context.read<Api>().getData();
     Provider.of<Api>(context).getData();
     final datas = Provider.of<Api>(context).userdata;
