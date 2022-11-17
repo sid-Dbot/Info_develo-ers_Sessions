@@ -58,9 +58,9 @@ class BlogPage extends StatelessWidget {
               style: TextStyle(fontSize: 25),
             ),
           ),
-          const TextField(
+          TextField(
               controller: nameController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   label: Text('Name'),
                   border: OutlineInputBorder(
                       borderSide: BorderSide(),
@@ -68,7 +68,7 @@ class BlogPage extends StatelessWidget {
           TextField(
               controller: job,
               decoration: const InputDecoration(
-                  label: Text('Name'),
+                  label: Text('Job Title'),
                   border: OutlineInputBorder(
                       borderSide: BorderSide(),
                       borderRadius: BorderRadius.all(Radius.circular(9))))),
