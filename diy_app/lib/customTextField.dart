@@ -30,29 +30,29 @@ class customTextField extends StatelessWidget {
       child: TextField(
         controller: textController,
         decoration: InputDecoration(
-            fillColor: Colors.grey[300],
+            fillColor: Colors.cyan,
             filled: true,
             //hintText,
             hintText: hintText,
             // prefixIcon
             // prefixIcon: Icon(icon, color: Colors.yellow),
             //focusedBorder
-            focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: const BorderSide(
-                  width: 0.0,
-                  color: Colors.white,
-                )),
-            //enabled Border
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: const BorderSide(
-                  width: 0.0,
-                  color: Colors.white,
-                )),
-            // enabledBorder
-            //
-            // border
+            // focusedBorder: OutlineInputBorder(
+            //     borderRadius: BorderRadius.circular(15),
+            //     borderSide: const BorderSide(
+            //       width: 0.0,
+            //       color: Colors.white,
+            //     )),
+            // //enabled Border
+            // enabledBorder: OutlineInputBorder(
+            //     borderRadius: BorderRadius.circular(15),
+            //     borderSide: const BorderSide(
+            //       width: 0.0,
+            //       color: Colors.white,
+            //     )),
+            // // enabledBorder
+            // //
+            // // border
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
             )),
