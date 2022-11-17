@@ -48,8 +48,11 @@ class BlogPage extends StatelessWidget {
             },
           ),
           const Center(
-            child: Text('Enter New Details:'),
-          )
+            child: Text(
+              'Enter New Details:',
+              style: TextStyle(fontSize: 25),
+            ),
+          ),
         ],
       ),
       floatingActionButton:
