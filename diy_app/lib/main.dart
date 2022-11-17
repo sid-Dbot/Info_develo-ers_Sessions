@@ -25,6 +25,7 @@ class BlogPage extends StatelessWidget {
   Widget build(BuildContext context) {
     //context.read<Api>().getData();
     final datas = Provider.of<Api>(context).userdata;
+    print(datas);
     return Scaffold(
       body: ListView.builder(
         itemCount: datas.length,
