@@ -27,4 +27,13 @@ class Api with ChangeNotifier {
     }
     notifyListeners();
   }
+
+  postdata(info) async {
+    return await http.post(Uri.parse("https://reqres.in/api/users"),
+        body: jsonEncode(info),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': '*/*',
+        });
+  }
 }
