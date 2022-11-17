@@ -56,6 +56,7 @@ class BlogPage extends StatelessWidget {
               style: TextStyle(fontSize: 25),
             ),
           ),
+          const TextField()
         ],
       ),
       floatingActionButton:
