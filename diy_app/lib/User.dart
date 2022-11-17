@@ -8,13 +8,19 @@ class userPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userId = ModalRoute.of(context)!.settings.arguments as String;
+    final userId = ModalRoute.of(context)!.settings.arguments;
     final userdetails = Provider.of<Api>(context)
         .userdata
         .firstWhere((Uid) => Uid.id == userId);
     return Scaffold(
       appBar: AppBar(),
-      body: Center(child: Text(userdetails.name.toString())),
+      body: Center(
+          child: Column(
+        children: [
+          Text(userdetails.name.toString()),
+          Text(userdetails.address.toString())
+        ],
+      )),
     );
   }
 }
