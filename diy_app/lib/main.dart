@@ -47,6 +47,9 @@ class BlogPage extends StatelessWidget {
                   child: Text(datas[index].email.toString()));
             },
           ),
+          const Center(
+            child: Text('Enter New Details:'),
+          )
         ],
       ),
       floatingActionButton:
