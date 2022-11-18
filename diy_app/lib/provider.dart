@@ -37,8 +37,8 @@ class Api with ChangeNotifier {
     var response = await service().sendData(data);
     var body = jsonDecode(response.body);
     notifyListeners();
-    if (response.statusCode == 200) {
-      print(data);
+    if (response.statusCode == 201) {
+      print(body);
     } else {
       throw Exception('Post Failed');
     }
