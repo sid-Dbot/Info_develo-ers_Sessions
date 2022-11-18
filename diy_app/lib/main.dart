@@ -66,7 +66,8 @@ class BlogPage extends StatelessWidget {
               textController: passwordController, hintText: 'Password'),
           ElevatedButton(
               onPressed: () {
-                send.postData(emailController.text, passwordController.text);
+                send.postData(emailController.text.toString(),
+                    passwordController.text.toString());
               },
               child: const Text('Login'))
           // TextField(
