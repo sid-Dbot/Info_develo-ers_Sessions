@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
 }
 
 class BlogPage extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
-  var job = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +61,10 @@ class BlogPage extends StatelessWidget {
               style: TextStyle(fontSize: 25),
             ),
           ),
-          customTextField(textController: nameController, hintText: 'Name'),
-          customTextField(textController: job, hintText: 'Job Title'),
+          customTextField(textController: emailController, hintText: 'Name'),
+          customTextField(
+              textController: passwordController, hintText: 'Job Title'),
+          ElevatedButton(onPressed: () {}, child: const Text('Login'))
           // TextField(
           //     controller: nameController,
           //     decoration: const InputDecoration(
@@ -79,11 +81,11 @@ class BlogPage extends StatelessWidget {
           //             borderRadius: BorderRadius.all(Radius.circular(9))))),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Api().postData(nameController.text.toString(), job.text.toString());
-          },
-          child: const Icon(Icons.send)),
+      // floatingActionButton: FloatingActionButton(
+      //     onPressed: () {
+      //       Api().postData(nameController.text.toString(), job.text.toString());
+      //     },
+      //     child: const Icon(Icons.send)),
     );
   }
 }
