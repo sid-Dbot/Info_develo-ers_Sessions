@@ -36,5 +36,6 @@ class Api with ChangeNotifier {
     };
     await service().sendData(data);
     notifyListeners();
+    print(data);
   }
 }
