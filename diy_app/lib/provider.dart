@@ -34,6 +34,7 @@ class Api with ChangeNotifier {
       'title': title,
       'job': job,
     };
+
     var response = await service().sendData(data);
     var body = jsonDecode(response.body);
     notifyListeners();
