@@ -57,7 +57,7 @@ class BlogPage extends StatelessWidget {
           // ),
           const Center(
             child: Text(
-              'Enter New Details:',
+              'Login:',
               style: TextStyle(fontSize: 25),
             ),
           ),
