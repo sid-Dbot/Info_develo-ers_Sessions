@@ -40,21 +40,21 @@ class BlogPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Card(
-            elevation: 9,
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: datas.length,
-              itemBuilder: (context, index) {
-                return TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(
-                          arguments: datas[index].id, context, 'details');
-                    },
-                    child: Text(datas[index].email.toString()));
-              },
-            ),
-          ),
+          // Card(
+          //   elevation: 9,
+          //   child: ListView.builder(
+          //     shrinkWrap: true,
+          //     itemCount: datas.length,
+          //     itemBuilder: (context, index) {
+          //       return TextButton(
+          //           onPressed: () {
+          //             Navigator.pushNamed(
+          //                 arguments: datas[index].id, context, 'details');
+          //           },
+          //           child: Text(datas[index].email.toString()));
+          //     },
+          //   ),
+          // ),
           const Center(
             child: Text(
               'Enter New Details:',
