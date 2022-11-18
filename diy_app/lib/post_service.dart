@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class service {
   sendData(info) async {
-    return await http.post(Uri.parse("https://reqres.in/api/users"),
+    return await http.post(Uri.parse("https://reqres.in/api/login"),
         body: jsonEncode(info),
         headers: {
           'Content-Type': 'application/json',
