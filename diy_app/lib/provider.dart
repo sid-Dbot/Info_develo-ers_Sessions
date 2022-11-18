@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 import 'models/users.dart';
-import './post_service.dart';
 
 class Api with ChangeNotifier {
   List<Users> _userdata = [];
@@ -34,14 +33,23 @@ class Api with ChangeNotifier {
       'email': email,
       'password': password,
     };
-
-    var response = await service().sendData(data);
-    var body = jsonDecode(response.body);
     notifyListeners();
-    if (response.statusCode == 201) {
-      print(body);
-    } else {
-      throw Exception('Post Failed');
+    sendData(data) async {
+      var response = await http.post(Uri.parse("https://reqres.in/api/login"),
+          body: jsonEncode(data),
+          headers: {
+            'Content-Type': 'application/json',
+          });
+      notifyListeners();
+
+      // var response = await service().sendData(data);
+      // var body = jsonDecode(response.body);
+
+      if (response.statusCode == 201) {
+        print(response.body);
+      } else {
+        throw Exception('Post Failed');
+      }
     }
   }
 }
