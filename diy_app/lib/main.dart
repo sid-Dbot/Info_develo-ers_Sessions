@@ -81,7 +81,7 @@ class BlogPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
-            send.postData(nameController.toString(), job.toString());
+            send.postData(nameController.text.toString(), job.text.toString());
           },
           child: const Icon(Icons.send)),
     );
