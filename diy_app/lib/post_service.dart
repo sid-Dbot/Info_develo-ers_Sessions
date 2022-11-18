@@ -4,12 +4,17 @@ import 'dart:convert';
 
 class service with ChangeNotifier {
   Future sendData(info) async {
-    return await http.post(Uri.parse("https://reqres.in/api/users"),
+    var response = await http.post(Uri.parse("https://reqres.in/api/users"),
         body: jsonEncode(info),
         headers: {
           'Content-Type': 'application/json',
           'Accept': '*/*',
         });
+    if (response.statusCode == 200) {
+      print(response.body);
+    } else {
+      throw Exception('Post Failed');
+    }
   }
 
   // Future<void>_apply()async{
