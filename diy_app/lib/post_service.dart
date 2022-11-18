@@ -8,7 +8,6 @@ class service {
         body: jsonEncode(info),
         headers: {
           'Content-Type': 'application/json',
-          'Accept': '*/*',
         });
     // if (response.statusCode == 200) {
     //   print(response.body);
