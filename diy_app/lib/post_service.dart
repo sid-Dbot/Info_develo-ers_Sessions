@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class service with ChangeNotifier {
+class service {
   Future sendData(info) async {
     var response = await http.post(Uri.parse("https://reqres.in/api/users"),
         body: jsonEncode(info),
