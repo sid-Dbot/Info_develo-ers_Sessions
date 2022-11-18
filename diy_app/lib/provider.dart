@@ -29,7 +29,7 @@ class Api with ChangeNotifier {
     notifyListeners();
   }
 
-  postData(String title, String job) async {
+  Future postData(String title, String job) async {
     var data = {
       'title': title,
       'job': job,
@@ -39,6 +39,8 @@ class Api with ChangeNotifier {
     notifyListeners();
     if (response.statusCode == 200) {
       print(data);
+    } else {
+      throw Exception('Post Failed');
     }
   }
 }
