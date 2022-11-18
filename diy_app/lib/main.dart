@@ -64,7 +64,11 @@ class BlogPage extends StatelessWidget {
           customTextField(textController: emailController, hintText: 'Email'),
           customTextField(
               textController: passwordController, hintText: 'Password'),
-          ElevatedButton(onPressed: () {}, child: const Text('Login'))
+          ElevatedButton(
+              onPressed: () {
+                send.postData(emailController.text, passwordController.text);
+              },
+              child: const Text('Login'))
           // TextField(
           //     controller: nameController,
           //     decoration: const InputDecoration(
