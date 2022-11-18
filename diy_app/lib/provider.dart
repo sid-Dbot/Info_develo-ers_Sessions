@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 import 'models/users.dart';
+import './post_service.dart';
 
 class Api with ChangeNotifier {
   List<Users> _userdata = [];
@@ -28,12 +29,12 @@ class Api with ChangeNotifier {
     notifyListeners();
   }
 
-  postdata(info) async {
-    return await http.post(Uri.parse("https://reqres.in/api/users"),
-        body: jsonEncode(info),
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': '*/*',
-        });
+  postData(String title, String job) async {
+    var data = {
+      'title': title,
+      'job': job,
+    };
+    await service().sendData(data);
+    notifyListeners();
   }
 }

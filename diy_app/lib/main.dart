@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:diy_app/User.dart';
 import 'package:diy_app/customTextField.dart';
 import 'package:diy_app/provider.dart';
@@ -29,26 +27,15 @@ class MyApp extends StatelessWidget {
 }
 
 class BlogPage extends StatelessWidget {
-      TextEditingController nameController = TextEditingController();
-    var job = TextEditingController();
-     Future<void>_apply()async{
-        var allData= {
-          "name" : nameController.text,
-          "job" : job.text,
-        };
+  TextEditingController nameController = TextEditingController();
+  var job = TextEditingController();
 
-        var res = await Api().postdata(allData);
-        var body = jsonDecode(res.body);
-        if(res.statusCode == 201){
-        print(body);
-
-        }
   @override
   Widget build(BuildContext context) {
-
-    //context.read<Api>().getData();
+    context.read<Api>();
     Provider.of<Api>(context).getData();
     final datas = Provider.of<Api>(context).userdata;
+    final send = Provider.of<Api>(context);
 
     return Scaffold(
       body: Column(
@@ -92,8 +79,11 @@ class BlogPage extends StatelessWidget {
           //             borderRadius: BorderRadius.all(Radius.circular(9))))),
         ],
       ),
-      floatingActionButton:
-          FloatingActionButton(onPressed: () {}, child: const Icon(Icons.send)),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            send.postData(nameController.toString(), job.toString());
+          },
+          child: const Icon(Icons.send)),
     );
   }
 }
