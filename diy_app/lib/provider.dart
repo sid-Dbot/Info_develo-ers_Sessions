@@ -29,10 +29,10 @@ class Api with ChangeNotifier {
     notifyListeners();
   }
 
-  Future postData(String title, String job) async {
+  Future postData(String email, String password) async {
     var data = {
-      'title': title,
-      'job': job,
+      'email': email,
+      'password': password,
     };
 
     var response = await service().sendData(data);
