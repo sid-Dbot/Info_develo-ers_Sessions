@@ -34,7 +34,7 @@ class BlogPage extends StatelessWidget {
   Widget build(BuildContext context) {
     context.read<Api>();
     Provider.of<Api>(context).getData();
-    final datas = Provider.of<Api>(context).userdata;
+    //final datas = Provider.of<Api>(context).userdata;
     final send = Provider.of<Api>(context);
 
     return Scaffold(
