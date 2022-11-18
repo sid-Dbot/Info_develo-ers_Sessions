@@ -1,12 +1,15 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 class service {
-  Future sendData(info) async {
-    var response = await http
-        .post(Uri.parse("https://reqres.in/api/users"), body: info, headers: {
-      'Content-Type': 'application/json',
-      'Accept': '*/*',
-    });
+  Future<http.Response> sendData(info) async {
+    var response = await http.post(Uri.parse("https://reqres.in/api/users"),
+        body: jsonEncode(info),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': '*/*',
+        });
     if (response.statusCode == 200) {
       print(response.body);
       return response;

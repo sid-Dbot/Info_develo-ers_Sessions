@@ -34,8 +34,11 @@ class Api with ChangeNotifier {
       'title': title,
       'job': job,
     };
-    await service().sendData(data);
+    var response = await service().sendData(data);
+    var body = jsonDecode(response.body);
     notifyListeners();
-    print(data);
+    if (response.statusCode == 200) {
+      print(data);
+    }
   }
 }
