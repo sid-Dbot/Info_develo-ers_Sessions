@@ -69,7 +69,7 @@ class BlogPage extends StatelessWidget {
               onPressed: () {
                 send.postData(emailController.text.toString(),
                     passwordController.text.toString());
-                send.verified == true
+                (send.verified == true)
                     ? Navigator.push(
                         context,
                         MaterialPageRoute(
