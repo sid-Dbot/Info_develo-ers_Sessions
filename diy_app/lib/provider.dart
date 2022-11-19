@@ -42,10 +42,7 @@ class Api with ChangeNotifier {
         });
     notifyListeners();
 
-    // var response = await service().sendData(data);
-    // var body = jsonDecode(response.body);
-
-    if (response.statusCode == 201) {
+    if (response.statusCode == 200) {
       print(response.body);
     } else {
       throw Exception('Post Failed');
