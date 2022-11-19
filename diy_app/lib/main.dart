@@ -1,5 +1,6 @@
 import 'package:diy_app/User.dart';
 import 'package:diy_app/customTextField.dart';
+import 'package:diy_app/dashboard.dart';
 import 'package:diy_app/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -68,6 +69,11 @@ class BlogPage extends StatelessWidget {
               onPressed: () {
                 send.postData(emailController.text.toString(),
                     passwordController.text.toString());
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Dashboard(),
+                    ));
               },
               child: const Text('Login'))
           // TextField(
