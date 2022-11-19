@@ -46,10 +46,10 @@ class Api with ChangeNotifier {
     if (response.statusCode == 200) {
       print(response.body);
       verified = true;
-      notifyListeners();
     } else {
       throw Exception('Post Failed');
       verified = false;
     }
+    notifyListeners();
   }
 }
