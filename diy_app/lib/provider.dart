@@ -48,7 +48,6 @@ class Api with ChangeNotifier {
       verified = true;
     } else {
       throw Exception('Post Failed');
-      verified = false;
     }
     notifyListeners();
   }

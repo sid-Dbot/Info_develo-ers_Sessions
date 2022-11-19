@@ -27,8 +27,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class BlogPage extends StatelessWidget {
+class BlogPage extends StatefulWidget {
+  @override
+  State<BlogPage> createState() => _BlogPageState();
+}
+
+class _BlogPageState extends State<BlogPage> {
   var emailController = TextEditingController();
+
   var passwordController = TextEditingController();
 
   @override
