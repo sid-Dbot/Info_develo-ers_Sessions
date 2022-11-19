@@ -72,7 +72,7 @@ class _BlogPageState extends State<BlogPage> {
           customTextField(
               textController: passwordController, hintText: 'Password'),
           ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 send.postData(emailController.text.toString(),
                     passwordController.text.toString());
                 (send.verified == true)
