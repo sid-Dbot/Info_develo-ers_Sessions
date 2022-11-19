@@ -69,11 +69,16 @@ class BlogPage extends StatelessWidget {
               onPressed: () {
                 send.postData(emailController.text.toString(),
                     passwordController.text.toString());
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Dashboard(),
-                    ));
+                send.verified == true
+                    ? Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Dashboard(),
+                        ))
+                    : const AlertDialog(
+                        title: Text('Wrong email or password!'),
+                        content: Text('Please try again'),
+                      );
               },
               child: const Text('Login'))
           // TextField(
