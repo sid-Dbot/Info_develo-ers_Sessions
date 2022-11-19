@@ -78,6 +78,7 @@ class BlogPage extends StatelessWidget {
                     : const AlertDialog(
                         title: Text('Wrong email or password!'),
                         content: Text('Please try again'),
+                        elevation: 24,
                       );
               },
               child: const Text('Login'))
