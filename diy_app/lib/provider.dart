@@ -29,6 +29,7 @@ class Api with ChangeNotifier {
   }
 
   bool verified = false;
+
   Future postData(String email, String password) async {
     var data = {
       'email': email,
