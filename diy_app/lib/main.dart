@@ -84,6 +84,7 @@ class _BlogPageState extends State<BlogPage> {
                     : const AlertDialog(
                         title: Text('Wrong email or password!'),
                         content: Text('Please try again'),
+                        actions: [],
                         elevation: 24,
                       );
               },
