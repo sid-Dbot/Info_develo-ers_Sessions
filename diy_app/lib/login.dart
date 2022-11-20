@@ -13,6 +13,7 @@ class _BlogPageState extends State<loginPage> {
   var emailController = TextEditingController();
 
   var passwordController = TextEditingController();
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,45 +23,48 @@ class _BlogPageState extends State<loginPage> {
     final send = Provider.of<Api>(context);
 
     return Scaffold(
-      body: Column(
-        children: [
-          const Center(
-            child: Text(
-              'Login:',
-              style: TextStyle(fontSize: 25),
+      body: Form(
+        key: _formkey,
+        child: Column(
+          children: [
+            const Center(
+              child: Text(
+                'Login:',
+                style: TextStyle(fontSize: 25),
+              ),
             ),
-          ),
-          customTextField(textController: emailController, hintText: 'Email'),
-          customTextField(
-              textController: passwordController, hintText: 'Password'),
-          ElevatedButton(
-              onPressed: () {
-                send.postData(emailController.text.toString(),
-                    passwordController.text.toString());
-                (send.verified == true)
-                    ? Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Dashboard(),
-                        ))
-                    : showDialog(
-                        context: context,
-                        builder: (context) {
-                          return const AlertDialog(
-                            title: Text('Invalid email or password!'),
-                            content: Text(
-                              'Please try again',
-                              textAlign: TextAlign.center,
-                            ),
-                            actions: [],
-                            elevation: 24,
-                          );
-                        },
-                        barrierDismissible: true,
-                      );
-              },
-              child: const Text('Login'))
-        ],
+            customTextField(textController: emailController, hintText: 'Email'),
+            customTextField(
+                textController: passwordController, hintText: 'Password'),
+            ElevatedButton(
+                onPressed: () {
+                  send.postData(emailController.text.toString(),
+                      passwordController.text.toString());
+                  (send.verified == true)
+                      ? Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Dashboard(),
+                          ))
+                      : showDialog(
+                          context: context,
+                          builder: (context) {
+                            return const AlertDialog(
+                              title: Text('Invalid email or password!'),
+                              content: Text(
+                                'Please try again',
+                                textAlign: TextAlign.center,
+                              ),
+                              actions: [],
+                              elevation: 24,
+                            );
+                          },
+                          barrierDismissible: true,
+                        );
+                },
+                child: const Text('Login'))
+          ],
+        ),
       ),
     );
   }
