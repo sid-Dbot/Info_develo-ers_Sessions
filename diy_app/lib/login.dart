@@ -24,21 +24,6 @@ class _BlogPageState extends State<loginPage> {
     return Scaffold(
       body: Column(
         children: [
-          // Card(
-          //   elevation: 9,
-          //   child: ListView.builder(
-          //     shrinkWrap: true,
-          //     itemCount: datas.length,
-          //     itemBuilder: (context, index) {
-          //       return TextButton(
-          //           onPressed: () {
-          //             Navigator.pushNamed(
-          //                 arguments: datas[index].id, context, 'details');
-          //           },
-          //           child: Text(datas[index].email.toString()));
-          //     },
-          //   ),
-          // ),
           const Center(
             child: Text(
               'Login:',
@@ -75,27 +60,8 @@ class _BlogPageState extends State<loginPage> {
                       );
               },
               child: const Text('Login'))
-          // TextField(
-          //     controller: nameController,
-          //     decoration: const InputDecoration(
-          //         label: Text('Name'),
-          //         border: OutlineInputBorder(
-          //             borderSide: BorderSide(),
-          //             borderRadius: BorderRadius.all(Radius.circular(9))))),
-          // TextField(
-          //     controller: job,
-          //     decoration: const InputDecoration(
-          //         label: Text('Job Title'),
-          //         border: OutlineInputBorder(
-          //             borderSide: BorderSide(),
-          //             borderRadius: BorderRadius.all(Radius.circular(9))))),
         ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //     onPressed: () {
-      //       Api().postData(nameController.text.toString(), job.text.toString());
-      //     },
-      //     child: const Icon(Icons.send)),
     );
   }
 }
