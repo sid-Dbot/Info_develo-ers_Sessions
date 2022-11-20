@@ -55,4 +55,7 @@ class Api with ChangeNotifier {
     }
     notifyListeners();
   }
+
+  @override
+  notifyListeners();
 }
