@@ -1,16 +1,27 @@
-import 'package:api_service/datalist.dart';
+import 'package:api_service/Home.dart';
+import 'package:api_service/api/getService.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-void main(List<String> args) => runApp(HomePage());
+void main(List<String> args) => runApp(const MainApp());
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: DataItems(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<GetService>(
+          create: (context) => GetService(),
+        )
+      ],
+      child: MaterialApp(
+        theme: ThemeData(
+            textTheme: TextTheme(
+          titleMedium: TextStyle(color: Colors.white),
+        )),
+        home: HomePage(),
       ),
     );
   }

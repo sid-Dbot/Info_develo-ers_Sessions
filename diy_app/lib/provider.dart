@@ -56,6 +56,9 @@ class Api with ChangeNotifier {
     notifyListeners();
   }
 
-  @override
-  notifyListeners();
+  logout() async {
+    verified = false;
+
+    notifyListeners();
+  }
 }

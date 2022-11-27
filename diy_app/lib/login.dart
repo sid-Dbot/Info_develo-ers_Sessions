@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'provider.dart';
 import 'dashboard.dart';
-import 'customTextField.dart';
 
 class loginPage extends StatefulWidget {
   @override
@@ -33,34 +32,59 @@ class _BlogPageState extends State<loginPage> {
                 style: TextStyle(fontSize: 25),
               ),
             ),
-            customTextField(textController: emailController, hintText: 'Email'),
-            customTextField(
-                textController: passwordController, hintText: 'Password'),
+            TextFormField(
+              controller: emailController,
+              decoration: const InputDecoration(
+                hintText: 'Email',
+              ),
+              validator: (String? value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter Email.';
+                }
+                return null;
+              },
+            ),
+            TextFormField(
+              obscureText: true,
+              obscuringCharacter: '*',
+              controller: passwordController,
+              decoration: const InputDecoration(
+                hintText: 'Password',
+              ),
+              validator: ((value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter password';
+                }
+                return null;
+              }),
+            ),
             ElevatedButton(
                 onPressed: () {
-                  send.postData(emailController.text.toString(),
-                      passwordController.text.toString());
-                  (send.verified == true)
-                      ? Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Dashboard(),
-                          ))
-                      : showDialog(
-                          context: context,
-                          builder: (context) {
-                            return const AlertDialog(
-                              title: Text('Invalid email or password!'),
-                              content: Text(
-                                'Please try again',
-                                textAlign: TextAlign.center,
-                              ),
-                              actions: [],
-                              elevation: 24,
-                            );
-                          },
-                          barrierDismissible: true,
-                        );
+                  if (_formkey.currentState!.validate()) {
+                    send.postData(emailController.text.toString(),
+                        passwordController.text.toString());
+                    (send.verified == true)
+                        ? Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Dashboard(),
+                            ))
+                        : showDialog(
+                            context: context,
+                            builder: (context) {
+                              return const AlertDialog(
+                                title: Text('Invalid email or password!'),
+                                content: Text(
+                                  'Please try again',
+                                  textAlign: TextAlign.center,
+                                ),
+                                actions: [],
+                                elevation: 24,
+                              );
+                            },
+                            barrierDismissible: true,
+                          );
+                  }
                 },
                 child: const Text('Login'))
           ],

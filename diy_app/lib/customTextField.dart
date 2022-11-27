@@ -27,7 +27,7 @@ class customTextField extends StatelessWidget {
               spreadRadius: 1,
             ),
           ]),
-      child: TextField(
+      child: TextFormField(
         controller: textController,
         decoration: InputDecoration(
             // fillColor: Colors.cyan,
