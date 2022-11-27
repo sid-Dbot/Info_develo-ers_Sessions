@@ -26,8 +26,9 @@ class HomePage extends StatelessWidget {
             return Container(
               margin: EdgeInsets.all(6),
               padding: EdgeInsets.all(6),
-              decoration:
-                  BoxDecoration(border: Border.all(color: Colors.white)),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.circular(9)),
               child: ListTile(
                 title: Text(
                   loadedData[index].title.toString(),
