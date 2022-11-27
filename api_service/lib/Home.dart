@@ -24,6 +24,7 @@ class HomePage extends StatelessWidget {
           itemCount: loadedData.length,
           itemBuilder: (context, index) {
             return Container(
+              margin: EdgeInsets.all(6),
               padding: EdgeInsets.all(6),
               decoration:
                   BoxDecoration(border: Border.all(color: Colors.white)),
