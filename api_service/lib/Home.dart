@@ -23,21 +23,26 @@ class HomePage extends StatelessWidget {
           shrinkWrap: true,
           itemCount: loadedData.length,
           itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(
-                loadedData[index].title.toString(),
-                style: TextStyle(fontSize: 35),
-              ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    loadedData.first.description.toString(),
-                    maxLines: 2,
-                    style: TextStyle(fontSize: 25, color: Colors.blueGrey),
-                  ),
-                  Text('...'),
-                ],
+            return Container(
+              padding: EdgeInsets.all(6),
+              decoration:
+                  BoxDecoration(border: Border.all(color: Colors.white)),
+              child: ListTile(
+                title: Text(
+                  loadedData[index].title.toString(),
+                  style: TextStyle(fontSize: 35),
+                ),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      loadedData.first.description.toString(),
+                      maxLines: 2,
+                      style: TextStyle(fontSize: 25, color: Colors.blueGrey),
+                    ),
+                    Text('...'),
+                  ],
+                ),
               ),
             );
           },
