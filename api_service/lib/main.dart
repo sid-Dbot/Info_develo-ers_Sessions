@@ -1,5 +1,6 @@
 import 'package:api_service/Home.dart';
 import 'package:api_service/api/getService.dart';
+import 'package:api_service/detailsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -20,8 +21,12 @@ class MainApp extends StatelessWidget {
         theme: ThemeData(
             textTheme: TextTheme(
           titleMedium: TextStyle(color: Colors.white),
+          bodyMedium: TextStyle(color: Colors.blueGrey),
         )),
         home: HomePage(),
+        routes: {
+          '/detailsPage': (context) => DetailsPage(),
+        },
       ),
     );
   }

@@ -26,4 +26,8 @@ class GetService with ChangeNotifier {
     }
     notifyListeners();
   }
+
+  Movies findbyId(int id) {
+    return data.firstWhere((element) => element.id == id);
+  }
 }

@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
     //print(loadedData);
     return Scaffold(
       appBar: AppBar(
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.bookmark))],
         title: const Text('Home'),
       ),
       body: Container(
@@ -23,27 +24,33 @@ class HomePage extends StatelessWidget {
           shrinkWrap: true,
           itemCount: loadedData.length,
           itemBuilder: (context, index) {
-            return Container(
-              margin: EdgeInsets.all(6),
-              padding: EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(9)),
-              child: ListTile(
-                title: Text(
-                  loadedData[index].title.toString(),
-                  style: TextStyle(fontSize: 35),
-                ),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      loadedData.first.description.toString(),
-                      maxLines: 2,
-                      style: TextStyle(fontSize: 25, color: Colors.blueGrey),
-                    ),
-                    Text('...'),
-                  ],
+            return GestureDetector(
+              onTap: (() {
+                Navigator.of(context)
+                    .pushNamed('/detailsPage', arguments: loadedData[index].id);
+              }),
+              child: Container(
+                margin: EdgeInsets.all(6),
+                padding: EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(9)),
+                child: ListTile(
+                  title: Text(
+                    loadedData[index].title.toString(),
+                    style: TextStyle(fontSize: 35),
+                  ),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        loadedData[index].description.toString(),
+                        maxLines: 2,
+                        style: TextStyle(fontSize: 25, color: Colors.blueGrey),
+                      ),
+                      Text('...'),
+                    ],
+                  ),
                 ),
               ),
             );
