@@ -12,4 +12,7 @@ abstract class NewDAO {
 
   @delete
   Future<int> deleteNew(NewModel newModel);
+
+  @Query('SELECT COUNT(*) FROM NewModel')
+  Future<int?> getCount();
 }

@@ -1,5 +1,9 @@
 import 'dart:convert';
 
+import 'package:api_service/database/database.dart';
+import 'package:api_service/database/newDAO.dart';
+import 'package:api_service/database/new_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import '../models/movies-model.dart';
@@ -20,6 +24,7 @@ class GetService with ChangeNotifier {
 
       _data.addAll(List<Movies>.from(
           jsonDecode(response.body).map((e) => Movies.fromJson(e))));
+
       notifyListeners();
     } else {
       throw Exception('No Data');
